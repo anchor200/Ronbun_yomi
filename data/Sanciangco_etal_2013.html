@@ -1,0 +1,127 @@
+# LDG,Species richiness,marine,tropical<br>
+# インドー太平洋の熱帯種の種多様性パターンの解析。分布モデリングではなく専門家が作ったrange mapを使っている。<br><br>
+<script src="../library/marked.min.js"></script>
+<head>
+<title>
+Sanciangco JC, Carpenter KE, Etnoyer PJ, Moretzsohn F (2013) Habitat Availability and Heterogeneity and the Indo-Pacific Warm Pool as Predictors of Marine Species Richness in the Tropical Indo-Pacific. PLoS ONE 8(2): e56245. doi:10.1371/journal.pone.0056245
+</title>
+</head>
+<body>
+
+<font size="5"> 
+Sanciangco JC, Carpenter KE, Etnoyer PJ, Moretzsohn F (2013) Habitat Availability and Heterogeneity and the Indo-Pacific Warm Pool as Predictors of Marine Species Richness in the Tropical Indo-Pacific. PLoS ONE 8(2): <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0056245">e56245. doi:10.1371/journal.pone.0056245</a>
+</font>
+
+<script>md(`
+## 背景
+
+<p>Indo-West Pacific: インドの西・インドネシアを超えてイースター島くらいまで。世界で最も海の多様性が高い。<br>プレートがぶつかっている場所なので浅い場所が多く、時代によって水深が変わっている。
+</p>
+
+<p>
+Eastern Tropical Pacific: メキシコの東; 浅いところがないのでbarrierになる。浅瀬が少なくサンゴ礁未発達。<br>一部の造礁サンゴ以外はカリブ海の生物相に近い (太平洋を超えて分散したのではなく、アメリカ大陸の東からきた)。
+</p>
+
+<p>
+Indo-Pacific Warm Pool: Miocene後期にできた、世界で最も暖かいopen seaである。
+</p>
+
+
+<p>
+ Coral triangleはなぜ生物多様性が高いのか？<br>
+ 
+ <ol>
+<li>refuge hypothesis: coral triangleには浅い場所が多く、habitatがたくさんある→絶滅が少ないので多様性が高い。</li>
+<li>Center fo origin hypothesis: 地理的な複雑さが種分化を促進した。</li>
+<li>インド洋種プールと太平洋種プールが重なっているので種が多い。</li>
+<li>周辺で起源した種が集まってきた。</li>
+<li>tectonic integration</li>
+<li>太陽のエネルギーが多い。</li>
+</ol>
+
+<font size="2">[memo] mid-domain effect (中立性があるなら、regionの中心に一番多くの種が集まる)→否定はできないが、環境変数のほうが多様性をよく推定; “mid-domain”の定義が主観的になってしまう問題もあり。<br> </font>
+<font size="2">[memo] environmental heterogeneityの定量化の難しさ; 虫の場合、small-scaleで影響力が高いのはvegetation; large scaleではwetlandの有無が効く。<br> </font>
+</p>
+
+
+
+## 方法
+
+<p> 沿岸魚: 8,295、1,212: 無脊椎動物 (crustaceans and molluscs)、939 habitat-forming species comprising of 820 reef-building corals, 50 seagrasses, and 69 mangroves. </p>
+
+<p>Areaとpatchを使ってhabitat heterogeneityを定量化: -p log pとして、pがそれぞれ(サンゴ、マングローブ、海草)の種類のareaまたはpatchが、cell内全体のareaまたはpatch量に占める割合<br>
+Patchベースだと、areaのdominanceの影響が弱まる (discussionに書いてあった。また、patch数ベース/areaベースのheterogeneityは、それほど相関しない: 最小スケールで0.5、最大スケールで0.25程度)。</p>
+
+<font size="2">
+[memo] 深さ200m以下または海岸線から100km以内を沿岸域として使用<br>
+[memo] 複数のスケールで分析をするが、これはベストなgrain sizeをみるためではなく、どのスケールでどんな変数が効いてるのかを見るためのものである。https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-2699.2011.02637.x<br>
+[memo] molluscs: 軟体動物<br>
+[memo] crustaceans: 甲殻類<br>
+[memo] demersal: 底生魚<br>
+
+<ul>
+Seagrass, サンゴの分布マップ (habitat heterogeneityの定量化に使用)
+<li> Spalding MD, Blasco F, Field C (1997) World mangrove atlas. Okinawa, Japan: The International Society for Mangrove Ecosystems. 304 p.</li> 
+<li> Spalding MD, Ravilious C, Green EP (2001) World atlas of coral reefs. Berkeley: University of California Press. 416 p.</li> 
+<li> Green EP, Short FT (2003) World atlas of seagrasses. Berkeley: University of California Press. 310 p.</li> 
+</ul>
+
+</font>
+
+<p>Habitat以外に、Productivity, SSTを入れてGLMおよびSLMで回帰。SLMでは、残差項に空間自己相関を仮定する回帰モデル。</p>
+
+<p>
+浅い海 (水深200m以内) が多いエリアの図示。白はないところ？
+<br><img src="images/Sanciangco_etal_2013/01.png" title="Sanciangco_etal_2013_01.png" width=1000></p>
+<font size="2">
+[memo] habitat heterogeneityとshallow water areaは負の相関：浅いところは砂っぽいから。</font><br></p>
+
+## 結果
+<p>SSTとの相関が顕著：しかし一番小さいgrain size (Small = 23,000 km2) では有意ではなく、大きいスケールで効く。</p>
+<p>逆にNPPは小さいスケールでよく効く(魚のみ)が、ほかでは有意ではない。</p>
+<p>浅い海の広さも有意。</p>
+<p>habitatベースのheterogeneityのほうが影響が強い。areaベースのものも効いてはいる。</p>
+<p>large scaleではすべての変数を考慮する必要があった。</p>
+<p>patch数ベースのhabitat heterogeneityは、大きいスケールで説明力がある。</p>
+
+
+## 考察
+### 結果の解釈
+<p>概要の説明＋Coral triangleはVeron et al. (2009)の提案よりもっと広いのではないかという問題提起</p>
+<p>魚が一番サンプルが多いため信頼できる結果である。また、無脊椎動物も同じようなパターンを示した。しかし、より狭い地域に分布していた。また、より北に。これはサンプルバイアス＋魚がよりmobilityが高いことに起因するのではないか。[次の段落へのつなぎ：Coral triangleがepicenterなのは間違いない。そして、北部と中央部でどんな変数が効いているのかをみることが大事だ]</p>
+<p>説明変数間の相関構造が多いため、1つの重要な変数を抜き出すのは難しい。ただ、NPPはあまり保持されない。さらに他の変数と負の相関があることが多い(SSTとの相関も弱い。study areaは貧栄養であるため)。<a href="https://www.nature.com/articles/nature09329">Global scale</a>でもNPPはあまり重要ではない。高いNPPは、濁った水&上向きの冷たい水の流れと結びついているが、これはcoral oceanの特徴ではない(同様に、SSTがheterogeneityと相関があるのも、この調査区域特有のことだろう)。</p>
+<p>空間自己相関の影響の議論。時としてcontroversialな手法だが、SLMのほうが概して良い結果。一番大きいスケールと、habitat forming speciesではGLMでよかった。</p>
+<p>スケールを選ぶのは難しい。サンプルが小さい(grain sizeが大きい)と、当然当てはまりは良くなる。また、スケールによっては使えない変数が出てくることも注意すべき(例えば小さいgrainだと、coast lineが存在しないcellが増える)。</p>
+<p>SW、CL、HDIa、HDIn (habitat availability variables) およびSSTはretainされやすかった。特に、Coast lineの長さは全体で有意 (最大の説明力)。しかし、変数を抜いていく方法で一番いいモデルを選んだとき、すべてのケースでCL以外の説明変数が残った：CLだけでは十分ではない (areaとcomplexityが両方必要)。魚の場合のヒント：小さいスケールではSWとHDIa、大きいスケールではCLとHDIn (i.e., 1つのcellが大きいと、dominanceの影響がreduceされたheterogeneity indexのほうが適している)</p>
+
+### 先行研究との対応
+<p>[先行研究との差異を述べている] 緯度的には、Species richiness (SR)はCLとピークが一致 (STTのピークとはややずれる)が、経度ではSSTとSRのピークが一致：SSTは重要な要素である (Bellwood et al. (2005)はこの点を見落とし、mid-domain effectのみ述べていた。)。一方、Tittensor et al. (2010)はSSTがspeciationを促進する重要性を述べているものの、熱帯と高緯度の比較に基づいてこれを言っていた。本研究では、熱帯だけの結果からも同様のことが言えた。</p>
+<p>[既存の理論との対応を述べている] epicenterから外にだんだんSRが減っていくのは、centoer of originまたはaccmulationのでもどちらでも起きうるパターン (SRの図を示しつつ、ありえるプロセスを具体的に解説をしている)。</p>
+
+
+### limitation
+<p>[今回の結果がもっとあっけなく説明できる可能性を述べている1] 一方で、SSTとSRの関連は単なる偶然で、speciation rateとは関係がない可能性もある。Coral triangleの種はMioceneに起源したものが多く、分散には十分な時間があったはず。この点をテストするには、coral triangleの内と外で、どちらがdiversification rateが高かったかを調べるのが良い。</p>
+<p>[今回の結果がもっとあっけなく説明できる可能性を述べている2] habitat availabilityはcentoer of originまたはaccmulationのどちらのプロセスが起きていたとしても、重要な寄与をしているはずである。一方、中立的・折衷的理論でも似たようなことが言える。species-area relationship: 広いほど環境が多様なnicheができやすい効果、絶滅の回避がしやすい効果や、多様な環境がbarrierとなって種分化を促進した可能性もある。またcoral triagnle形成時の海面変動の効果も無視できない。</p>
+
+
+### 代表的な結果を更に広い視点から考察する
+<p>[保全の話] areaとcomplexityがどちらも大事だから、これらに注目して保全をするべき。ただし、浅瀬が多い=arega広いだけでは種数が多くない。海岸線の長さのほうが大事だった。この点に注意を払うべき。</p>
+<p>[歴史効果] 最終氷期に海が干上がった影響も考えられる。Sunda/Arafura shelfでは何度も海が干上がった。これによって、今浅瀬であっても(habitatが多くても)種が少ない、という可能性がある。</p>
+<p>[機能特性や物理現象と関連した議論] Coast lineが重要だという話：Coral triangleは、coast line km/gridの値が一番大きい。area よりもcomplexityが重要：海棲生物の幼生時に特に重要で、また炭酸塩プラットフォーム (carbonate platform) が多くできて、それが多様性に寄与する。</p>
+<p>[行政区に着目した記述] インドネシアよりフィリピンのほうが多様性が高い (インドネシアのほうがデータはたくさんあるのにも関わらず)。やや北にあるので亜熱帯種や温帯種もいる＆soft bottom shelf areaがあるのでそこに適応した種も保持できる。ただし、exploitationがフィリピンで問題となっているので保全が必要。インドネシアでももちろん必要。</p>
+<p>[まとめ] Available habitat/habitat complexityがspecies richinessに寄与することがわかった。これらをより良く定量化する方法 (新たなhabitat indicesまど) を考える必要がある。さらに、エリア分割の方法を変えることで、SSTなどの他の要素の働きを詳しく知ることができるはずだ。これらをもとに、保全をやっていく必要がある。</p>
+
+
+`)</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
