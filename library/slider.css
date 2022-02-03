@@ -48,7 +48,15 @@
 }
 
 
+.image-vw{
+   width : 55vw;
+}
+
+.nav-vw{
+   width : 15vw;
+}
 
 ul {
    list-style-type: none;
 }
+
