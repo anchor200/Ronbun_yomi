@@ -92,7 +92,7 @@ Seagrass, サンゴの分布マップ (habitat heterogeneityの定量化に使�
 <p>説明変数間の相関構造が多いため、1つの重要な変数を抜き出すのは難しい。ただ、NPPはあまり保持されない。さらに他の変数と負の相関があることが多い(SSTとの相関も弱い。study areaは貧栄養であるため)。<a href="https://www.nature.com/articles/nature09329">Global scale</a>でもNPPはあまり重要ではない。高いNPPは、濁った水&上向きの冷たい水の流れと結びついているが、これはcoral oceanの特徴ではない(同様に、SSTがheterogeneityと相関があるのも、この調査区域特有のことだろう)。</p>
 <p>空間自己相関の影響の議論。時としてcontroversialな手法だが、SLMのほうが概して良い結果。一番大きいスケールと、habitat forming speciesではGLMでよかった。</p>
 <p>スケールを選ぶのは難しい。サンプルが小さい(grain sizeが大きい)と、当然当てはまりは良くなる。また、スケールによっては使えない変数が出てくることも注意すべき(例えば小さいgrainだと、coast lineが存在しないcellが増える)。</p>
-<p>SW、CL、HDIa、HDIn (habitat availability variables) およびSSTはretainされやすかった。特に、Coast lineの長さは全体で有意 (最大の説明力)。しかし、変数を抜いていく方法で一番いいモデルを選んだとき、すべてのケースでCL以外の説明変数が残った：CLだけでは十分ではない (areaとcomplexityが両方必要)。魚の場合のヒント：小さいスケールではSWとHDIa、大きいスケールではCLとHDIn (i.e., 1つのcellが大きいと、dominanceの影響がreduceされたheterogeneity indexのほうが適している)</p>
+<p>SW、CL、HDIa、HDIn (habitat availability variables) およびSSTはretainされやすかった。特に、Coast lineの長さは全体で有意 (最大の説明力)。しかし、変数を抜いていく方法で一番いいモデルを選んだとき、すべてのケースでCL以外の説明変数が残った：<b>CLだけでは十分ではない (areaとcomplexityが両方必要)</b>。魚の場合のヒント：小さいスケールではSWとHDIa、大きいスケールではCLとHDIn (i.e., <b>1つのcellが大きいと、dominanceの影響がreduceされたheterogeneity indexのほうが適している</b>)</p>
 
 ### 先行研究との対応
 <p>[先行研究との差異を述べている] 緯度的には、Species richiness (SR)はCLとピークが一致 (STTのピークとはややずれる)が、経度ではSSTとSRのピークが一致：SSTは重要な要素である (Bellwood et al. (2005)はこの点を見落とし、mid-domain effectのみ述べていた。)。一方、Tittensor et al. (2010)はSSTがspeciationを促進する重要性を述べているものの、熱帯と高緯度の比較に基づいてこれを言っていた。本研究では、熱帯だけの結果からも同様のことが言えた。</p>
