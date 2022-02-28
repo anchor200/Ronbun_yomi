@@ -1,0 +1,176 @@
+# 生態系サービス,Ecological service,Natural stock,Kuroshio,Japan,Temperate,Tropical,Sub-tropical <br>
+# 漁獲生産fisheries production, アクアリウムaquarium fish production, ダイビングrecreational diving の3つの生態系サービスに着目し，自然資本を定量化．さらに緯度及び種多様性との関係を分析<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Sato, M., Nakamura, Y., & Hori, M. (2021). Potential stocks of reef fish‐based ecosystem services in the Kuroshio Current region: Their relationship with latitude and biodiversity. Population Ecology, 63(1), 75-91.
+</title>
+</head>
+<body>
+
+<font size="5"> 
+Sato, M., Nakamura, Y., & Hori, M. (2021). Potential stocks of reef fish‐based ecosystem services in the Kuroshio Current region: Their relationship with latitude and biodiversity. Population Ecology, 63(1), 75-91. <a href="https://doi.org/10.1002/1438-390X.12061">https://doi.org/10.1002/1438-390X.12061</a>
+</font>
+
+
+<script>md(`
+
+
+## 背景
+
+
+<div class="box1">
+<p>海の生態系は様々な生態系サービスをもたらす．
+例えば，魚介食・鑑賞資源，護岸，水の浄化，気候の調整，レクリエーション，観光 (Barbier et al., 2011; Costanza, 1999)．<b>海は生態系サービスの40％を提供し，中でも沿岸域が最も高い影響力を持つ</b>．</p>
+<p>欧米やオーストラリアに比べ，東アジアの研究が少ない．とくに黒潮地域（日本，台湾，フィリピン）は海の生態系サービスの恩恵を大きく受けているため，現状調査が必要．
+</p>
+<p>黒潮地域は，海水温の上昇が全球平均より大きく，熱帯でのサンゴ白化や温帯でのサンゴ礁の発達など顕著な影響がみられる．(Vergés et al., <a href="https://doi.org/10.1098/rspb.2014.0846">2014</a>; Yamano, Sugihara, & Nomura, <a href="https://doi.org/10.1029/2010GL046474">2011</a>)
+</p>
+
+<p>
+海の生物多様性（種多様性）は緯度との関係を示す．熱帯ピーク，温帯-亜熱帯ピークのどちらの場合も知られている．生態系サービスにも種多様性との相関が予測されるが，あまりこれを調べた研究は知られていない．
+</p>
+<p>
+<font size="2" color="888888">[文献案内] 海の種多様性緯度勾配 Connolly, Bellwood, & Hughes, <a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1890/02-0254">2003</a>; Hillebrand, <a href="https://doi.org/10.3354/meps273251">2004</a>; Mora, Chittaro, Sale, Kritzer, & Ludsin, <a href="https://doi.org/10.1038/nature01421.1">2003</a>: 緯度に従う単調減少．Chaudhary, Saeedi, & Costello, <a href="https://doi.org/10.1016/j.tree.2016.06.001">2016</a>: 熱帯以外でのピーク<br> </font>
+<font size="2" color="888888">[文献案内] 生態系サービスの緯度勾配 Miller et al., <a href="https://doi.org/10.1139/cjfas-2016-0228
+">2017</a><br> 
+</p></font>
+
+<p>
+この研究では，fisheries production, aquarium fish production, recreational diving (Barbier et al., 2011)の3つの生態系サービスに着目し，自然資本を定量化，緯度及び種多様性との関係を調べる．
+</p>
+
+
+</div>
+
+## 方法
+
+<div class="box1">
+
+### サンプルサイト<br>
+<p>
+<figure><img src="Images/Sato_etal_2020/fig1.png" width="400"><figcaption>図1．熱帯から温帯にかけたプロットでサンプルを収集．</figcaption></figure><br>
+Band-censusで，複数回の調査を平均．調査の年はプロットによって異なるがその間に大規模な白化は起きていない．実施月はすべて8-10月．
+</p>
+
+### 自然資本の定量化
+
+<p>
+<ul>
+<li>fisheries productionは，漁獲対象魚のその地域での取引金額をドルで計算（同属or科がリストにあればそれも含める）．</li>
+<li>aquarium fish productionは，アクアリウム販売のウェブサイト上での金額の平均を使用．</li>
+<li>Diving target speciesは，ダイバー向けウェブサイトの画像（合計2000枚程度）に登場するか否かで判定し，価値を登場頻度から計算．</li>
+<li>FishBaseの情報も補足的に用いている．</li>
+</ul>
+</p>
+<p>
+使用するmetricは，それぞれの資本の対象となる(a) 種の数，(b) 種ランク及び(c) 種価値の重み付き和．（種ランクは，種価値を離散的なクラスに切ったもの）．各区分（熱帯，亜熱帯，温帯）での個体数あるいは個体密度で掛け算している．
+</p>
+
+### 分析
+<p>
+<ul>
+<li>緯度との関係: Lenear, Quadratic, Cubic (3次), null モデルから最良のものを選び，パターンを考察．</li>
+<li>温帯の現在と未来の比較: 温帯プロットを現在，亜熱帯プロットを未来の状態を反映すると仮定．さらに，各プロットでのそれぞれの自然資本の価値が温帯での価値（現在の価値）から亜熱帯での価値（亜熱帯化した温帯のステークホルダーが，その本来の価値＝現在の亜熱帯での価値に適応した価値付けを行ったと仮定した場合の価値）に移行した際の値を比較．</li>
+</ul>
+</p>
+
+</div>
+
+## 結果
+
+<div class="box1">
+
+### 緯度-自然資本関係
+<figure><img src="Images/Sato_etal_2020/fig2.png" width="400"><figcaption>図2．種多様性は亜熱帯ピーク．価値は，漁獲のみ亜熱帯ピークで，ほかはU字．</figcaption></figure><br>
+
+
+種多様性，ランクmetricはカウントデータなのでポアソンモデル（過分散の場合は負の二項分布）．漁獲価値はgamma hurdle model (ゼロを含む連続量であるため)，アクアリウム価値はγ分布+log-link．
+
+### 温帯の現在と未来
+
+<figure><img src="Images/Sato_etal_2020/fig3.png" width="400"><figcaption>
+図3．現在，未来ともに，温帯地域では亜熱帯での価値を用いた自然資本の計算を行ったほうが価値が高く見積もられる．</figcaption></figure><br>
+
+
+### 種多様性-潜在自然資本関係
+
+<figure><img src="Images/Sato_etal_2020/fig4.png" width="400"><figcaption>
+図4．一般に正の関係を示す．</figcaption></figure><br>
+
+</div>
+
+
+## 考察
+
+<div class="box1">
+
+### 緯度勾配
+
+<p>種多様性は熱帯と亜熱帯にピークがある：コンスタントな減少を示す先行研究と異なるが，これは今回の研究のほうがstudy extentが広いことによると思われる．
+</p>
+<p>
+漁獲対象種数のみ亜熱帯に鋭いピーク：亜熱帯でのみ漁獲される種がいる．例：ヤガラ科とハリセンボン類．ダイビング，アクアリウムでは気候区分間でのこういう違いは考えにくい．
+</p>
+
+<p>
+アクアリウム価値，ダイビング価値は緯度とU字の関係を示す：個体数が同様のU字パターンであることから，これを反映していると考えられる．
+</p>
+
+<p>
+全体的に高緯度のほうが価値が高い傾向があるのは，今回対象とした魚が主に熱帯魚になっていたからだろう．
+</p>
+
+<p>
+参考：柏島と網取は推定値より上に振れている→どちらも保護区でありダイビングの名所であるが，それが結果にも現れている．
+</p>
+
+
+
+### 種多様性-潜在自然資本関係
+
+
+<p>
+正の関係は先行研究と合致する．この関係をdriveする要因は，samplingとcomplementarityがある．<b>sampling</b>: 種多様性が高い群集ほど，高い生態系サービスをもたらす種がカウントされやすい．<b>complementarity</b>: ニッチ分化や種間の正の相互作用が，多様な生態系サービスをもたらしている．
+</p>
+<p>
+本研究から，これらの働きを確定することはできないが，アクアリウム，ダイビング種は小型のプランクトン食種，漁獲種は大型の肉食・ベントス食・草食種である傾向にあったため，complementarity effectが示唆される．
+</p>
+
+<p>
+<b>insurance</b>: 多様な種が似た生態学的な機能を持っている場合，それぞれの種が撹乱に対して異なる応答をすることで＝絶滅が防がれることで，生態系サービスが守られる．この働きは種多様性が高いcoral reefでも生じていると考えられるが，生態学的な機能が近くても人にとって異なる価値を持っている場合には同じことが言えるとは限らない．
+</p>
+
+
+### 温暖化下での将来シナリオ
+
+
+<p>
+漁獲者が，熱帯魚の進出に適応した経済活動を行えば，生態系サービスがもたらす利益は上昇すると示唆された．一方で，そのような適応は一般に難しい（インフラ，漁具の整備などのコスト）．
+</p>
+
+<p><font size="2" color="888888">[文献案内] 日本における熱帯魚の進出はすでにかなり進んでいる． Nakamura et al., <a href="https://doi.org/10.1371/journal.pone.0081107">2013</a>
+</font><p>
+
+
+<p>
+温暖化によってサンゴの白化のようなdiversity lossが引き起こされる可能性も十分にあるため，温暖化が正・負どちらの影響をもたらすかはわからない．アクアリウム種の採集を禁じたり，保護区 (Marine reserve) を置くことが，多様性喪失および生態系サービス損壊を食い止める緩衝作用をもたらすという実証的知見がある (Mumby & Harborne, 2010; Sato et al., 2020) ．気候勾配に対してこのような対策が重要である．
+</p>
+
+
+</div>
+
+`)</script>
+2022/02/28 レジュメ作成：五十里
+
+
+
+
+
+
+
+
+
+
+</body>
