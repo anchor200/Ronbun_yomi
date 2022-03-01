@@ -49,8 +49,21 @@ Indo-Pacific Warm Pool: Miocene後期にできた、世界で最も暖かいopen
 
 <p> 沿岸魚: 8,295、1,212: 無脊椎動物 (crustaceans and molluscs)、939 habitat-forming species comprising of 820 reef-building corals, 50 seagrasses, and 69 mangroves. </p>
 
-<p>Areaとpatchを使ってhabitat heterogeneityを定量化: -p log pとして、pがそれぞれ(サンゴ、マングローブ、海草)の種類のareaまたはpatchが、cell内全体のareaまたはpatch量に占める割合<br>
-Patchベースだと、areaのdominanceの影響が弱まる (discussionに書いてあった。また、patch数ベース/areaベースのheterogeneityは、それほど相関しない: 最小スケールで0.5、最大スケールで0.25程度)。</p>
+<p>Areaとpatchを使ってhabitat heterogeneityを定量化: -p log pとして、pがそれぞれ(サンゴ、マングローブ、海草)の種類のareaまたはpatchが、cell内全体のarea面積またはpatch数に占める割合<br>
+★Patchベースだと、areaのdominanceの影響が弱まる (discussionに書いてあった。また、patch数ベース/areaベースのheterogeneityは、それほど相関しない: 最小スケールで0.5、最大スケールで0.25程度)。</p>
+
+
+<p>
+<ul>説明変数
+<li>SW: Shallow water area</li>
+<li>SST: Sea surface temperature</li>
+<li>NPP: Net primary productivitiy</li>
+<li>CL: Coastline length</li>
+<li>HDIa: area面積ベースのhabitat heterogeneity</li>
+<li>HDIn: patch数ベースのhabitat heterogeneity</li>
+</ul>
+</p>
+<p><br><img src="Images/Sanciangco_etal_2013/変数間の相関.png" title="Sanciangco_etal_2013_01.png" width=500><br>説明変数間の相関</p>
 
 <font size="2" color="gray">
 [memo] 深さ200m以下または海岸線から100km以内を沿岸域として使用<br>
@@ -77,9 +90,14 @@ Seagrass, サンゴの分布マップ (habitat heterogeneityの定量化に使�
 [memo] habitat heterogeneityとshallow water areaは負の相関：浅いところは砂っぽいから。</font><br></p>
 
 ## 結果
-<p>SSTとの相関が顕著：しかし一番小さいgrain size (Small = 23,000 km2) では有意ではなく、大きいスケールで効く。</p>
-<p>逆にNPPは小さいスケールでよく効く(魚のみ)が、ほかでは有意ではない。</p>
-<p>浅い海の広さも有意。</p>
+<br><img src="Images/Sanciangco_etal_2013/sig.png" title="Sanciangco_etal_2013_01.png" width=700><br>係数の有意性</p>
+
+<br><img src="Images/Sanciangco_etal_2013/coef.png" title="Sanciangco_etal_2013_01.png" width=700><br>AIC基準で選ばれた一番ケチなモデルでの係数(÷標準偏差)</p>
+
+
+<p>SSTとの相関が顕著：しかし一番小さいgrain size (Small = 23,000 km2) では有意ではない場合が多い。大きいスケールでよく効く。</p>
+<p>逆にNPPは魚でのみ小さいスケールで有意だが、ほかでは有意ではない(しかし、AICでのモデル選択では選ばれない)。</p>
+<p>浅い海の広さも概して有意。</p>
 <p>habitatベースのheterogeneityのほうが影響が強い。areaベースのものも効いてはいる。</p>
 <p>large scaleではすべての変数を考慮する必要があった。</p>
 <p>patch数ベースのhabitat heterogeneityは、大きいスケールで説明力がある。</p>
