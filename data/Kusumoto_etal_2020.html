@@ -1,6 +1,7 @@
 # Coral,Sampling,Sample Coverage,Sample Completeness,Data Completeness,Rarefaction,Prediction,Hill numbers<br>
 # レンジマップではなく，occurence data情報を用いた種数推定により，イシサンゴの種多様性パターンを解析＋サンプル優先域を推定<br>
 <script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
 <head>
 <title>
 Kusumoto, B., Costello, M. J., Kubota, Y., Shiono, T., Wei, C. L., Yasuhara, M., & Chao, A. (2020). Global distribution of coral diversity: Biodiversity knowledge gradients related to spatial resolution. Ecological Research, 35(2), 315-326.
@@ -15,6 +16,9 @@ Kusumoto, B., Costello, M. J., Kubota, Y., Shiono, T., Wei, C. L., Yasuhara, M.,
 
 <script>md(`
 ## 背景
+
+
+<div class="box1">
 <p>データの不完全性による多様性推定のバイアスが問題である．</p>
 
 <p>
@@ -29,18 +33,25 @@ Kusumoto, B., Costello, M. J., Kubota, Y., Shiono, T., Wei, C. L., Yasuhara, M.,
 
 
 <p><font size="2" color="888888">[memo] Jackknife estimator 種数の推定値のバイアスが1/Nの指数で減っていくことを仮定し，non-parametricに種数推定を行う．<br> 
-[memo] Hill numbers 複数の特徴を持った種多様性指標をパラメータによって表せる族． qD = pow( Σ_{i-1}^{R} pow(pi, q), 1/(1-q) ) これはq=1 （の極限） でShannon-Weinerエントロピーの自然対数乗と一致；"typical species"の数と解釈，q=2でSimpson's indexの逆数と一致；"very abundant species"の数と解釈．Rはサンプル中の種数（なので，q=0でHill numbersは単なる種数）．qを大きくしていくほど，rareな種への感受性が下がる．
+[memo] Hill numbers 複数の特徴を持った種多様性指標をパラメータによって表せる族． qD = pow( Σ_{i-1}^{R} pow(pi, q), 1/(1-q) ) これはq=1 （の極限） でShannon-Weinerエントロピーの自然対数乗と一致；"typical species"の数と解釈，q=2でSimpson's indexの逆数と一致；"very abundant species"の数と解釈．Rはサンプル中の種数（なので，q=0でHill numbersは単なる種数）．<b>qを大きくしていくほど，rareな種への感受性が下がる</b>．
 </font>
 </p>
 イシサンゴは，海の多様性の1/4-1/3を支えるハビタットを支えており，保全上非常に重要な分類群である．保全計画のために，レンジマップを重ねて行う多様性推定が行われてきた．しかし<b>レンジマップはfalse-positiveが多い</b>．そこで，より間違いの少ないoccurence dataを使うことが有効である．
 <p>
 本研究では，occurence dataを用い，異なるgrid-scaleにおいてsampling completeness, species diversity values (Hill numbers) を推定しその誤差を計算する．スケール依存のlatitudinal/longitudinal gradientを検証し，range-map basedのものと比較する．genus levelでの解析によりLinnean shortfallの影響も検証する．その上で，今後求められる研究の方向性を示す．
 </p>
-
+</div>
 
 
 ## 方法
+
+
+<div class="box1">
+
+
 ### Data
+
+
 <p>109,296 geo-referenced occurrence points for 697 species. <br>0.01°グリッドに分けて，1,2,4,6,10,15°という異なるスケールで集計．
 種数が6以下のグリッド，1incidence以上あるサブグリッドが6以下，singletonのサブグリッドしかないグリッドは分析対象外とした．
 </p>
@@ -62,7 +73,7 @@ Hill numbersを2倍以上に外挿することは良くないため，サンプ�
 ### Optimal sampling effort allocation
 <p>knowledge gapを埋めるのに最適なサンプル戦略を計算．式 (1) のTは潜在的なハビタットを表す（計算式では，singltonを数でsubstituteされる）が，これを環境情報を用いて推定する．具体的には，TをmeanSSTが18~36℃，sea depthが-40~0mのグリッドの数とみなす．
 </p>
-
+<p>
 以上の仮定を元に，1°スケールにおいて
 <ol>
 <li>現在のデータから各グリッドのSC及び全体のGini係数を計算する．</li>
@@ -72,13 +83,20 @@ Hill numbersを2倍以上に外挿することは良くないため，サンプ�
 <li>Gini係数に一番影響が大きいグリッドに新たにサンプル（仮想的なincidence）を加える．</li>
 <li>このプロセスを決めたサンプルサイズの上限まで繰り返す．</li>
 </ol>
+</p>
 <p>サンプル上限は15,000とした．これは1年間で加えられるサンプルの平均（2008~2018；平均調査努力のsubstitute）．</p>
 
 
 <p><font size="2" color="888888">[memo] R packages c("rgbif", "iNEXT", "maptools", "raster", "spatialEco")<br> </font>
 </p>
+</div>
+
+
 
 ## 結果
+
+
+<div class="box1">
 
 <figure><img src="Images/Kusumoto_etal_2020/SC1.png" width="500"><figcaption>Sample coverage (completeness)の分布</figcaption></figure><br>
 
@@ -92,12 +110,15 @@ Hill numbersを2倍以上に外挿することは良くないため，サンプ�
 <p>属レベルでも上記パターンは類似．</p>
 
 <figure><img src="Images/Kusumoto_etal_2020/priori.png" width="400"><figcaption>保全上重要なポイント，(b)は15,000の追加データが1個のグリッドにどれだけ割り振られたのかのヒストグラム</figcaption></figure><br>
-<p></p>
-
+</div>
 
 ## 考察
 
+<div class="box1">
+
+
 ### 多様性推定
+
 
 <p><b>やったこと</b>：occurence dataを用い，sample completenessを統制し，複数の空間スケールでイシサンゴ多様性を比較．<b>発見の概要</b>：緯度勾配は細かいスケールで顕著というスケール依存性，ただし経度勾配はある程度一貫．<b>この結果の先行研究との対応</b>：スケールが違うと支配的プロセスが異なる．「局所的な多様性は異なる群集形成プロセスで支配される＆大きなスケールでは集中的種プールがrangeの重なりによって生じている (Center of overlap hypothesis; Gaither & Rocha, <a href="https://onlinelibrary.wiley.com/doi/10.1111/jbi.12126">2013</a>)」を支持．他にも環境変動に関するプロセスも効いているはず（例：海面変動）．
 </p>
@@ -115,12 +136,16 @@ Hill numbersを2倍以上に外挿することは良くないため，サンプ�
 <p>
 <b>一般論から</b>：理想的には多様性とサンプル努力は比例すべき．<b>分析の結果</b>：(a)限られた種しか見つかってない場所，(b)sample completenessが低い場所，(c)種多様性の推定誤差が大きい場所，が優先的な場所の共通点だとわかった．<b>具体的には</b>：北東オーストラリア，Coral Triangle中心，マダガスカル，紅海とペルシャ湾のまんなか，中央アメリカの岸，高緯度帯（日本を含む）．<b>理論との対応</b>：マクロ生態学上で重要なエリア（Coral reef diversityが進化する潜在的場所/気候変動による分布シフトの境界地帯）が重要だと今回の分析からもわかった．
 </p>
+</div>
 
 
 ## 結論
 
-Occurence dataを使った多様性推定は，range-map basedのものとは異なる結果を示した．その結果，西インド洋の多様性の高さがわかるなど新発見があった．統計理論をつかうことで，occurrence records, Sample completeness, true diversity, reliability of diversity estimates を接続することができる．そして，今後調査すべきところを予測することもできる：保全に不可欠．
+<div class="box1">
 
+
+Occurence dataを使った多様性推定は，range-map basedのものとは異なる結果を示した．その結果，西インド洋の多様性の高さがわかるなど新発見があった．統計理論をつかうことで，occurrence records, Sample completeness, true diversity, reliability of diversity estimates を接続することができる．そして，今後調査すべきところを予測することもできる：保全に不可欠．
+</div>
 
 `)</script>
 2022/02/07 レジュメ作成：五十里
