@@ -1,0 +1,481 @@
+# STAR,Threat abatement,Habitat restoration,Conservation,Conservation evaluation <br>
+# IUCN Red List の情報に基づいて種の保全に必要な努力を計算する方法．生息地再生の効果の定量化も可能．これらの値は，種ごと・任意の区域・脅威ごとに保全に必要な努力を分割可能．<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Mair, L., Bennun, L. A., Brooks, T. M., Butchart, S. H., Bolam, F. C., Burgess, N. D., ... & McGowan, P. J. (2021). A metric for spatially explicit contributions to science-based species targets. Nature Ecology & Evolution, 5(6), 836-844.</title>
+</head>
+<body>
+
+<font size="5"> 
+Mair, L., Bennun, L. A., Brooks, T. M., Butchart, S. H., Bolam, F. C., Burgess, N. D., ... & McGowan, P. J. (2021). A metric for spatially explicit contributions to science-based species targets. Nature Ecology & Evolution, 5(6), 836-844.</font>
+<a href="https://www.nature.com/articles/s41559-021-01432-0">https://www.nature.com/articles/s41559-021-01432-0</a>
+
+<script>md(`
+
+
+## 背景
+
+<div class="box1">
+<p>
+Strategic Plan for Biodiversity 2011-2020, including Aichi Biodiversity Targets: The Convention on Biological Diversity (CDB) による生物多様性保全およびその持続的利用のための国際的フレームワークにおける戦略目標．<br>
+<font size="2" color="gray"> <b>Aichi Bioriversity Target 12</b>: By 2020 the extinction of known threatened species has been prevented and their conservation status, particularly of those most in decline, has been improved and sustained.</font>
+</p>
+<br>
+
+<p>
+一部の種は保全計画が成功裡に進んでいるが，総体的な絶滅リスクは上昇し続けている．2030年までの新たな計画では，「種の個体数の安定化と復元」がゴール（<B>the CBD’s 2050 Vision</B>の中間目標）になっている．
+</p>
+<br>
+
+<p>
+これまでと異なり，2020年以降の目標では，生物多様性の損失を止めるために脅威を減らす必要があること，さらにそのための具体的なサブゴールを明記している（Aichi Targetは20の目標からなるが，それぞれに対する具体策が盛り込まれていなかった）．<br>主要な直接的脅威についてはよく知られているが，個別の脅威削減目標を達成することは難しい；種が多い（IUCN Red Listによると，3万種以上が脅威にさらされている），状況が急速に劣化している，種の分布・絶滅リスクの傾向・具体的な脅威に<b>空間的な差異</b>が大きい，<br>種の回復，重要地の特定，システム化保全計画を支援するツールは開発されている．しかし，特定の場所での特定の活動が，全世界で危機にさらされている種に対する<b>脅威の削減と生息地の復元にどれだけ貢献したか</b>を定量化する手法は存在しない．
+</p>
+<br>
+
+</div>
+
+
+
+## 結果と議論
+
+<div class="box1">
+
+
+### STARの概要
+
+詳しい計算方法は<a href="#method">STARの計算方法</a>を参照<br>
+必要なデータの詳細は<a href="#method2">STARの計算に必要な情報</a>を参照
+<p>
+<b>Species threat abatement and restoration (STAR) metric</b>: 脅威の削減と生息地の復元のための活動が，驚異にさらされた種にもたらす潜在的利益を定量化する．
+<ul>
+<li>Red List Indexと同様に，STARは既存のRed Listデータを用いることで，緊急性に対応</li>
+<li>空間明示的である：特定の場所での脅威削減・生息地復元（人により進められている開発の影響が無い場合のレベルにまで絶滅リスクを下げる）の機会を特定できる．</li>
+</ul>
+
+STARでは，大半の種では，脅威の完全な削減が達成されれば，個体数が十分な上昇・安定に転じ，Red List の Least Concern 種に移行すると考える．
+</p>
+<br>
+
+<p>
+<b>STAR_T</b> (a global STAR threat abatement score)
+<ul>
+<li>一種に対して，全球で1つの値</li>
+<li>値の幅：0 (Least Concern), 100 (Near Threatened), 200 (Vulnerable), 300 (Endangered), 400 (Critically Endangered)</li>
+<li>全種に対する和が，全ての種を Least Concern に移行させるのに必要な脅威削減エフォートを表す．</li>
+<li>一種ごとに全球で定義された値だが，特定の地域に存在する生息地の面積をもとに空間的に分割できる（個体数比の近似値）：その地域で行う保全活動が達成可能な潜在的寄与を表す</li>
+<li>特定の脅威が絶滅リスクに与える影響に関する既知の情報を元に，脅威の種類ごとにも分割できる：これによって，特定の地域での特定の驚異の削減の効果が定量化できる</li>
+</ul>
+<font size="2" color="gray"> [memo] United Nations Decade on Ecosystem Restoration (2021–2030)</font>
+</p>
+<br>
+
+
+<p>
+<b>STAR_R</b> (a complementary habitat restoration component)
+<ul>
+<li>STAR_Tと同様のロジックを，破壊されたが潜在的に復元可能な生息地 (restorable AOH) に適用する．</li>
+<li>どれだけの生息地の復元が種の保全に必要かについて仮定を置くのではなく，生息地復元活動が種の絶滅リスクの低減にどれだけ寄与しうるかを定量化する．</li>
+<li>特定の種・特定の地域に対して，全球で残された生息地に対するその地域内の復元可能な生息地の割合を反映する</li>
+<li>STAR_Rスコアには，復元された生息地が種に利得をもたらす早さ（保全された既存の生息地と比べ早いか遅いか）を反映した係数がかけられる．</li>
+<li>種ごとに足したり，脅威ごとに分割できる</li>
+</ul>
+</p>
+<br>
+
+<p>
+脅威が完全に取り除かれることでSTAR_Tが0になる； ただし，同様の効果が，<b>既存の生息地の保全＋失わせた生息地の再生（とそれに合わせた脅威の削減）によっても達成できる</b>．
+</p>
+<br>
+
+
+<p>
+STARは，既存のデータセット（種の絶滅リスクカテゴリー，記載されている脅威）を用いる；IUCNレッドリスト（全球スケールの情報がない固有種は地域のレッドリスト）．<br>
+AOHは，種のrange map，生息地の条件，分布の標高制限を，標高および土地被覆と合わせて用いることで推定する（人間が現れる前の土地被覆も利用）．
+</p>
+<br>
+
+
+### STARの使用例
+
+
+<p>
+脊椎動物（鳥・哺乳類・爬虫類5,359種）に対してSTARを計算した．
+</p>
+<p>
+対象とした種全体に対するSTAR_Tのうち，最大の割合は Annual and perennial non-timber crops: 農業（木材以外）であった；24.5%．
+<br>
+<font size="2" color="gray"> 農業機械の作動による種の死滅，焼畑農業，プランテーション（熱帯の大農場，果樹園）．see <a href="https://www.wildlife.state.nh.us/wildlife/documents/wap/chapter4-agricultureaquaculture.pdf">ref</a></font><br>
+<br>その次が，Logging and wood harvesting: 森林伐採・植林；16.4%であった．
+
+<figure><img src="Images/Mair_etal_2021/fig1.png" width="500"><figcaption></figcaption></figure><br>
+</p>
+<br>
+
+
+<p>
+<a href="http://www.keybiodiversityareas.org/">Key Biodiversity Areas</a>は，地上の8.8%であるが，STAR_Tでは全体の47%を占めていた．また，ニュージーランドはSTAR_Tの0.8%を占めるが，ニュージーランドで行われている外来種排除の政策 (Predator Free 2050 goal) はそのうち30%に貢献する (つまり全球STAR_Tの0.2%強)．
+このように，STARは既存の政策の評価にも用いることができる
+</p>
+<br>
+
+
+<p>
+STAR_Tの分布には国ごとの偏りが大きい；インドネシア (7.1%) ，コロンビア (7.0%) ，メキシコ (6.1%) ，マダガスカル (6.0%) ，ブラジル (5.2%) が高く，下位88カ国は合わせて1.0%．
+<br>
+<font size="2" color="gray">STAR下位の国が保全活動をしなくてもよいということにはならない；普通種の個体数も減っていることから絶滅リスク低減への直接的寄与が高くない地域でも対策が不可欠である．</font>
+
+<figure><img src="Images/Mair_etal_2021/fig2.jpg" width="700"><figcaption>STAR_T(a)とSTAR_R(b)の全球での分布</figcaption></figure><br>
+</p>
+<br>
+
+
+<p>
+理論的には，STAR_Tスコアの55.9%は，生息地の復元によっても達成できる．復元目標 restoration objectives は多くの生物多様性戦略目標に含まれており，STARはこれらを定量的に評価できる．<br>
+Red List のD/D1（個体数極小），Bac（分布域が狭く分割され，変異が大きい）にある種の場合，脅威の排除だけでは Least Concern の達成は難しい．このような種（今回対象とした脊椎動物の2.8%）の場合には，戦略的な生息地の復元が不可欠である．
+<br>
+<font size="2" color="gray"><a href="Images/Mair_etal_2021/iucn_categories_and_criteria_japanese.pdf">Red List 下位カテゴリーの詳細</a></font>
+
+</p>
+<br>
+
+
+### Application of STAR at the landscape scale
+
+<p>
+インドネシアのThe Bukit Tigapuluh landscape（ゴムの持続可能な経済利用のための森；周囲に5kmの緩衝地域を持つ）において，30mスケールの解析を実施．<br>
+
+<figure><img src="Images/Mair_etal_2021/indo.png" width="700"><figcaption></figcaption></figure><br>
+
+国立公園近くの自然林が最も重要な領域であった．ゴムやアブラヤシ (oil palm) の栽培が最大のストレスを与えていることがわかった．保全重要地域は西にも小さく分布している．これは小型コウモリの分布と重なっている．STAR_Tスコアのうち，47%は生息地再生によって達成できることもわかった．
+</p>
+<br>
+
+### Operationalization and future development
+
+<p>
+データの他分類群への拡張，分布推定の高精度化によって，さらなる発展が可能．またデータがアップデートされるため，定期的に分析 (recalibration) を実行する必要がある．
+</p>
+<br>
+
+<p>
+保全コストや利益といったデータを組み合わせることで，保全計画の立案に活用することも可能．保全優先度の算出，地域戦略が重要になる（参考，Strassburg et al., <a href="https://doi.org/10.1038%2Fs41559-018-0743-8">2019</a>）．<br>
+また，STARは短期的な戦略評価に使えるが，長期的な計画の評価は別で行う必要がある（例，<a href="https://www.iucnredlist.org/about/green-status-species">IUCN Gree Status</a>；絶滅の危機には瀕していなくても，生態系内での機能を失ったり，本来の生息地では絶滅した種は"recovered"とはみなせない．絶滅リスク以外も含めた包括的な側面から種の回復を評価する必要がある． see Crocodylus porosus イリエワニの例）．
+</p>
+<br>
+
+<p>
+STAR値はローカルスケールでも算出できるが，脅威によっては全球規模で取り組む必要がある問題も多い（例，気候変動）．また，ペットなどに起因する外来種問題は，STARスコアが低い国でも，大きな影響をもたらしている場合がある．例えばドイツでは，世界で0.01%のSTAR_Tしか持っていないが，<a href="https://doi.org/10.1038%2Fnature11145">サプライチェーンを通じた生物多様性への影響</a>は世界で3位である．このような社会経済的側面についても分析するべきである．
+</p>
+<br>
+
+
+
+### Policy implications
+
+
+<p>
+STARを用いることで，現在行われている科学に基づく温室効果ガス削減目標策定と同等の枠組みを生物多様性について構築できる．そして，生物多様性の消失を増加に転じさせるために必要な労力を定量化することが可能である．ラムサール条約（湿地の保全）といった他の枠組みと組み合わせることもできる．
+</p>
+
+<p>
+最も基本的で重要であるのは，<b>生物の保全に対する共通の指標があることで，自発的な貢献や国や自治体を超えた活動を動機づけられる</b>ことである．このような，非中央集権的な保全活動は今後不可欠になるだろう．
+</p>
+<br>
+
+</div>
+
+
+
+## Methods
+
+
+<div class="box1">
+
+### Data inputs
+
+<p>
+
+#### 必要な情報
+
+以下のデータが，分析対象とする全ての種について必要．
+<ul>
+<li>絶滅リスク</li>
+<li>脅威リスト</li>
+<li>現在の生息地情報</li>
+<li>復元可能な生息地</li>
+</ul>
+
+詳細は<a href="#method2">STARの計算に必要な情報</a>を参照
+</p>
+<br>
+
+
+<p>
+分析は，VU, EN, CR種を対象にした（LC種は脅威がコーディングされていないものが多い）．DDも，データ不足により対象外とした．
+</p>
+<br>
+
+
+#### 脅威のコーディング
+
+<p>
+The IUCN/Conservation Measures Partnership Threat Classification Scheme: 階層的かつ詳細な脅威の分類スキーム．
+各種の各脅威にたいして，
+<ul>
+<li>Scope: 影響を受ける個体の割合</li>
+<li>Severity: 脅威の影響下での個体数の減少率</li>
+<li>Timing: past/ongoing/futureのどれか</li>
+</ul>
+</p>
+<br>
+
+
+<p>
+今後は影響しないと考えられるか，影響がとても弱いか無く一部の個体群だけに影響する脅威は分析から除いた（詳細は以下）．分析対象外の脅威にのみさらされてている種も分析から除いた．</p>
+<br>
+
+
+#### 分布情報 (AOH) の取得
+
+<p>
+5kmスケールのラスターで，現在の生息地 (AOH) ，復元可能な生息地を定義．データを以下のプロセスで作成
+</p>
+
+<p>
+
+##### 現在の分布情報
+
+<ul>
+<li>the European Space Agency Climate Change Initiative (ESA CCI) land use and cover maps: 2015年のデータで，300x300mスケール．37の土地被覆タイプがあるが，今回は10に縮減 （forests, wetlands, arid ecosystems, natural grasslands, shrublands, croplands, cultivated grasslands, rock and ice, urban areas, water bodies; IUCN Red List assessments に記載されている habitat class と対応させた）：habitat type と合わないエリアを除外</li>
+<li>Range maps: PresenceとOriginが紐付いている．その中で，Presence が extant, probably extant (a category that is being phased out), possibly extinct かつ Origin が native, reintroduced, assisted colonization（絶滅回避のために放された）である地域のみを抽出（<a href="https://nc.iucnredlist.org/redlist/resources/files/1539098236-Mapping_Standards_Version_1.16_2018.pdf">区分の詳細</a>を参照）．</li>
+<li>標高データ: 種の range map 内で投影し，IUCN Red List に記載されているelevation rangeと対応させ，elevation range 外のエリアを除外</li>
+</ul>
+</p>
+
+
+
+<p>
+
+##### 過去の分布情報
+
+<ul>
+<li>ESA CCI land use and cover maps from 1992: 人の影響が及ぼされる以前の土地被覆のソースとして使用</li>
+<li>現在の Range map 内のみを対象として，過去の土地被覆，elevation によって分布域を制限．</li>
+<li>Range maps: PresenceとOriginが紐付いている．その中で，Presence が extant, probably extant (a category that is being phased out), possibly extinct かつ Origin が native, reintroduced, assisted colonization（絶滅回避のために放された）である地域を抽出（これは現在の生息地と同様）．これらに加え，Presence が extinct となっているエリアを生息地域に含めた．</li>
+</ul>
+
+</p>
+<br>
+
+### STARの計算
+
+<p>
+STAR値は，特定の Location （区域）における全ての Threatened/Near threatened 種について計算．ここで，区域とは空間期に定義されたいかなる領域でもあり得る（最大は全球全て〜最小は解像度の1つ分）．
+</p>
+
+<div id="method">
+
+#### STAR_T
+
+<p>
+区域 i における 脅威 t に対するSTAR_Tスコア T は以下の式で計算する．これをすべての対象種に対して合計する．<br>
+<font color="blue">T_t,i（種s） =   P_s,i * W_s * C_s,t </font>
+<br>
+<font size=2 color="grey">P_s,i は区域 i 中の種の生息地面積 (AHO)，W_s はレッドリストカテゴリーによる重み (Near Threatened = 1; Vulnerable = 2; Endangered = 3; Critically Endangered = 4)，C は 脅威 t が種 s の絶滅に与える総体的影響，N_sは区域 i 中の種の数．ここで，Cは以下のように計算；特定の脅威のレッドリスト評価の severity と scope の積（個体数の減少割合）を，すべての脅威に対する種数の減少率の和で割る（最も細かい脅威の分類を使い，分析のためのカテゴリ分けに合うように集計）．</font>
+</p>
+
+#### STAR_R
+
+
+<p>
+区域 i における 脅威 t に対するSTAR_Rスコア R は以下の式で計算する．これをすべての対象種に対して合計する．<br>
+<font color="blue">R_t,i（種s）=  H_s,i * W_s * C_s,t  * M_s,i</font>
+<br>
+<font size=2 color="grey">H_s,i は区域 i 中の復元可能な生息地（その種の全球の生息地との比）．M_s,iは区域 i の生息域の時間遅れによる価値割引を表す係数；今回は0.29という固定値を使用．これは10年間保全努力を行った際の再生率をメタ分析 (Jones et al., <a href="https://doi.org/10.1098%2Frspb.2017.2577">2018</a>) に基づいて計算した値の中央地．</font>
+</p>
+<br>
+</div>
+
+### 実施した分析
+
+
+<p>
+今回，STAR_T, R は5kmグリッドで計算．ある種のあるグリッドのSTAR_T値は，種の全球STAR_Tを，全球の生息地面積中にそのグリッドが占める割合を掛けた値．STAR_Rは，この重み付けを復元可能生息地で実施．50kmで集計したもの，国ごとに計算したもの，既存の保全区域 (Key Biodiversity Areas) を図示した．
+</p>
+<br>
+
+
+<p>
+ニュージーランドは外来種による脅威が詳細に記録されている（全球で85%のところ，ニュージーランドでは97%が）ので，外来種の脅威の計算例として分析を実施．外来種あたりのSTAR_Tスコアを計算．
+</p>
+<br>
+
+<p>
+The Bukit Tigapuluh landscapeにおいて，30mスケールの分析も実施．森林が優占するため，生息地が森林（IUCN Red List habitat classification 基準）の種のみを対象に実施．AOHは2018年の森林被覆情報，復元可能 AOH は2000年の情報を用いて計算．種の分布は，Range Map を 標高制限で切り抜き．対象区域中のSTARスコアは，全球のスコアに対する比で計算．
+</p>
+<br>
+</div>
+
+## 補足1 STARの感度分析
+
+<div class="box1">
+
+<p>
+鳥類（データの完全性が最も高い）を対象として，感度解析を実施．
+</p>
+<br>
+
+#### 脅威の scope と severity が未知の場合
+
+<p>
+脅威の scope と severity に関する情報は，哺乳類と爬虫類では欠けていることがある．
+種数が多い区域では，scope と severity のデータを未知と仮定してとりうる値の中央値で置き換えても，STARスコアの誤差が生じにくい．以上から，この場合について検討し，とりうる値の中央値を使うことがよいと結論づけた (median scope = “Majority (50-90%)”; median severity = “Slow, Significant Declines”)．
+
+<figure><img src="Images/Mair_etal_2021/messageImage_1650850714184.jpg" width="500"><figcaption>脅威のスコア (scope, severity) の値を不明とした場合の影響</figcaption></figure><br>
+</p>
+
+
+#### Red List カテゴリーの重み付けを変えた場合
+
+<p>
+Red List カテゴリーの重み付けを変えた場合；logスケール (総体的絶滅リスクを考慮；NT= 0.0005, VU=0.005, EN=0.05, CR=0.5) ではずれが大きく，一定（すべて1）とした場合にはずれが少ない．前者の場合は，Critically Endangered 種の影響が過大になってしまう．
+デフォルトでは (NT = 1; VU = 2; EN = 3; CE = 4)．
+<figure><img src="Images/Mair_etal_2021/weighting.png" width="300"><figcaption>Red List カテゴリーの重み付けを変えた場合の影響．(a) がlogスケール，(b)が一定．</figcaption></figure><br>
+
+</p>
+
+
+#### サイト内のAOHの重み付けを変えた場合
+
+<p>
+サイト内のAOHの重み付けを変えた場合の影響を以下のシグモイド関数による重み付けで検証．
+<br>f1(x) = 1 / (1+ e^-((x-39)/9.5))<br>
+これは，影響が小さいことがわかった．
+<figure><img src="Images/Mair_etal_2021/sigmoid.png" width="150"><figcaption>サイト内のAOHの重み付けを変えた場合の影響</figcaption></figure><br>
+</p>
+
+
+#### 個体数の減少割合を変えた場合
+
+<p>
+個体数の減少割合（severity と scope の積）をが変化した場合の影響を検討．個体数の減少割合を一様分布（とりうる値の上限〜下限）からランダムサンプルして置き換える．
+<figure><img src="Images/Mair_etal_2021/messageImage_1650852072446.jpg" width="500"><figcaption>個体数の減少割合の一部をランダムサンプルした場合の影響</figcaption></figure><br>
+種数がある程度あれば，影響は比較的小さいことがわかった．
+</p>
+<br>
+
+
+
+</div>
+
+
+## 補足2 必要なデータ
+
+
+<div class="box1">
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg" style="undefined;table-layout: fixed; width: 897px">
+<colgroup>
+<col style="width: 137px">
+<col style="width: 219px">
+<col style="width: 219px">
+<col style="width: 300px">
+<col style="width: 22px">
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-0pky"><b>STARの要素</b></th>
+    <th class="tg-0pky"><b>必要なデータ</b></th>
+    <th class="tg-0pky"><b>STARの不確実性の原因</b></th>
+    <th class="tg-0pky" colspan="2"><b>不確実性を減らす方法</b></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky" colspan="5"><b>脅威削減 (STAR_T) と生息地再生 (R)の両方に必要</b></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">種の絶滅リスク</td>
+    <td class="tg-0pky">IUCNレッドリストによる種の絶滅リスクカテゴリー</td>
+    <td class="tg-0pky">Data Deficient / Not Evaluated になっている種がある．</td>
+    <td class="tg-0pky" colspan="2">調査を行う．</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"></td>
+    <td class="tg-0pky"></td>
+    <td class="tg-0pky">絶滅リスクカテゴリーやそのデータの利用可能性は変化する．</td>
+    <td class="tg-0pky" colspan="2">データが増えた際に再計算をする．</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">種への脅威</td>
+    <td class="tg-0pky">IUCNレッドリストによる種への脅威の記録</td>
+    <td class="tg-0pky">脅威の記載が不完全．</td>
+    <td class="tg-0pky" colspan="2">データが増えた際に再計算をする．</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"></td>
+    <td class="tg-0pky"></td>
+    <td class="tg-0pky">脅威の範囲と深刻さの記載が不完全．</td>
+    <td class="tg-0pky" colspan="2">データが増えた際に再計算をする．</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"></td>
+    <td class="tg-0pky"></td>
+    <td class="tg-0pky">脅威やその深刻さに空間的変異がある．</td>
+    <td class="tg-0pky" colspan="2">脅威の深刻さの分布を用いて詳細に計算する．</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" colspan="5"><b>脅威削減 (STAR_T) 要素の計算にのみ必要</b></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">現在の生息地の面積</td>
+    <td class="tg-0pky">1種のrange map，2種と生息地の関連づけ，3種の分布の標高制限，4数値標高マップ，5現在の土地被覆；1-3はIUCNレッドリストから</td>
+    <td class="tg-0pky">range mapは生息適地を表すが，その場所に実際に種がいるかは不明．</td>
+    <td class="tg-0pky" colspan="2">在不在データなどを用いて種分布の正しい情報を用いる．</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" colspan="5"><b>生息地再生 (STAR_R) 要素の計算にのみ必要</b></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">再生可能な面積</td>
+    <td class="tg-0pky">1種のrange&nbsp;&nbsp;&nbsp;map，2種と生息地の関連づけ，3種の分布の標高制限，4数値標高マップ，5人が影響を与える前の土地被覆；1-3はIUCNレッドリストから</td>
+    <td class="tg-0pky">過去の生息敵の分布がわかっても，そこに種がいたかどうかは不明である．また，生息地が再生可能かどうかは地域によって異なる要素が効いていることがある．</td>
+    <td class="tg-0pky" colspan="2">過去の在不在データなどを用いて過去の主分布の正しい情報を得る．インフラや農業の重要地域など，再生不可能な場所を特定する．</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">再生率</td>
+    <td class="tg-0pky">生息地を再生した場合の減衰（完全な再生にはならないので，どの程度の個体数が戻るのか）を定量化した科学的データ</td>
+    <td class="tg-0pky">全球規模の再生率はメタ分析で計算できる一方，地域ごとの値はいろいろな要素で異なる．</td>
+    <td class="tg-0pky" colspan="2">地域ごとの再生率を計算する．</td>
+  </tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+`)</script>
+2022/04/13 レジュメ作成：五十里
+<a href="../index.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>
