@@ -1,0 +1,409 @@
+# LDG,Latitudinal diversity gradient,Marine,Multi-taxon,Mid-domain effect,Effective evolutionary time model,Environmental gradient model<br>
+# 海の生物でLDGの一般性とその形状を左右する要因をメタ分析によって検証．<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Hillebrand, H. (2004). Strength, slope and variability of marine latitudinal gradients. Marine Ecology Progress Series, 273, 251-267.
+</title>
+</head>
+<body>
+
+<font size="5"> 
+
+Hillebrand, H. (<a href="https://www.int-res.com/abstracts/meps/v273/p251-267/">2004</a>). Strength, slope and variability of marine latitudinal gradients. Marine Ecology Progress Series, 273, 251-267.
+</font>
+
+
+<script>md(`
+
+
+## 導入
+
+<div class="box1">
+<p>
+海のLDGには未知の点が多い．本研究では，海の分類群を対象に，LDGの一般性と差異を取り扱う．<br>
+<font size="2" color="gray">第一段落にはLDGの歴史がいろいろと書いてある．</font><br>
+<font size="2" color="gray">aquatic macrophytes 水生植物 (Bolton 1994)，ichneumonid insect ヒメバチ科(Owen & Owen 1974)，sediment infauna 埋在動物 (Thorson, 1952)，単細胞真核生物 unicellular eukaryotes (Hillebrand & Azovsky, 2001) などが顕著な例外として知られている．また，high polar diversity (Clarke 1992, Brey et al. 1994) に関する報告もある．</font>
+</p>
+<br>
+
+<p>
+海のLDGについて一般的視点がないことを解決するために，メタ分析を行う．それによって，いろいろな変数が（分類群の特徴， Habitat タイプ，地域）LDGの違いに与える影響を説明できる．<br>
+一般性を追求すると解像度が落ちる．海の多様性パターンは緯度とのみ相関するような単純なものではない：(1) 地域的なホットスポットやコールドスポットが分類群ごとに存在する．(2) 地域依存的な側面が強い．(3) 必ず赤道で多様性がピークを持つということはない．(4) 北半球と南半球には明確な違いがある．以上を考慮した上で，「陸域以上に，地域的効果が緯度勾配とは異なるパターンを生じさせているのか」を問う．
+</p>
+<br>
+
+<p>
+具体的には，198の文献を分析し，(1) 海でもLDGがある．(2) それは陸や淡水と同程度．(3) 勾配は Habitat タイプと海域に寄って異なる．という3つの仮説を検証する．
+</p>
+<br>
+
+</div>
+
+
+## 方法
+
+<div class="box1">
+
+### 文献
+
+<p>
+文献の使用基準．(1) 3以上の観察があること．(2) 10度以上の緯度幅を扱っていること．(3) 3サイト以下であれば，それらはすべて同じ大陸や海であること（地域をまたいでgradientを計算してしまわないように）．<br>
+<font size="2" color="gray">文献の選択によるバイアスを防ぐためにゆるめの使用基準を設けた．出版バイアスに対処するためにLDGを検証することを目的としていない研究も含めた．</font><br>
+</p>
+<br>
+
+### 指標
+
+<p>
+緯度と種数の相関係数rと回帰係数bとそのSE，切片aを計算した．<br>
+勾配の強さは，rのフィッシャーのz変換統計量 rz = 1/2 * log( (1+r) / (1-r) ) で定義した．<br>
+また，rzの分散は 1 / ( N-3 ) と定義した（ただしNは観察の回数）．rとbは独立ではないが，異なる側面を捉えるため両方を分析した．
+</p>
+<br>
+
+
+### 分類群のクラス分け
+
+
+用語の詳細は<a href="Images/Hillebrand_2004/bunrui.html">こちら</a>を参照
+
+<p>
+機能特性による分割：
+<ul>
+<li>microalgae</li>
+<li>macrophytes</li>
+<li>protozoa</li>
+<li>crustacean zooplankton</li>
+<li>other zooplankton</li>
+<li>meiofauna</li>
+<li>arthropod zoobenthos</li>
+<li>colonial zoobenthos</li>
+<li>molluscan zoobenthos</li>
+<li>other zoobenthos</li>
+<li>fish</li>
+<li>other vertebrates</li>
+<li>parasites</li>
+</ul>
+この分割により，ある程度の特徴（体サイズ，栄養段階， Habitat ）が共通した分類群に分けることができる．それぞれは進化的なoriginは共通しないため，それは考察しない．<br><br>
+
+分類群による分割：門 (phylum) で分ける．
+<ul>
+<li>Bacillariophyta</li>
+<li>Spermatophyta</li>
+<li>Arthropoda</li>
+<li>Chordata</li>
+<li>Cnidaria</li>
+<li>Porifera</li>
+<li>Tentaculata</li>
+<li>Mollusca</li>
+<li>Nemathelminthes</li>
+<li>Annelida</li>
+<li>Echinodermata</li>
+<li>Plathelminthes</li>
+<li>Protozoa</li>
+<li>Chaetognatha</li>
+</ul>
+<br>
+<br>
+分散形態による分割：
+<ul>
+<li>flying</li>
+<li>own mobility</li>
+<li>pelagic larvae</li>
+<li>pelagic adults</li>
+<li>seed/spores</li>
+<li>parasitic transfer</li>
+</ul>
+</p>
+<br>
+<br>
+生活型による分割：
+<ul>
+<li>nekton</li>
+<li>mobile epifauna</li>
+<li>sessile epifauna</li>
+<li>infauna</li>
+<li>plankton</li>
+<li>flying</li>
+<li>parasite</li>
+</ul>
+分類群内で異なる生活型を保つ場合，多数派に合わせた．
+<br>
+<br>
+
+栄養段階による分割：
+<ul>
+<li>carnivores</li>
+<li>herbivores</li>
+<li>autotrophs</li>
+<li>omnivores</li>
+<li>parasite</li>
+<li>suspension feeder</li>
+<li>detritivores and microbivores</li>
+</ul>
+分類群内で異なる栄養段階を持つ場合，omnivoresとした．
+<br><br>
+
+体サイズ（湿重量 wet weight の対数変換）：既存の文献にある推定値を用いた．<br>
+<font size="2" color="gray"><a href="images/Hillebrand_2004/Hillebrand_2004_Amer_nat.pdf">Hillebrand 2004</a> における Body mass に関する引用<br>
+Body mass estimates were obtained from the original contributions or from the literature (Peters 1983; Wetzel and Likens 1991).</font><br>
+<br>
+
+研究方法の分割：特定のサイトやサンプル点の種数が対象の場合，localとした (α-diversity)．特定の領域や緯度グリッドを使用している場合，regionalとした (γ-diversity)，調査地域の最大絶対値緯度（最も極に近い緯度），最小絶対値緯度（最も赤道に近い緯度），緯度幅によって研究の緯度帯を特徴づけた．
+</p>
+
+### 統計
+
+<p>
+Weighted meta-analysis を rz と b に対して実施．重み付けは，分散をもってする．
+<ul>
+<li>Grand main effect sizes: 全体で勾配が有意か？bootstrap で信頼区間を算出し検定．
+</li>
+<li>group-wise main effect sizes: 特定の分割グループにおいて勾配が有意か？bootstrap で信頼区間を算出し検定．
+</li>
+<li>group-wise main effect sizes の差: カテゴリカル変数は，mixed effect model（各カテゴリーに1つの effect size があるとは考えず，カテゴリーの違いが他の変数の効き方に影響すると考える）により異質性を分割（変数で説明できる異質性＋異質性の残差）．
+</li>
+</ul>
+<br>
+Bonfferoni 補正をする（14変数なので，p_adj = p/14）が，これは過度に保守的であるためp_adj < 0.05 だけでなく，p < 0.01つまり p_adj < 0.15 も解釈する．
+</p>
+<p>Diversity measure は種数を採用（詳細は本文を参照）．
+</p>
+
+</div>
+
+
+
+
+
+
+
+## 結果
+
+<div class="box1">
+<p>
+
+### 全体の主効果
+
+（regional と local は大きく違うので，最初から分けた）および，陸域・淡水域との比較．
+<figure><img src="Images/Hillebrand_2004/grand_e.png" width="300"><figcaption>grand main effect 全体の主効果</figcaption></figure><br>
+<figure><img src="Images/Hillebrand_2004/grand_e_comp.png" width="500"><figcaption>grand main effect 全体の主効果</figcaption></figure><br>
+<figure><img src="Images/Hillebrand_2004/grand_e_relo.png" width="400"><figcaption>主効果は，regional v. local で有意に異なる．</figcaption></figure><br>
+
+</p>
+<br>
+
+<p>
+
+### 地理的分割による主効果の違い
+
+<figure><img src="Images/Hillebrand_2004/separated_e.png" width="600"><figcaption>地理的分割による主効果の違い</figcaption></figure><br>
+<figure><img src="Images/Hillebrand_2004/separated_e_CI.png" width="600"><figcaption>地理的分割による主効果の違いの図示</figcaption></figure><br>
+<ul>
+<li>Regional な LDGの強さrは，大西洋で最も強い</li>
+<li>Local な LDGの強さrは，差異は有意ではあるものの明確ではない</li>
+<li>LDGの傾きbは，優位な差はないものの，インド洋で急峻（ただし分散大）</li>
+</ul>
+</p>
+<br>
+
+
+
+<p>
+
+###  Habitat による主効果の違い
+
+<figure><img src="Images/Hillebrand_2004/separated_habi.png" width="200"><figcaption> Habitat による主効果の違いの図示</figcaption></figure><br>
+<ul>
+<li>外洋のほうが沿岸よりも強さrが急</li>
+<li>外洋のほうがベントスよりも強さrが急</li>
+<li>host-specific な種の local LDG が最も弱い</li>
+<li> Habitat による傾きbの違いは有意ではない</li>
+<li>最も傾きbが急なのは、浅海域の外洋性生物 neritic pelagial（外洋性 oceanic よりも）および沿岸性生物（深海性と比較）である。沿岸底生生物（深海底生物よりも）</li>
+<li>LDGは Habitat を問わず存在</li>
+</ul>
+</p>
+<br>
+<p>
+
+### 生物的特性による主効果の違い
+
+<figure><img src="Images/Hillebrand_2004/separated_body.png" width="400"><figcaption>生物的特性による主効果の違い</figcaption></figure><br>
+<figure><img src="Images/Hillebrand_2004/body.png" width="600"><figcaption>生物的特性による主効果の違い 体サイズと移動・栄養</figcaption></figure><br>
+<ul>
+<li>大きい種ほどLDGが急峻で，小さい種はよりフラットである．</li>
+<li>栄養段階がLDGの強さrに影響する：有意ではないが，高次（肉食，雑食）のものほどregional LDGが強い</li>
+<li>local でも，独立栄養生物 autotroph が最もフラットなLDGで，肉食が最も急峻．</li>
+<li>寄生生物 Parasite は local LDGは弱いが，regional LDG は強い．この強弱の関係は他の特徴でも同様だが，regional/local の乖離は寄生生物で最大．</li>
+<li>移動能力の効果は有意ではないが，海鳥，独立栄養生物，種子散布生物で LDG が弱く，他の分類群で強い（一貫して有意で負）．</li>
+
+</ul><br>
+<p>
+<figure><img src="Images/Hillebrand_2004/body.png" width="400"><figcaption>生物的特性による主効果の違い 分類群ごと</figcaption></figure><br>
+<ul>
+<li>体サイズによる傾向からの逸脱：海草の regional LDG が有意ではない，動物プランクトンのLDGがとても強い．</li>
+<li>分類群ごとに見てるとほとんどのケースで LDG が存在する．ただし，海草とother zoobenthos においては存在しない</li>
+</ul>
+</p>
+</p>
+
+</div>
+
+
+## 考察
+
+<div class="box1">
+<p>
+
+### 発見の概要
+
+<ul>
+<li>海でも LDG が存在し，全体で有意</li>
+<li>海の LDG の大きさは陸や淡水と近いが，より大きい</li>
+<li>地域，Habitat，種の特徴によって LDG の大きさは異なる</li>
+</ul>
+</p>
+<br>
+
+### 海の LDG の一般性について
+
+<p>
+たしかに，体サイズが小さいグループ (珪藻diatoms, 原生動物protozoa) や一部の分類群 (海草macrophytes)，生活型（埋在動物infauna）では有意な LDG が無いが，一般には LDG が存在していると言える．<br>これは，この研究が多くの分類群をカバーしたデータを用いていること，有意でない LDG を報告数論文を1/3も含むため出版バイアスの影響が低いと考えられること，サンプル努力や分類の詳細さは重み付けをしたメタ分析によって影響が除かれていることからいえる．<br>
+とくに，regional なスケールでは，ほとんどのグループで負で有意であった．
+</p>
+<br>
+
+<p>
+このように LDG は海でも存在する一般的なパターンであるといえるが，その程度には差異がある．LDG は，水深や経度による勾配を無視していることをに注意すべきである．以上を踏まえると，LDG が一貫したパターンであり，かつ(1)その形状を左右する要因と(2)その形成要因を検証するべきであるといえる．
+</p>
+<br>
+
+
+### 海の LDG の形状
+
+<p>
+LDG が regional > local なのはこの現象がスケール依存であることを反映している．データのエラー (例: autocorrelation) によるものではない（これについては，<a href="images/Hillebrand_2004/Hillebrand_2004_Amer_nat.pdf">Hillebrand, 2004</a>を参照）．これは低緯度ほど共存する種が少ないことを反映しており，したがって低緯度ほどβ多様性が高い（入れ替わる種の数が多い）ことを示す．
+</p>
+<br>
+
+
+<p>
+2番目に重要だった要因は体サイズであった．この結果は先行研究とも一貫している．そして，栄養段階や移動能力といった要因とも関係する．しかし，体サイズがそのまま LDG に影響するとは考えられない．既存の LDG の形成要因に関する仮説には体サイズが異なるパターンを生じさせることを予測していない（次のセクション参照）．<br>
+考察の前に，体サイズについて2点注意点を述べる．第一に，体サイズの range が広くないと，その LDG への影響は重要にはならない．例えば，海草で極端に弱いこと，毛顎動物Chaetognathaで極端に強いことなどの影響によって全体のパターンが説明できる場合がある．第二に，LDG と体サイズの関係は，緯度と体サイズの関係とは異なる．後者は，同一のグループ内で，高緯度ほど体サイズが大きいという関係である．
+</p>
+<br>
+
+<p>
+体サイズは，分散の機会，エネルギー制約，個体群サイズ (population) に影響するだろう．受動的な分散は大規模な海流に影響されるが，その場合体サイズが小さいほど分散が早いだろう：個体数が多い，1世代が短い，移動しやすい (Fenchel 1993, Fenchel et al. 1997, Finlay et al.)．真核微生物eukaryotic microbes は「どこにでもいる」という仮説が唱えられている．原核生物protists を用いた検証では，微生物は「どこにでもいる」ことはなくても，広く分散することが明らかになった．[微生物の多様性パターンについての説明がある]．このような広範な分散が起きる体サイズの閾値があるという議論もあるが，これは正しくはなさそうである（詳細は本文）．ただし，体サイズと分散能力の関係は非線形であると考えられる：受動的な分散の場合は体サイズが小さいほど分散しやすく，能動的な分散の場合は体サイズが大きいほど分散しやすいだろう．
+</p>
+<br>
+
+
+<p>
+栄養段階の影響は，海，陸，淡水で一貫している．これは体サイズだけの影響ではない．なぜなら独立栄養生物には微細藻類から海草までいるし，肉食生物には毛顎動物chaetognathsから，魚までいるからである．藻類や微細藻類では，実際に LDG がないという結果が知られている (Gaines & Lubchenco 1981; Santelices & Marquet 1998, 逆のLDGが報告)．海草で LDG が無いのは，サンゴとの競争のせいではないかと考えられる．
+</p>
+<br>
+
+<p>
+Local スケールで寄生生物の LDG が弱かった理由はよくわからない．レアな種がサンプルされていない可能性がある．
+</p>
+<br>
+
+<p>
+生活型によっても LDG に差異があった．固着性の埋在生物，表生生物は LDG が弱かった：これは "Thorson's rule" として知られている．反例も報告されているが，今回の分析では，同様に埋在生物infauna は LDG が弱かった．理由は複雑であると考えられる．Thorson (1952, 1957) は，infauna は均質な環境に生息することを理由に上げているが，逆に LDG に環境の異質性が必要だとは現在考えられていない (Roy et al., 2000) ため，この説明には不足がある．
+</p>
+<br>
+
+<p>
+種多様性の経度勾配についても古くから知られている．今回，海域によって LDG の強度が異なったことはこれを反映している．太平洋は大西洋より古いが，今回の分析で，太平洋のほうが LDG が緩やかであることがわかった．インド洋は最も研究が少なく緯度幅も狭いが，興味深いパターンが現れた：LDG の傾きbがとても急である一方，強さrは弱い（相関係数が小さい）．ホットスポットが中央にあり，そこから放射状に多様性が減衰するパターンが，この「傾きが急で相関が弱い」結果に符合する．
+</p>
+<br>
+
+
+<p>
+北半球と南半球で種多様性パターンが異なることが指摘されてきている．その理由は，海と陸の割合が南北半級で異なることや，北極よりも南極で特定の分類群の多様性が高いことが知られているからである．
+今回の分析の結果，違いは見いだせなかった．したがって上記の要因は全体の傾向には影響しなかったことになる．極を除いた解析を行っても，南北で異なるパターンは現れなかった．極付近のデータがさらに集まることで異なる結果が現れる可能性はある．さらにこの問いを深める必要がある．
+</p>
+<br>
+
+<p>
+最大（絶対値）緯度，最小緯度は LDG に影響しないが，緯度幅は影響した．緯度幅が広いほど LDG は傾きと強さが急になった．これは陸や淡水とは違うパターンである．ゆえに，海で LDG の研究をする際には，赤道から極まで緯度幅を広く取ることが望ましい．
+</p>
+<br>
+
+
+<p>
+Habitat の影響は有意であったが，小さかった．異なる Habitat でも LDG の傾きと強さが似通っていることは特筆すべきである．ただし，違いが見いだされた点もある．とくに，外洋の環境で，海底と同程度またはそれ以上の LDG が存在した．外洋は海流の影響で生物地理的パターンが弱くなると考えられるからである．ただし，大きな海流システムは，生物を特定の領域に押し止める作用があるため，外洋といえ開放度は考えられているより小さいのかもしれない．海流に関する研究は未発達なので，今後の研究が必要である．ところで，外洋での LDG の強さは，一部の分類群の影響（LDG がほとんどない海草は海底生物であり，LDG が顕著な魚は外洋性である）かもしれない．
+</p>
+<br>
+
+<p>
+LDG の傾きは沿岸より深海で緩やかであったが，強度は深海でのほうが急であった．このような違いはあるものの，環境が大きく異なることを考えれば，類似した値であったことは驚くべきことである．深海は特異な領域なのでもっと研究が必要である．ただし，深海と浅海で腹側綱 LDG のパターンは似通っているという結果が報告されている (Rex et al., 2000)．ただし，このことは生物多様性の水深勾配が存在しないことを含意はしない．
+</p>
+<br>
+
+
+### LDG の形成要因
+
+<font size="2" color="gray">[難しい]</font>
+
+<p>
+LDG の形成要因はよくわかっていなくて，1つの要因があるのか複数の要因の組み合わせなのかという実証できない議論もある．一方，LDG の明確な例外（藻類など）は，一般的ではない，生物間の相互作用や分類群の特徴によって説明されることが多い (Clarke 1992, Bolton 1994)．メタ分析の一般性によって，複数の説明モデルの妥当性が検証できる．
+</p>
+<br>
+
+
+<p>
+Mid-domain effect: 厳しい環境を境界として，エリアの中心に多くの種が集まるというモデル (Colwell & Hurtt 1994) ．これは生態学的・進化的ドライバーを仮定しない．このモデルと合致する結果は知られており，標高勾配でも実証されている (Rahbek, 1997)．分類群や Habitat によらない LDG のパターンがあるため，このような非生態学的要因が存在するという仮説は棄却されない．MDEという null-model があり，体サイズ，生活型，栄養段階といった生態学的要因がそこからの逸脱をもたらすのかもしれない．
+</p>
+<br>
+
+<p>
+エネルギーの勾配と，面積の勾配が緯度と相関することが，LDG の要因であるという仮説もある (Rosenzweig, 1992;1995)．面積-種数の正の相関を報告する研究は存在するが，否定するものもある (biome スケールでは関係は存在しない; Hawkins & Porter, 2001)．一方で，生産性が，面積が種多様性の勾配に与える影響の大きさを左右するということはよく認められている (Rohde 1997, 1998, Rosenzweig & Sandlin 1997, Chown & Gaston 2000)．同時に，生産量（エネルギー）を LDG 主たる形成要因としたうえで，種数-エネルギー関係にはスケール依存性があることを報告する研究も知られている (Currie 1991)．であれば，種数-生産性関係にも影響するはずである：local スケールでは unimodal の，regional スケールでは linear な関係が予測される（<a href="https://www.nature.com/articles/416427a">参照</a>）．面積とエネルギーは相互に接続しあって LDG に影響している．
+</p>
+<br>
+
+
+<p>
+種数-エネルギー仮説は，Wright (1983) で提唱されて以来，とくに海域でよく支持されてきた．ただしこれは，エネルギーの指標として，気温，水温，放射照度（面積あたりの放射エネルギーの量 irradiance），バイオマス，生産量，蒸発散 (蒸発または蒸散で空気中に戻る水の量 evapotranspiration; actual/potential) といった複数の指標が使われているからかもしれない．また，この仮説の問題は，エネルギー量が高い種多様性を生じさせるメカニズムが記述されていないことである（エネルギーが多いとバイオマスは増えるが，それが多くの種に分割されるという根拠は？）．分子の反応を促進することが結果的に種分化を促進するという説 (Allen et al. 2002) も提唱されているが，まだ議論の最中である．高エネルギー・高温で種分化が早いということはこれまでも指摘されてきたが，最近になって鳥と蝶で，低緯度で種分化が早いことが示された(Cardillo 1999)．
+
+</p>
+<br>
+
+
+<p>
+上記の，Effective evolutionary time model （暖かく，安定した気候は種分化を早め多くの種をもたらす）によった説明は，種分化が LDG の主たる要因であるとみなすことを意味する．しかし，これは Environmental gradient model （面積，エネルギー，環境変化）と切り分けることが難しい（熱帯地方での種分化率の高さは、環境勾配モデルで使用されているのと同様の勾配と関連しているため）．化石データが少ないことから，これらを分割して検証することは難しい．化石データを使って現在と過去を比較できた研究によると，熱帯のほうが温帯よりも種分化率が高い (Buzas et al. 2002)．同様に熱帯で進化が早いという結果が陸でも海でも報告されている．また，熱帯の有孔虫の種多様性は，レアで局所的な分布を持つ種（化石に残っていない）による (Buzas & Culver 1999)．
+</p>
+<br>
+
+<p>
+緯度を超えるような大規模な分散がないのであれば，熱帯での種分化の早さのみが LDG を説明しうる．近年生物多様性パターンに対し分散制限が与える影響が強調されているが，海においてもこれまで考えられていたよりも大規模な分散は起きにくいことが明らかになってきている (Jones et al. 1999, Swearer et al. 1999, Cowen et al. 2000, Marsh et al. 2001)．[海での分散に関する細かい話がある; reef fish の分散とself-recruitment etc.]
+</p>
+<br>
+
+
+<p>
+多くの説明の中で，生物間の相互作用は最も一般性が低い．生物間の相互作用は多様性パターンを左右しうるが，LDG に影響するには，それが緯度と一貫して関係している必要がある．緯度と生物間の相互作用が関係しているという証拠もあるが，その変化は一貫していない．ストレス強度によって，藻類の相互作用は排他的（高緯度）ー相互利益的（低緯度の高ストレス環境）と変化する (Bertness & Ewanchuk 2002)．[生物間の相互作用と緯度の関係の細かい話]
+<br>生物間の相互作用と緯度の関係は存在するが，今回の分析でも regional scale で LDG の一般性が高かったことから，生物間の相互作用が LDG を左右する究極要因であるとはいえないだろう．ただし，local / regional で LDG の強さが異なることから，小さなスケールで生物間の相互作用が LDG に影響していると考えられる．
+</p>
+<br>
+
+
+
+</div>
+
+`)</script>
+2022/05/11 レジュメ作成：五十里
+<a href="../index.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>
