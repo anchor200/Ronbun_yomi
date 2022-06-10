@@ -1,0 +1,180 @@
+# GBIF,Data bias,Digital accessible information,Global,Socio-economic<br>
+# GBIFの哺乳類，両生類，鳥類を対象に，データの地理的バイアス（不完全性の分布）を生じさせている要因を検討．<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Meyer, C., Kreft, H., Guralnick, R., & Jetz, W. (2015). Global priorities for an effective information basis of biodiversity distributions. Nature communications, 6(1), 1-8.
+</title>
+</head>
+<body>
+
+<font size="5"> 
+Meyer, C., Kreft, H., Guralnick, R., & Jetz, W. (2015). Global priorities for an effective information basis of biodiversity distributions. Nature communications, 6(1), 1-8.<a href="https://doi.org/10.1038/ncomms9221">https://doi.org/10.1038/ncomms9221</a>
+</font>
+
+
+<script>md(`
+
+
+## 導入
+
+
+<div class="box1">
+
+### 背景と目的
+
+<ul>
+<li>生物多様性の保全のためには種の分布情報が重要</li>
+<li>大規模・高解像度の種 Occurrence 情報を提供する GBIF など様々に使えるデジタル化されたデータがある: digital accessible information (DAI)</li>
+<li>しかしDAIには種や記録の完全性，地理的バイアスなど，研究や保全に用いる際には注意点がある</li>
+<li>DAIにおけるバイアスの原因として考えられているのは，経済的・組織的リソースの不足，国際協力の不足，アクセスできなかったり危険だったりして調査が不足している，種数／固有種数が多いエリアや保全区域に調査が偏る，といった内容</li>
+<li>21170 種の鳥類，哺乳類，両生類について，総計 157M (157,000,000 or 1.57億) 点の種と位置情報が対応付けられた GBIF データを対象に，データ不足の原因となっている要因を特定．</li>
+</ul>
+
+### わかったこと
+
+<ul>
+<li>非西洋の大きな発展中の国 (Large emerging economies) にギャップが存在</li>
+<li>重要な変数は，データ管理組織からの距離，地域的な研究ファンド，データ共有への政治的な貢献</li>
+</ul>
+</div>
+
+
+## 結果と考察
+
+
+<div class="box1">
+
+<ul>
+<li>110kmグリッドサイズで分析：レコードの数は最大5桁違う．</li>
+<li>ヨーロッパ，北中米，オーストラリアにピークがある</li>
+<li>アジアの48％，アフリカの35%，南米の21%には使えるDAIがない/li>
+<li>110kmグリッドは，専門家のレンジマップの制度が十分なもっとも細かい解像度であるが，このグリッドサイズでは，GBIF とレンジマップによる在の相関は 0.28-0.39 にとどまる．</li>
+<li>12029セル中，4.2%だけが80%以上の完全性を示した．</li>
+<li></li>
+</ul>
+
+
+<p>
+<figure><img src="Images/Meyer_etal_2015/result.jpeg" width="400"><figcaption>全球サンプル完全性</figcaption></figure><br>
+</p>
+
+
+#### 全球レベルの概要
+
+<ul>
+<li>レコード点密度がサンプル完全性と強く相関 (d^2 = 0.59-0.9)</li>
+<li>とくに Nearctic（アメリカ大陸のメキシコ以北）と Australasia（オーストラリア大陸＋＋ニュージーランド周辺）で上記の傾向が顕著</li>
+<li>一方、Neotropics（南米）と Afrotropics（エチオピア区；アフリカ大陸の最北部以外）ではこの傾向は弱い</li>
+<li>熱帯・亜熱帯林，草原，サバンナ，北方林，ツンドラが未調査</li>
+<li>「熱帯ギャップ＝熱帯はデータ不足」は確認されなかった</li>
+<li>アジア，アフリカの南部以外，ブラジルにデータのギャップがある</li>
+</ul>
+
+
+#### 分類群ごとの概要
+
+<ul>
+<li>鳥類，哺乳類，両生類の間の相関は中程度（r_s=0.65-0.74）</li>
+<li>鳥類（150Million）に比べて，哺乳類，両生類（-3, -1M）はデータが少ない；</li>
+</ul>
+
+
+#### 解像度と分類群別の充実度
+
+<figure><img src="Images/Meyer_etal_2015/spatial.jpg" width="600"><figcaption>解像度と分類群別の完全性</figcaption></figure><br>
+
+<ul>
+<li>110kmグリッドでも完全性は低い（北米，ヨーロッパ，オーストラリアの鳥類だけ一貫して80%を超える）．440, 880kmとグリッドサイズを上げると完全性は上がるが，それでも80%に達しない場所が多い</li>
+<li>アジアではとくに完全性が低い；880kmグリッドでも完全性が80%を超えるグリッドは20%以下</li>
+<li>SDMを回すには50-100点が推奨されるが，54.9%の鳥類，79.2の哺乳類，91.3%の両生類で50点以下</li>
+<li>データ数の中央値は，鳥類37，哺乳類6，爬虫類2</li>
+</ul>
+
+
+#### データ不足の原因
+
+<p>12の仮説を検証<br>
+5つのドメイン</p>
+<ul>
+<li>appeal</li>
+<li>accessibility</li>
+<li>security</li></li>
+<li>international scientific integration</li>
+<li>financial and institutional resources</li>
+</ul>
+<p>
+GLMで解析→AIC基準で minimul なモデルを選択し，その上で spatial GLM を実施（計算時間の短縮のため）．
+</p>
+
+<figure><img src="Images/Meyer_etal_2015/spatial.jpg" width="600"><figcaption>バイアスの要因</figcaption></figure><br>
+
+
+
+<figure><img src="Images/Meyer_etal_2015/hyp.jpg" width="600"><figcaption>バイアスの要因</figcaption></figure><br>
+
+<p><font size="2" color="888888">
+analyses of variance: 可能なすべてのモデルのAICを応答変数とし，特定のモデルに変数含まれているかどうか（変数の在・不在）を説明変数として分散分析：各変数を入れることがAICの分散をどれだけ説明するかを計算．
+</p></font>
+
+
+<ul>
+<li>予測因子によって異なるが、分散分析で説明される平方和の割合は、「空間粒度」因子と比較して「分類群」因子の方が16%～72%高い</li>
+<li>固有性の高さ→強い説明力</li>
+<li>保護区からの距離→弱い説明力</li>
+<li>都市からのアクセス→弱い説明力（regional scale の先行研究と異なる）</li></li>
+<li>データ管理組織からの距離→強い説明力</li>
+<li>地域の安全性（Global Peace Index）→とても弱い説明力</li>
+<li>生態学の盛んさ（国の生態学論文のh-index）→とても弱い説明力</li>
+<li>GBIF参加→とても強い説明力</li>
+<li>国の予算規模→とても強い説明力（ただしデータ出版組織の予算規模は説明力がとても弱い）</li>
+<li>データ出版組織の大きさ→弱い説明力（鳥に対してはとても強い説明力；鳥類は博物館ではなく民間の観察が主要なデータ源）</li>
+</ul>
+
+
+#### 改善への示唆
+
+<ul>
+<li>データ完全性に対するほとんどの制限要因は，新たなデータの収集ではなく既存のデータのデジタル化・アクセス可能化に作用している．</li>
+<li>データ管理組織への直接的なものと比べ，大学への Funding はデータ完全性の向上をもたらさない可能性がある．</li>
+<li>一部の大きな博物館に対してだけ Funding を行うのでは不足で，地域の組織とデータ共有への国レベルの貢献が必要．</li>
+<li>データ冗長性：種ごとに分布域内で1回ごと 110km グリッドスケールでサンプルする場合，3.7M 点あればすべてを網羅できる（最大効率のデータ収集）．一方，現実のデータは157M 点ある → 一部の種・場所に記録が集中している．</li>
+<li>本研究で考慮したすべての要因を統制しても，国の影響は有意（2.4%-7.1%）だった：国ごとの政治的，法的，歴史的，言語的，文化的影響を考慮すべき</li>
+<li></li>
+<li>資金の規模は説明力が弱かったことから，政治的要因がより重要：メキシコは成功した国</li>
+<li>大きな発展中の国 (Large emerging economies) ，ブラジル，中国，インド，ロシア，トルコにデータ不足が多い：経済活動が生物多様性にプレッシャーを与えていることを鑑みても重大な問題．</li>
+</ul>
+
+<figure><img src="Images/Meyer_etal_2015/coun.jpg" width="600"><figcaption>国による差異</figcaption></figure><br>
+
+<p>
+<font size="2" color="888888">
+Aichi target: examples include land-use planning to minimize biodiversity loss (Target 7), creating species lists for protected areas and improving global reserve networks (Target 11), safeguarding threatened species (Target 12) and mapping and securing associated ecosystem services (Target 14).
+</p></font>
+
+
+#### 今後
+
+<ul>
+<li>本研究で対象となっている陸上脊椎動物は記載されている種の1.6%しかない；魚や植物，昆虫などもっと種が多い分類群に広げて現状把握すべき</li>
+<li>分類群ごとに，種あたりのデータ数は異なる；四足動物 tetrapods (31,032 spp.) は1種あたり6,909点; 魚類 fishes (31,658 spp.) は347点; vascular plants (283,701 spp.) は317点; invertebrates (1.38M spp.) は31点（2014年のGBIF）．</li>
+<li>Rapid biodiversity loss, limited funding and potential trade-offs with direct conservation investments64 require priorities for future collection and mobilization of biodiversity records into DAI. Targeted integration of available information and assessments of gaps, along with continued evaluation of effectiveness of DAI for conservation needs, are as vital as increased commitment to biodiversity data sharing by political stakeholders, institutions and individual scientists. With time running out to meet CBD targets on biodiversity knowledge, more effective data use and mobilization, and a cultural shift about data sharing are urgently needed.</li>
+</ul>
+
+</div>
+
+
+`)</script>
+2022/06/10 レジュメ作成：五十里
+<a href="../index.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>
