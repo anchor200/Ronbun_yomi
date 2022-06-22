@@ -52,6 +52,7 @@ Strategic Plan for Biodiversity 2011-2020, including Aichi Biodiversity Targets:
 <ul>
 <li>Red List Indexと同様に，STARは既存のRed Listデータを用いることで，緊急性に対応</li>
 <li>空間明示的である：特定の場所での脅威削減・生息地復元（人により進められている開発の影響が無い場合のレベルにまで絶滅リスクを下げる）の機会を特定できる．</li>
+<b><li>すべての種を絶滅リスクのない状態 (Least Concern) に移行させるのに必要なエフォートを，地域や対策すべき脅威ごとに分割する．</li></b>
 </ul>
 
 STARでは，大半の種では，脅威の完全な削減が達成されれば，個体数が十分な上昇・安定に転じ，Red List の Least Concern 種に移行すると考える．
@@ -283,7 +284,7 @@ STAR値は，特定の Location （区域）における全ての Threatened/Nea
 区域 i における 脅威 t に対するSTAR_Tスコア T は以下の式で計算する．これをすべての対象種に対して合計する．<br>
 <font color="blue">T_t,i（種s） =   P_s,i * W_s * C_s,t </font>
 <br>
-<font size=2 color="grey">P_s,i は区域 i 中の種の生息地面積 (AHO)，W_s はレッドリストカテゴリーによる重み (Near Threatened = 1; Vulnerable = 2; Endangered = 3; Critically Endangered = 4)，C は 脅威 t が種 s の絶滅に与える総体的影響，N_sは区域 i 中の種の数．ここで，Cは以下のように計算；特定の脅威のレッドリスト評価の severity と scope の積（個体数の減少割合）を，すべての脅威に対する種数の減少率の和で割る（最も細かい脅威の分類を使い，分析のためのカテゴリ分けに合うように集計）．</font>
+<font size=2 color="grey">P_s,i は区域 i 中の種の生息地面積 (AHO)，W_s はレッドリストカテゴリーによる重み (Near Threatened = 1; Vulnerable = 2; Endangered = 3; Critically Endangered = 4)，C は 脅威 t が種 s の絶滅に与える相対的影響，N_sは区域 i 中の種の数．ここで，Cは以下のように計算；特定の脅威のレッドリスト評価の severity と scope の積（個体数の減少割合）を，すべての脅威によるものの和で割る．</font>
 </p>
 
 #### STAR_R
