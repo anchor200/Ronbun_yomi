@@ -1,0 +1,36 @@
+<script src="../../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../library/index.css">
+<head>
+<title>
+Chao1 and Chao2 estimator
+</title>
+</head>
+<body>
+<div class="box1">
+
+<b>Chao1 estimator</b><br>
+<p>個体数データに基づく種数推定</p>
+<p>1個体しか見つかっていない種 (singleton, F種とする)，2個体しか見つかっていない種 (doubleton, G種) に基づき，以下の式で計算</p>
+<p>Sest = Sobs + ((F2 / 2G + 1) - (FG / 2 (G + 1) 2))</p>
+</div>
+
+<div class="box1">
+
+<b>Chao2 estimator</b><br>
+<p>在-不在データに基づく種数推定</p>
+<p>種数推定を行う単位において，サンプルが複数得られている，という階層構造を仮定．1サンプルにしか出現しない種 (unique, L種)，2サンプルにしか出現しない種 (duplicate, M種) に基づき，以下の式で計算．</p>
+<p>Sest = Sobs + ((L2 / 2M + 1) - (LM / 2 (M + 1) 2))</p>
+
+</div>
+
+
+<b>Reference</b><br>
+<ul>
+<li>Chao, A., Kubota, Y., Zelený, D., Chiu, C. H., Li, C. F., Kusumoto, B., ... & Colwell, R. K. (2020). Quantifying sample completeness and comparing diversities among assemblages. Ecological Research, 35(2), 292-314.</li>
+<li>https://www.researchgate.net/post/How-to-interpret-Chao1-and-Chao2-values</li>
+<li><a href="images/Chapter4.pdf">数式の説明</a></li>
+</ul>
+<br><br>
+2022/09/04 レジュメ作成：五十里
+</body>
+<a href="../index.html">return to index</a>

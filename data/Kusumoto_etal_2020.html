@@ -15,7 +15,7 @@ Kusumoto, B., Costello, M. J., Kubota, Y., Shiono, T., Wei, C. L., Yasuhara, M.,
 
 
 <script>md(`
-## 背景
+## <p id="bb">背景</p>
 
 
 <div class="box1">
@@ -43,7 +43,7 @@ Kusumoto, B., Costello, M. J., Kubota, Y., Shiono, T., Wei, C. L., Yasuhara, M.,
 </div>
 
 
-## 方法
+## <p id="bb">方法</p>
 
 
 <div class="box1">
@@ -51,10 +51,13 @@ Kusumoto, B., Costello, M. J., Kubota, Y., Shiono, T., Wei, C. L., Yasuhara, M.,
 
 ### Data
 
+<ul>
+<li>緯度経度がふられた 109,296 点のデータ（697種を含む）</li>
+<li>grain size: 1,2,4,6,10,15°という異なるスケールで集計</li>
+<li>sub-grid: 0.01°；iNEXTの計算では，grain size（種数の集計に使う）とは別に sub-grid（群集のカウントに使う）の大きさを定義する必要がある</li>
+<li>種数が6以下のグリッド，1 incidence以上あるサブグリッドが6以下，singletonのサブグリッドしかないグリッドは分析対象外とした．</li>
+</ul>
 
-<p>109,296 geo-referenced occurrence points for 697 species. <br>0.01°グリッドに分けて，1,2,4,6,10,15°という異なるスケールで集計．
-種数が6以下のグリッド，1incidence以上あるサブグリッドが6以下，singletonのサブグリッドしかないグリッドは分析対象外とした．
-</p>
 <p><font size="2" color="888888">[memo] 種の名前を統一；World Register of marine Species （WoRMS）<br> </font>
 </p>
 
@@ -62,17 +65,29 @@ Kusumoto, B., Costello, M. J., Kubota, Y., Shiono, T., Wei, C. L., Yasuhara, M.,
 </p>
 
 ### Analysis
-<p>Sampling completeness: 以下の式 (1) で計算．その値でのqDをqD_refとする．さらに，SC=1の漸近値を外挿する（これは，q=0のときは種多様性の下限を与え，1，2のときは不偏推定量となる）．<br>
-U: すべてのincidenceの数．T: 1以上のincidenceがあったsubgridの数．Q1は1つのsubgridでのみ存在した種，Q2は2つ．
-</p>
-<figure><img src="Images/Kusumoto_etal_2020/SC.png" width="300"><figcaption>			式(1)</figcaption></figure><br>
 <p>
-Hill numbersを2倍以上のSCに外挿することは良くないため，全セルに対してサンプル数が2倍になった時のSCを計算し，その下位1または5パーセンタイルの値をSC*とし，このSCで固定したときのqD_SC*を計算した（つまり，1%または5%のセルのみが2倍以上の外挿を受ける）．qD_SC*を比べることでSCに依存しない多様性の比較ができる．
+サンプル完全性を式 (1) で計算した．生データの Hill numbers (qD) をqD_refとした．さらに，サンプル完全性が完全 (SC=1) のときの外挿値を計算した (qD_asym) ．この値は，q=0のときは種多様性の下限を与え，1，2のときは不偏推定量となる．
+
+<figure><img src="Images/Kusumoto_etal_2020/SC.png" width="300"><figcaption>			式(1)<br></figcaption></figure>
+<font size="2" color="888888">
+U: すべてのincidenceの数．<br>
+T: 1以上のincidenceがあったsubgridの数．<br>
+Q1: 1つのsubgridでのみ存在した種 (singleton) の数．<br>
+Q2: 2つのsubgridでのみ存在した種 (doubleton) の数．</font>
 </p>
-<p>経度，緯度に対してqD_SC*のLOWESS平滑化を行い多様性パターンを得る．</p>
+
+<p>
+同じサンプル完全性（参照値）のもとでのqDを比較することで，サンプル完全性に依存しない多様性の比較を行う．<br>
+
+
+Hill numbersを2倍以上のSCに外挿することは良くないため，全セルに対してサンプル数が2倍になった時のSCを計算し，その下位1または5パーセンタイルの値を参照値とした (SC<sup>※</sup>)．
+<br><br>
+このように参照値SC<sup>※</sup>を求め，SC=SC<sup>※</sup>のときのqD=qD_SC<sup>※</sup>のパターンを解析した．
+<br><br>
+その上で，経度・緯度に対してqD_SC<sup>※</sup>のLOWESS平滑化を行い多様性パターンを得た．</p>
 
 ### Optimal sampling effort allocation
-<p>knowledge gapを埋めるのに最適なサンプル戦略を計算．式 (1) のTは潜在的なハビタットを表す（じっさいの計算では，singltonの数でsubstituteされる）が，これを環境情報を用いて推定する．具体的には，TをmeanSSTが18~36℃，sea depthが-40~0mのグリッドの数とみなす．
+<p>knowledge gapを埋めるのに最適なサンプル戦略を計算．式 (1) のTは潜在的なハビタットを表す（じっさいの計算では，singltonの数でsubstituteされる）が，これを環境情報を用いて推定すことで，新たにサンプルが得られた際の利得の大きさを空間明示的に計算する．具体的には，TをmeanSSTが18~36℃，sea depthが-40~0mのグリッドの数とみなす．
 </p>
 <p>
 以上の仮定を元に，1°スケールにおいて
@@ -85,7 +100,7 @@ Hill numbersを2倍以上のSCに外挿することは良くないため，全�
 <li>このプロセスを決めたサンプルサイズの上限まで繰り返す．</li>
 </ol>
 </p>
-<p>サンプル上限は15,000とした．これは1年間で加えられるサンプルの平均（2008~2018；平均調査努力のsubstitute）．</p>
+<p>ただし，サンプル上限は15,000とした．これは1年間で加えられるサンプルの平均（2008~2018；平均調査努力のsubstitute）である．</p>
 
 
 <p><font size="2" color="888888">[memo] R packages c("rgbif", "iNEXT", "maptools", "raster", "spatialEco")<br> </font>
@@ -94,7 +109,7 @@ Hill numbersを2倍以上のSCに外挿することは良くないため，全�
 
 
 
-## 結果
+## <p id="bb">結果</p>
 
 
 <div class="box1">
@@ -113,7 +128,7 @@ Hill numbersを2倍以上のSCに外挿することは良くないため，全�
 <figure><img src="Images/Kusumoto_etal_2020/priori.png" width="400"><figcaption>保全上重要なポイント，(b)は15,000の追加データが1個のグリッドにどれだけ割り振られたのかのヒストグラム</figcaption></figure><br>
 </div>
 
-## 考察
+## <p id="bb">考察</p>
 
 <div class="box1">
 
@@ -121,26 +136,26 @@ Hill numbersを2倍以上のSCに外挿することは良くないため，全�
 ### 多様性推定
 
 
-<p><b>やったこと</b>：occurence dataを用い，sample completenessを統制し，複数の空間スケールでイシサンゴ多様性を比較．<b>発見の概要</b>：緯度勾配は細かいスケールで顕著というスケール依存性，ただし経度勾配はある程度一貫．<b>この結果の先行研究との対応</b>：スケールが違うと支配的プロセスが異なる．「局所的な多様性は異なる群集形成プロセスで支配される＆大きなスケールでは集中的種プールがrangeの重なりによって生じている (Center of overlap hypothesis; Gaither & Rocha, <a href="https://onlinelibrary.wiley.com/doi/10.1111/jbi.12126">2013</a>)」を支持．他にも環境変動に関するプロセスも効いているはず（例：海面変動）．
+<p><strong>やったこと</strong>：occurence dataを用い，sample completenessを統制し，複数の空間スケールでイシサンゴ多様性を比較．<br><br><strong>発見の概要</strong>：緯度勾配は細かいスケールで顕著というスケール依存性，ただし経度勾配はある程度一貫．<br><br><strong>この結果の先行研究との対応</strong>：スケールが違うと支配的プロセスが異なる．「局所的な多様性は異なる群集形成プロセスで支配される＆大きなスケールでは集中的種プールがrangeの重なりによって生じている (Center of overlap hypothesis; Gaither & Rocha, <a href="https://onlinelibrary.wiley.com/doi/10.1111/jbi.12126">2013</a>)」を支持．他にも環境変動に関するプロセスも効いているはず（例：海面変動）．
 </p>
 
 <p>
-<b>Surprisingな発見</b>：西インド洋の多様性がlocal/regionalともに高い（Coral triangleよりも高いことも）．このエリアは固有種が多い海と接続している（紅海，西太平洋のはし，南アフリカ＋マダガスカル）．ただし，西インド洋はサンプルが少なく推定誤差も多いため今後の調査が必要（あわせて，alpha/beta/gamma多様性のパターンも詳しく見るべき）．
+<strong>Surprisingな発見</strong>：西インド洋の多様性がlocal/regionalともに高い（Coral triangleよりも高いことも）．このエリアは固有種が多い海と接続している（紅海，西太平洋のはし，南アフリカ＋マダガスカル）．ただし，西インド洋はサンプルが少なく推定誤差も多いため今後の調査が必要（あわせて，alpha/beta/gamma多様性のパターンも詳しく見るべき）．
 </p>
 
 <p>
-<b>イントロと対応する重要性の指摘1</b>：大規模＆在のみデータセットはバイアスがとても大きいため，sampling effortを考慮した推定量を使うべき．<b>イントロと対応する重要性の指摘2</b>：range mapとは異なる地理的パターンが見えた．異なる側面を提示している（occurenceはスケール依存の多様性パターン，range mapは種プールの潜在値or上限）．この視点は他の分類群にも使える．
+<strong>イントロと対応する重要性の指摘1</strong>：大規模＆在のみデータセットはバイアスがとても大きいため，sampling effortを考慮した推定量を使うべき．<br><br><strong>イントロと対応する重要性の指摘2</strong>：range mapとは異なる地理的パターンが見えた．異なる側面を提示している（occurenceはスケール依存の多様性パターン，range mapは種プールの潜在値or上限）．この視点は他の分類群にも使える．
 </p>
 
 ### 調査優先区域
 
 <p>
-<b>一般論から</b>：理想的には多様性とサンプル努力は比例すべき．<b>分析の結果</b>：(a)限られた種しか見つかってない場所，(b)sample completenessが低い場所，(c)種多様性の推定誤差が大きい場所，が優先的な場所の共通点だとわかった．<b>具体的には</b>：北東オーストラリア，Coral Triangle中心，マダガスカル，紅海とペルシャ湾のまんなか，中央アメリカの岸，高緯度帯（日本を含む）．<b>理論との対応</b>：マクロ生態学上で重要なエリア（Coral reef diversityが進化する潜在的場所/気候変動による分布シフトの境界地帯）が重要だと今回の分析からもわかった．
+<strong>一般論から</strong>：理想的には多様性とサンプル努力は比例すべき．<br><br><strong>分析の結果</strong>：(a)限られた種しか見つかってない場所，(b)sample completenessが低い場所，(c)種多様性の推定誤差が大きい場所，が優先的な場所の共通点だとわかった．<br><br><strong>具体的には</strong>：北東オーストラリア，Coral Triangle中心，マダガスカル，紅海とペルシャ湾のまんなか，中央アメリカの岸，高緯度帯（日本を含む）．<br><br><strong>理論との対応</strong>：マクロ生態学上で重要なエリア（Coral reef diversityが進化する潜在的場所/気候変動による分布シフトの境界地帯）が重要だと今回の分析からもわかった．
 </p>
 </div>
 
 
-## 結論
+## <p id="bb">結論</p>
 
 <div class="box1">
 
