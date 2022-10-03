@@ -32,7 +32,7 @@ background-color:#ded;
 .wrap label {
   display: block;
   padding : 8px;
-  color: #fff;
+  color: #555;
   font-weight: bold;
   background: #999;
   cursor: pointer;
@@ -54,6 +54,10 @@ background-color:#ded;
   height: auto;
   padding: 8px;
   background: #f7f7f7;
+}
+
+a {
+  color: darkgreen;
 }
 
 
