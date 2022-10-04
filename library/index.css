@@ -29,6 +29,16 @@ margin:10px; padding:10px; border:5px solid lightgray;
 background-color:#ded;
 }
 
+@media screen and (max-width:480px) {
+ 
+    .box1 {
+    width: 95vw;
+    margin:10px; padding:10px; border:5px solid lightgray;
+    background-color:#ded;
+    }
+ 
+}
+
 .wrap label {
   display: block;
   padding : 8px;
