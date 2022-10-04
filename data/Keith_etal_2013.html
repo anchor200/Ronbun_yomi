@@ -1,0 +1,182 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+# Keyword Algae,LDG,Global,Marine,Geographically weighted regression,Competitive exclusion<br>
+# Abstract 緑藻，紅藻，褐藻の多様性パターンに対する環境変数の説明力の地理的パターンを解析．熱帯ほど，環境以外の要因が種数を左右することを主張．<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Keith, S. A., Kerswell, A. P., & Connolly, S. R. (2013). Global diversity of marine macroalgae: environmental conditions explain less variation in the tropics. Global ecology and biogeography, 23(5), 517-529.
+</title>
+</head>
+<body>
+
+<font size="5"> 
+Keith, S. A., Kerswell, A. P., & Connolly, S. R. (2013). Global diversity of marine macroalgae: environmental conditions explain less variation in the tropics. Global ecology and biogeography, 23(5), 517-529.
+</font>
+
+
+<script>md(`
+
+
+## <p id="bb">導入</p>
+
+
+<div class="box1">
+
+### 問題提起
+
+<ul>
+<li>種多様性の緯度勾配の構成要因はなにか？ <b>多くの仮説に関する変数が緯度と相関する</b>ため，決着をつけるのが難しい</li>
+<li><b>典型的なLDGの例外となっている分類群</b>を検討することが有効 for example birds (Rabenold, 1979), snakes (Pyron & Burbrink, 2009) and aquatic macrophytes (Kerswell, 2006; Santelices et al., 2009) </li>
+<li>その題材として，海藻を扱う；褐藻，紅藻，緑藻</li>
+<li>この分類群は多様性のピークが温帯にある．栄養塩濃度，光合成有効光量が多様性に影響するとされているが，証明されていない</li>
+<li><b>環境変数と種多様性関係は一様ではないはず</b>；熱帯では，サンゴとの競争や捕食者の存在により，環境によるコントロールが弱くなると考えられる</li>
+</ul>
+
+
+### 進化的視点
+
+<ul>
+<li>海藻のパターンは「熱帯で種分化率が高い」仮説とは一貫しない．「気候安定性が高いと種数が多い」仮説も，180Myもの間気候変動が穏やかな熱帯の海で種数が少ないことから，有望ではない．</li>
+<li>「ニッチ保守性」仮説（<b>起源した時のニッチ特性が系統樹に渡って保存されるため，起源地以外の気候帯に広がりにくい</b>）は妥当な可能性がある仮説</li>
+<li>環境変数の説明力の地理的差異を調べることで，歴史効果のシグナルを拾える（気候変数の予測力が低くなる地域は，競争関係にある系統が存在した，などといった環境要因以外の理由で種数がコントロールされていることを示唆する）</li>
+
+</ul>
+</div>
+
+
+## <p id="bb">方法</p>
+
+<div class="box1">
+
+### データ
+
+<ul>
+<li>海藻データ：423サイト，属レベル</li>
+<li>環境変数：海水表面温度（mean, range, max, min），栄養塩，塩分濃度，光合成有効光量；多重共線性を考慮して変数選択</li>
+</ul>
+
+
+### 分析
+
+<ul>
+<li>回帰モデル1：OLS；それぞれ変数ごとに単回帰を1乗，2乗，3乗値で回し，AICc基準でベストな乗数を選択して投入→さらに，AICcで変数選択</li>
+<li>回帰モデル2：GLS；残差に空間自己相関を入れたモデル</li>
+<li>回帰モデル3：GWR；セルごとに，周辺の値に重み付けをして回帰．回帰係数や予測力の空間的構造を求める．</li>
+</ul>
+
+</div>
+
+
+## <p id="bb">結果</p>
+
+<div class="box1">
+
+### グループごとの種多様性パターン
+
+<figure><img src="Images/Keith_etal_2013/geb12132-fig-0001-m.png" width="500"><figcaption>海藻グループごとの種多様性パターン</figcaption></figure><br>
+
+
+### 回帰分析
+
+<figure><img src="Images/Keith_etal_2013/kaiki.png" width="500"><figcaption>回帰テーブル</figcaption></figure><br>
+
+<figure><img src="Images/Keith_etal_2013/geb12132-fig-0002-m.jpg" width="300"><figcaption>各変数の影響</figcaption></figure><br>
+
+<figure><img src="Images/Keith_etal_2013/gwr.png" width="800"><figcaption>GWR結果の図示</figcaption></figure><br>
+
+</div>
+
+
+
+## <p id="bb">考察</p>
+
+<div class="box1">
+
+## 全球多様性パターンと環境変数
+
+<p>
+栄養塩と海水表面温度が種多様性パターンに影響することはグローバルには支持されたものの，
+環境変数による予測力には地域差がある（R2は0.4-0.73まである）：<b>環境以外の要因が効いているエリアが存在する</b>
+</p>
+<br>
+
+<p>
+環境変数の効果は大きいが，<b>熱帯では予測力が弱い</b>．海水温の効果は上に凸 (Hump-shaped) だが，高温域では予測力が弱いため，高温による制限の強さには疑問が残る．
+</p>
+<br>
+
+<p>
+大型藻類の生育は，栄養塩に制限される．しかし今回の結果では，種多様性とは負の関係を持っていた．湧昇がある場所でも，栄養塩と種数に関係はなかった．栄養塩が多いと優占種の生育が促進され，多様性が抑制されるのかもしれない (Reed & Foster, 1984)．
+</p>
+
+<p>
+<font size="2" color="888888">
+湧昇があると，栄養塩濃度にミクロな変異が起き，それが多様性パターンに影響すると考えられるが，今回のスケールでは検出されなかったのかもしれない．
+</p></font>
+<br>
+
+<p>
+海藻は塩分順応力が高いため，塩分濃度と多様性パターンには関連がないと予測していた；ある程度支持されたが，紅藻の種数と塩分濃度はオーストラリア周辺で正に相関し，褐藻では汽水域で正に相関していた．これらの関係は，原因がよくわからない．ただし，局所的なため全球スケールでの影響は小さい．
+</p>
+
+<p>
+<font size="2" color="888888">
+基質の影響もあるかもしれないが，検証できるデータがない＋影響があったとしても小さいと見積もられる (<a href="https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fgeb.12132&file=geb12132-sup-0006-as3.pdf">Appendix S3</a>)
+</p></font>
+
+
+## 環境変数による説明力の地理的勾配
+
+<p>
+熱帯で気候変数の説明力が下がることは，仮説と一貫している：<b>種間競争の影響が卓越した</b>と考えられる．熱帯はサンゴ礁に覆われており，競争排除が起きていたと推測される (Bolton, 1994; Santelices et al., 2009)．
+</p>
+<br>
+
+<p>
+同様のプロセスは，裸子植物でも主張されている（裸子植物は熱帯起源だが，被子植物との競争で高緯度に追いやられた）．＋藻類の生理学的耐性の広さは，競争力を犠牲に得た特性であると考えられている．
+</p>
+<br>
+
+<p>
+熱帯には植食性の魚類が多い（被食圧が高い）ことも影響したと考えられる (Floeter et al., 2005)．熱帯の藻類は，温帯種にはできない化学防御を行う．<br>
+さらに，以下は仮説と一貫する結果．
+<ul>
+<li>サンゴと魚類の多様性が著しいインド-太平洋で，環境変数による緑藻の多様性の予測力がとても低い．</li>
+<li>褐藻の場合は，ウニによる被食圧が強い北半球で予測力が低い；</li>
+</ul>
+</p>
+<br>
+
+<p>
+熱帯の種数の少なさが "insufficient time for diversification" で説明される可能性は低い．なぜなら，(1) 熱帯は海水温が安定している，(2) 藻類の起源は古い (褐藻，緑藻，紅藻はそれぞれ 5, 600, 1200Ma) ，(3) この理由で説明されるのは（例：北アメリカでウミガメの種数が少ない）は，20,000年前に北アメリカに到達した，という比較的短い時間スケールのケースである．
+</p>
+<br>
+
+<p>
+「熱帯で環境勾配がゆるやか」だから今回の結果が得られた可能性もある．しかし，そうだとしたら「回帰係数は他の地域と同じくらいで，標準誤差が大きい」という結果になるはずである．しかし，熱帯では回帰係数の値も0に近かった．ゆえに，現に熱帯に置いて環境による影響が小さいと結論付けられる．
+</p>
+
+
+</div>
+
+<p>
+<font size="2" color="888888">
+test
+</p></font>
+
+
+
+`)</script>
+2022/06/21 レジュメ作成：五十里
+<a href="../index.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>
