@@ -1,0 +1,290 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+# Historical biogeography,歴史効果,Mid-domain effect,Tropical niche conservatism,phylogenetic regression,phylogenetic niche conservatism,Rapoport's rule,Amphibian,Diversification rate<br>
+# 種多様性の緯度勾配を説明する仮説のうち，どれが一般則なのかを，温帯ピークの例外的な種多様性パターンをもつ新世界ヘビを使って検証：起源地，ニッチ保守性と種分化時間に基づく説明が最も一般性が高い．解析が網羅的で，議論がとてもきれい<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Pyron, R. A., & Burbrink, F. T. (2009). Can the tropical conservatism hypothesis explain temperate species richness patterns? An inverse latitudinal biodiversity gradient in the New World snake tribe Lampropeltini. Global Ecology and Biogeography, 18(4), 406-415.
+</title>
+</head>
+<body>
+Pyron, R. A., & Burbrink, F. T. (2009). Can the tropical conservatism hypothesis explain temperate species richness patterns? An inverse latitudinal biodiversity gradient in the New World snake tribe Lampropeltini. Global Ecology and Biogeography, 18(4), 406-415.
+<font size="5"> 
+</font>
+
+
+<script>md(`
+
+
+## <p id="bb">導入</p>
+
+
+<div class="box1">
+
+<p>
+種多様性の緯度勾配を説明する仮説は，互いにオーバーラップするものの，
+<b>生態学的仮説，時間的仮説，進化的仮説</b>の3つに大別できる．
+</p>
+
+
+
+<p>
+<b><font color="blue">生態学的仮説</font></b>：熱帯は，高い生産性や，ニッチの多様さ，土地の広さといった要因（あるいはその組み合わせ）があることで，多種が共存できる (Willig et al. 2003)．
+</p>
+
+<p>
+<b><font color="blue">時間的仮説</font></b>：熱帯の系統が，起源した時期が古いことと長く生き残っていることが，熱帯の多様性につながっている；time-for-speciation/centre-of-origin effects (<a href="https://royalsocietypublishing.org/doi/10.1098/rspb.2006.3596">TFS/COO</a>)
+</p>
+
+<p>
+<b><font color="blue">進化的仮説</font></b>：熱帯での高い種分化率と低い絶滅率が，種数の緯度勾配を作っている (e.g., <a href="https://www.science.org/doi/10.1126/science.1135590">Wier & Scluter, 2007</a>)．
+</p>
+
+<p>
+これに加え，土地の中心に多くの種分布が重なることが熱帯の種多様性の理由であるという上記のようなプロセスに対する null model (Mid-domain effect; MDE; Colwell et al., 2004) も提唱されている．
+</p>
+
+<p>
+LDGの成因に関する仮説のうち，「熱帯でのピーク」というケースにしか当てはまらないものは少ない．例えば，
+<ul>
+<li>Rapoport's rule（分布域の緯度幅は高緯度ほど広い）は「熱帯での種数のピーク」とは独立に成立しうる．</li>
+<li>温帯で起源した種に対しては，上記の Temporal hypothesis は温帯で種数が最大になることを予測する．</li>
+<li>種分化，絶滅率の勾配があったとしても，他のプロセスが卓越する可能性もある．また，温帯で絶滅率が高く，熱帯で種分化率が低い，といった状況では，熱帯で種数が最大にならない可能性もある</li>
+<li>"mid domain"が熱帯であるという必然性はないため，MDEが成立している下では，種数のピークはどこでもありえる</li>
+</ul>
+</p>
+
+
+<p>
+これらの仮説が，<b>種数の熱帯ピーク以外のパターンの説明にも適用可能であれば，一般性が高い</b>ことになる．そこで，温帯で種数がピークになる分類群 新世界のヘビ族 "Lampropeltini" （北アメリカNAで27種，熱帯新区NTで4種）を対象に検討する．
+</p>
+
+
+</div>
+
+
+## <p id="bb">方法</p>
+
+<div class="box1">
+
+<p>
+
+### <font color="blue">系統情報</font>
+
+<p>著者らが独自に推定 (Pyron & Burbrink, 2009) </p>
+
+### <font color="blue">Ancestral area reconstruction</font>
+
+<p>バイオリージョンごとに，在不在をコーディングし， Lagrange 2.0.1 (Ree et al., 2005) で系統の節点（分岐点）の分布エリアを推定</p>
+
+### <font color="blue">系統ニッチ保守性1</font>
+
+<ol>
+<li>対象とする系統＋旧世界の姉妹群の在地点の気候変数を抽出．</li>
+<li>影響の強い主成分のloadingを計算．</li>
+<li>系統の節点の値をPGLSを用いて再構成．</li>
+<li>各種（末端）の値と節点の値を合わせてプロット．</li>
+</ol>
+
+
+### <font color="blue">系統ニッチ保守性2</font>
+<ol>
+<li>PC軸に最も正負の幅が大きい重みがかかっている気候変数を選択．</li>
+<li>種ごとの平均値に対して系統シグナル (Pagel's λ) を計算．</li>
+</ol>
+
+
+### <font color="blue">種分化率の緯度依存変化</font>
+
+<p>姉妹種のペアごとに，分化した年を2種の分布の中心緯度に対してプロット．種分化が激しいところで，分化年が若ければ，種分化が種多様性に影響している．逆の関係ならば，絶滅率の高さが種多様性が低いエリアを作っていることを示す．</p>
+
+### <font color="blue">ラポポートの法則</font>
+
+<p>
+在データをもとに，分布の緯度中心と緯度幅を計算し．これらの関係を回帰分析（系統考慮なし／あり両方）．
+</p>
+
+
+### <font color="blue">Mid domain effect</font>
+
+<p>Lampropeltini（対象分類群）の分布 (–3 to 51° N) ，北半球，全球の3通りで分布中心 (Mid point) を設定し，ランダムな分布レンジを作成（Nullモデル）．実際分布パターンのNullモデルからの逸脱を検定．</p>
+
+</div>
+
+
+
+## <p id="bb">結果</p>
+
+<div class="box1">
+
+### <font color="blue">系統情報とAncestral area reconstruction</font>
+
+<figure><img src="Images/Pyron_and_Burbrink_2009/phylo1.png" width="500"><figcaption>Lampropeltini の系統樹．節点</figcaption></figure>
+
+<p>
+Lampropeltini  の祖先は北アメリカ中央部（温帯）に居たと推定された．20Maまではそこにとどまっており，10Maより最近になって北アメリカの西部と東部（ミシシッピ川より東）に移動したと推定された．<b>この系統が温帯アメリカに長く居たことが，温帯での種多様性の高さを説明する</b> (TFS/COO time-for-speciation/centre-of-origin effects と一貫)
+</p>
+
+
+### <font color="blue">系統ニッチ保守性</font>
+
+<figure><img src="Images/Pyron_and_Burbrink_2009/pca.png" width="500"><figcaption>Lampropeltini の温帯種，熱帯種，祖先の分布点のPC上での図示</figcaption></figure>
+
+<p>
+温帯種と熱帯種が，第一主成分上ではっきり分かれる．PC1に正で最も影響していたのが「気温レンジ」．負で最も影響していたのが「雨量最大期の雨量」．
+</p>
+
+<p>
+熱帯種は気温の季節性低，雨量最大期の雨量大のハビタットを好み，温帯種とはその逆．祖先種および旧世界の姉妹種 (Coronella austriaca) は温帯と同一のクラスタに属した．
+</p>
+
+<p>
+気温の季節性には系統シグナルが現れ，降水量では現れなかった（2つの変数を追加しても一貫した）．これにより，<b>気候の季節変動を好む性質が系統上で保存され，それが熱帯への分散を制限していた</b>といえる．熱帯に分散した種は末端の4種だけで，多様化していないことも，この結論と一貫する．
+</p>
+
+### <font color="blue">種分化率の緯度依存変化</font>
+
+<figure><img src="Images/Pyron_and_Burbrink_2009/bunka.png" width="300"><figcaption>Lampropeltini の分化年と緯度中心のプロット</figcaption></figure>
+
+<p>
+分化年と緯度中心には有意な相関がなかったため，
+種分化率は緯度と関連がないといえる．
+</p>
+
+
+### <font color="blue">ラポポートの法則</font>
+
+<figure><img src="Images/Pyron_and_Burbrink_2009/rapo.png" width="300"><figcaption>Lampropeltini の分布レンジの緯度幅と中心緯度の関係</figcaption></figure>
+
+<p>
+外れ値の種を除けば，ラポポートの法則が成り立つ．これが成り立つと熱帯で種が多いパターンがありえるが，そうではなかったので，種多様性パターンとラポポートの法則の間には今回はあまり関係がなかったといえる．
+</p>
+
+<p>
+<font size="2" color="888888">
+外れ値である種を除く解析に関する議論が参考になる．
+</font>
+</p>
+
+
+### <font color="blue">Mid domain effect</font>
+
+<figure><img src="Images/Pyron_and_Burbrink_2009/mde.png" width="300"><figcaption>実際のパターン（黒）とNullモデルの予測（灰色）</figcaption></figure>
+
+
+<p>
+実際のパターンは，Nullモデルからの逸脱が激しい．そのため，温帯ピークの実際の種多様性パターンは，MDEでは説明できない．
+どのNullモデルを使ってもこの結果は一貫．
+</p>
+
+</div>
+
+
+## <p id="bb">議論</p>
+
+<div class="box1">
+
+### <font color="blue">問題提起の繰り返し</font>
+
+<p>
+<b>種多様性パターンの一般則は，熱帯ピーク以外のパターンも説明できるはず</b>だ．
+</p>
+
+<p>
+<font size="2" color="888888">
+熱帯以外に種多様性ピークがあるグループ
+<ul>
+<li>ヌマガメpond turtle (Stephens & Wiens, 2003)</li>
+<li>全北区（だいたい北半球のこと）のアマガエル (Smith et al., 2005)</li>
+<li>ペンギン (Cody, 1966)</li>
+<li>寄生ヒメバチ ichneumonid parasites (Owen & Owen, 1974)</li>
+</ul>
+</font>
+</p>
+
+
+### <font color="blue">歴史的な説明が最もよい</font>
+
+<p>
+「<b>起源した地域と種分化にかけられた時間 TFS/COO</b>」に基づく歴史的な説明が最も支持された．
+</p>
+
+<p>
+MDEが支持されなかったことから，このプロセスは <b>non-random</b> である．
+</p>
+
+<p>
+種分化率の緯度勾配はなかったことから，これは影響していない．
+</p>
+
+<p>
+TFS/COO の説明が支持された．これはもっとよくある「熱帯ピーク」の分類群において，「長く居た熱帯で種分化する時間があったので種が多く，熱帯を出て温帯にたどり着いた時期が最近であったから温帯で種が少ない」という説明が支持されるのと同様．
+</p>
+
+
+
+### <font color="blue">Lampropeltini は温帯ニッチ保守性を示す</font>
+
+<p>
+なぜこの分類群では，熱帯に種が少ないのか？ Lampropeltini の祖先は気候が少し寒冷化した30Maごろにベーリング地峡を渡って新世界にたどり着いた．このときの気候が温帯であったため，この系統は，温帯への強いニッチ保守性を持っていた．この結論は，<b>気候ニッチに系統シグナルが現れたこと</b>，<b>旧世界の姉妹群が温帯種であること</b>，の2点によって指示されている．
+</p>
+
+<p>
+<font size="2" color="888888">
+系統シグナルだけでニッチ保守性を議論することに対する警鐘 (Revell et al., 2008)
+</font>
+</p>
+
+
+### <font color="blue">ニッチ保守性の効果は強い</font>
+
+<p>
+温帯を好む気候ニッチが，メキシコなどの新熱帯区への分散を妨げた．種間競争の影響も指摘されているが，系統のシグナルが非常に強いこと，熱帯種でも温帯に入り込んでいることから，気候ニッチ保守性のほうがメインのドライバーである．
+</p>
+
+
+### <font color="blue">熱帯ニッチ保守性ではなく「生物地理ニッチ保守性」</font>
+
+
+<p>
+熱帯ニッチ保守性は以下の3つを予測する．(1)<b>熱帯で種数が多いグループは熱帯起源し，温帯に分散したのは最近（TFS/COOの影響が効いている）</b>．(2)<b>熱帯から温帯への分散はニッチ保守性によって妨げられている</b>．(3)<b>熱帯で多くの系統が生まれたのは熱帯がかつて広い面積を持っていたから</b>．
+</p>
+
+<p>
+今回の分析で明らかになったように，TCHの背景にある以上のプロセスは，温帯がピークになる種多様性パターンの説明にも当てはまっている．ゆえに熱帯ニッチ保守性 TCH は一般化されて，「生物地理ニッチ保守性」と呼ばれるべきだ．
+</p>
+
+
+### <font color="blue">一般化の可能性と今後の発展</font>
+
+<p>起源の場所に関わらず，この研究の主張と一貫する先行研究がある．</p>
+
+<ul>
+<li>Time-for-speciation effect (Ricklefs & Schluter, 1993)</li>
+<li>先祖のニッチが受け継がれる (e.g. Smith et al., 2005; Wiens et al., 2006)</li>
+<li>生息適地の広さ (e.g. Fine & Ree, 2006)</li>
+</ul>
+
+<p>MDEやラポポートの法則は，"red herring" であるが，これらに基づかないほうが，多くの種多様性パターンが説明できる．</p>
+
+<p>
+なぜ<b>熱帯起源の分類群が多いのかについては，まだ明らかになっていないし，この研究からは結論できない</b>．かつて熱帯が広い面積を持っていたこと，より昔には熱帯で種分化率が高かったこと，などが可能性として考えられる．グローバルスケール，<b>異なる系統時間スケールを扱った研究</b>により，この点を明らかにすべきである．
+</p>
+</div>
+
+
+
+`)</script>
+2022/12/01 レジュメ作成：五十里
+<a href="../index.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>
