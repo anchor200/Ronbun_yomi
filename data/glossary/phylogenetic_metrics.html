@@ -1,0 +1,183 @@
+<script src="../../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../library/index.css">
+<head>
+<title>
+Phylogenetic metrics 系統メトリック
+</title>
+</head>
+<body>
+<script>md(`
+
+
+<b><font size=5>系統メトリックの統合フレームワーク</font></b>
+
+<div class="box1">
+
+<p>
+系統メトリックは70以上もあり，混乱している．しかし先行研究によると，以下の3通りに大別できる．
+</p>
+
+<p>
+Pavoine による概念分類
+<ol>
+<li>(i) <b>どれだけ多いか？</b> the sum of accumulated phylogenetic differences among taxa (‘richness’)</li>
+<li>(ii) <b>どれだけ近い／遠いか？</b> the mean phylogenetic relatedness among taxa (‘divergence’), representing the average phylogenetic difference between taxa in an assemblage</li>
+<li>(iii) <b>どれだけ規則的か？ </b>the variance in differences among taxa, representing how regular the phylogenetic differences between taxa in an assemblage are (‘regularity’) </li>
+</ol>
+</p>
+
+<figure><img src="images/phylo_diag.png" width="500"><figcaption>Conceptual diagrams of FRAMEWORK FOR PHYLO-DIVERSITY METRICS</figcaption></figure><br>
+
+<p>
+また，メトリックがどのような情報を用いているのかという観点で2つに分けられる．
+<ol>
+<li>1つのタクソンセットに関する系統樹（1つの群集内）のみを用いる the metric uses information about a single set of tips of a phylogenetic tree within an assemblage ＝ 単一の群集や地域種プールに関する問い [α多様性] </li>
+<li>複数の系統樹 ＝ 時空間に渡り複数の種プールを比較する [β多様性]</li>
+</ol>
+</p>
+
+
+## フレームワークに従う分類
+
+<details>
+
+<summary>分類テーブル</summary>
+<figure><img src="images/phylo_list.png" width="800"><figcaption>既存の尺度を分類</figcaption></figure><br>
+
+</details>
+
+
+### 使う情報 "unit" 
+
+#### (1) Richness の場合
+
+<p>Richness: 系統的差異に関する"unit"を足し合わせる．
+<br>
+"unit"は3つに分けられる．
+<ul>
+<li>枝長 branch length (e.g. Faith's PD)</li>
+<li>系統距離 phylogenetic distance (e.g. phylogenetic species richness (PSR))</li>
+<li>系統隔離度 phylogenetic isoloation 一番近い他種との枝長 (e.g. ED)</li>
+</ul>
+
+<br>
+β多様性の観点で分析する場合は，群集間で共有されている枝長を計算 (1.1b) したり，比率を計算 (1.2b) したりする．<br>
+
+Richness metrics that compare diversity between sets (β-diversity) may calculate the proportion of shared branch lengths between two communities (e.g. Unifrac, Lozupone & Knight, 2005; 1.1b in Table 1) or a proportional measure of pairwise phylogenetic similarities among species (Pavoine & Ricotta, 2014; 1.2b in Table 1). These metrics capture the difference in phylogenetic composition between assemblages.
+</p>
+
+
+#### (2) Divergence の場合
+
+<p>Divergence: 系統的差異に関する"unit"を平均する．
+<br>
+"unit"は3つに分けられる．
+<ul>
+<li>枝長 branch length</li>
+<li>系統距離 phylogenetic distance</li>
+<li>系統隔離度 phylogenetic isoloation</li>
+</ul>
+
+pairwise distanceを計算するものでは，ありえるすべてのペアを計算する指標 (Mean pairwise distance; MPD, Webb et al., 2002; 2.2.1a)や，一部のみを用いる指標 (MNTD, Webb et al., 2002; この場合は最も近いものだけ; 2.2.2a) がある．<br>
+
+β多様性の観点で分析する場合にも，枝長を用いる (e.g. Hβ <a href="https://royalsocietypublishing.org/doi/abs/10.1098/rsbl.2010.0769">総量を和で分解する</a> ; 2.1b) ものや，すべてのpairiwise (2.2.1b) 一部のpairwise (2.2.2b) ものがある．<br>
+
+</p>
+
+
+#### (3) Regularity の場合
+
+<p>Regularity: 与えられた系統樹が star tree（すべての種が無関係）とどれだけ異なるかを定量化する．すなわち，どれだけ種間の関係が均一かを求める．<br>
+
+トポロジー（枝長を無視した関係）を用いるもの (3.1a)，全てまたは一部の pairwise distance を用いるもの (3.2.1a 3.2.2a)，隔離度を用いるもの (3.3a) がある．β多様性に対応した指標は無い．
+</p>
+
+
+
+
+## 各メトリックの振る舞いを図示
+
+<p>仮想的な系統樹を100個シミュレートし，それぞれに対して8通りの群集形成プロセスを仮定して仮想群集を作ってそれぞれのメトリックを計算する．詳細な設定は Appendix S2 を参照．</p>
+
+<font size="2" color="888888">各メトリックが規格化されてれば，相関行列を使ってPCAができる．https://statistics.co.jp/reference/software_R/statR_9_principal.pdf</font>
+
+<figure><img src="images/phylo_pca.png" width="600"><figcaption>α多様性に関するメトリックをPCAで図示</figcaption></figure><br>
+<p>
+(A) は presence/absence のみで計算する指標．(B) は abundanceで重み付けする指標も含めている． (C) はパラメトリックに振る舞いが変わる指標も入れている．
+</p>
+
+<p>
+同じ側面を測っている指標は近くに来ているが，Divergence に関する指標では，nearest pair (MNTD) と isolation を使う指標 (mean ED) は，すべてのペアを使う指標 (MPD) とは異なる位置に来ている．
+</p>
+
+
+<figure><img src="images/phylo_pca2.png" width="400"><figcaption>β多様性に関するメトリックをPCAで図示</figcaption></figure><br>
+
+<p>
+
+PC1は，richness か divergenve かを反映している．PC2は，系統β多様性の2通りの測り方（先端か，基部か）のどちらなのかを反映している．(see Swenson, 2011)<br>
+
+
+Swenson (2011) showed that β-diversity metrics can emphasize either differences among communities towards the base (‘basal’) or tips (‘terminal’) of a phylogenetic tree. In our simulations negative values along the second axis appear to capture basal metrics, such as Rao's D (equivalent to Dpw) which is a MPD-based measure of β-diversity, while known terminal metrics such as Dnn, which is a MNTD-based measure of β-diversity, fall close to zero. This suggests that for β-diversity metrics, metric choice should additionally consider whether it is more of interest to capture internal versus terminal tree structure (Swenson, 2011; Jin, Cadotte & Fortin, 2015).
+
+</p>
+
+
+
+## メトリックと生態学の問いを結びつける
+
+<figure><img src="images/phylo_choice.png" width="700"><figcaption>メトリックと問いの対応例</figcaption></figure><br>
+
+#### "unit" のチョイス例
+
+<ul>
+<li>「進化の歴史」を守りたいなら branch lenght を使う．If one wants to conserve as many evolutionary units as possible, branch lengths should be the target of interest.</li>
+<li>競争を考慮したいなら，pairwise distance を使う．If users wish to consider competition among species, pairwise distances may be an appropriate choice of unit. </li>
+<li>ユニークな種を保全したい、あるいは保全の優先順位を系統樹全体の多様化率の違いに関連づけたい場合は、系統的隔離（多様化率と生態学的プロセスを分析したい場合も）．Phylogenetic isolation should be the target if users want to conserve unique species or relate conservation prioritization or ecological processes to differences in the rate of diversification across the tree.</li>
+</ul>
+
+
+<font size=2 color="grey">
+
+## ★複雑化させる要因
+
+#### Abundance
+
+<p>
+どのように Abundance を考慮するかの違い：レア種を重くする（保全への応用）／多い種を重くする（生態系サービスなどを分析する場合）
+</p>
+
+#### Hill numbers
+
+<p>
+qが変わることによる変化は，理論的にもっと解析が必要．
+</p>
+
+#### 種多様性に依存する指標
+
+<p>
+PSRとPSV (PSR = PSV*species richness) は Pavoine–Bonsall framework では同一クラスになっている (divergence) が，種多様性 species richness をかけると振る舞いが変わるはず．こういうことは他でもあり得る．<br>
+
+Rao's quadratic entropy (Rao's QE) is primarily an index of divergence (Rao, 1982; Clarke & Warwick, 1998) as most of its variation occurs along the divergence dimension – but it is also slightly correlated with the richness dimension since it includes the diagonal of the distance matrix.
+</p>
+</font>
+
+
+
+</div>
+
+
+
+
+`)</script>
+
+
+
+
+<b>Reference</b><br>
+<a href="https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12252">Tucker, C. M., Cadotte, M. W., Carvalho, S. B., Davies, T. J., Ferrier, S., Fritz, S. A., ... & Mazel, F. (2017).</a> A guide to phylogenetic metrics for conservation, community ecology and macroecology. Biological Reviews, 92(2), 698-715.
+
+<br><br>
+2022/12/30 レジュメ作成：五十里
+</body>
+<a href="../../index.html">return to index</a>

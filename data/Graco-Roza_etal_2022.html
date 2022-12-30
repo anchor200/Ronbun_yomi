@@ -1,0 +1,244 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+# Distance-decay,Beta diversity,Multi-taxon,Global,Functional beta diversity<br>
+# 種組成のβ多様性と機能β多様性のdistance-decayに関する複数の仮説を，複数の分類群で検証する．とても網羅的な解析（手法は複雑）．Distance-decayの解釈集，文献集としても有用．イントロはわかりやすいがディスカッションが難しい…<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Distance decay 2.0 – A global synthesis of taxonomic and functional turnover in ecological communities
+</title>
+
+</head>
+<body>
+<font size="5"> 
+Graco‐Roza, C., Aarnio, S., Abrego, N., Acosta, A. T., Alahuhta, J., Altman, J., ... & Soininen, J. (2022). Distance decay 2.0–a global synthesis of taxonomic and functional turnover in ecological communities. Global Ecology and Biogeography, 31(7), 1399-1421.
+</font>
+
+
+<script>md(`
+
+
+## <p id="bb">導入</p>
+
+
+<div class="box1">
+
+<p>
+β多様性（群集の時空間変動）を理解することは，変わりゆく地球環境を保全する上で重要である．
+</p>
+
+<p>
+β多様性は，distance-decayの観点でよく研究されている．ドライバーは分散制限と環境フィルタ（＋それに関連した適応；種分化・絶滅）．種組成についてはいろいろ研究されている一方，機能β多様性はほとんど研究されていない．
+</p>
+
+<p>
+機能β多様性を用いれば，種組成だけに着目するよりも，群集がどのように環境に応答するのかをよく理解できる．しかしそのような試みは非常に限られている（例：微生物 <a href="https://doi.org/10.1002/lno.10577">Heino & Tolonen, 2017</a>; 全休の哺乳類 <a href="https://doi.org/10.1098/rspb.2016.1028">Penone et al., 2016</a>; ヨーロッパの魚 <a href="https://doi.org/10.1111/geb.12021">Villéger et al., 2013</a>）．
+</p>
+
+<p>
+組成β，機能βの相関によって群集形成プロセスに関する情報が得られる．例えば以下のような状況である．地域 regional 種プールから各サイト site (locality) にたどり着ける割合は変わらないが，局所的 local な環境要因が影響して局所群集の種組成が決まるため，機能βはクラスタリングしている．そして，一方地域 region スケールでは逆 (overdispersion) になる．このような現象が当てはまるケースが葉の大きさの標高勾配について報告されている (<a href="https://doi.org/10.1098/rspb.2010.1369">Swenson et al., 2011</a>)．ただし，いつでも組成βと機能βはいつも同じパターンになるわけではない．具体的には，
+<ul>
+<li>種組成から予測されるより機能特性が多様な場合→組成βのdecay弱＋機能βのdecay強</li>
+</li>同じハビタット制約を持つ種が異なる種プールからサンプルされている場合→組成βのdecay強＋機能βのdecay弱．</li>
+</ul>
+よって，「環境勾配に対して組成と機能どちらが典型的には急峻なdistance-decayを示すのか」という問いがとても重要になる (<a href="https://doi.org/10.1111/jbi.13722">Carvalho et al., 2020</a>; <a href="https://doi.org/10.1086/659625">Sokol et al., 2011</a>)．
+</p>
+
+
+### <font color="blue">仮説</font>
+
+<figure><img src="Images/Graco-Roza_etal_2022/kasetsu.png" width="600"><figcaption>本研究の仮説</figcaption></figure>
+
+<p>
+
+#### (a) シナリオごとの予測
+
+<ol>
+<li>異なる機能を持った種が，環境勾配に沿って入れ替わる→どちらも同じようにdistance-decayする．</li>
+<li>異なる機能を持った種が入れ替わる→機能βのdecay率は低い．</li>
+</ol>
+
+#### (b) マスター仮説
+<ol>
+<li>種組成は空間的距離に応答してdistance-decayしやすい．種組成は分散制限や異所的種分化といった空間プロセスと強く関連するからである．</li>
+<li>機能（環境適応のための形質；ただし分散に関係ない機能のみを考慮した場合）は環境的距離に応答してdistance-decayしやすい．</li>
+</ol>
+
+#### (c) 個別の仮説<br>
+
+##### 緯度
+
+<ol>
+<li>高緯度ほど空間的なdistance-decayはゆるやかになる．先行研究でもこの点は知られている (Soininen, 2010)．また知られているように，γ多様性はα多様性より急峻な緯度勾配を持つ（β多様性は高緯度ほど高い）こと，さらにラポポートの法則からも，同様のことが予測される．</li>
+<li>一方，高緯度のほうが広域での環境異質性が高いため，環境に応答するdistance-decayは高緯度で急峻になる（ただし，高緯度の厳しい気候では許容される環境適応戦略が限定されるため，機能βが全体的に低くなり，distance-decayが弱い可能性もある）．</li>
+</ol>
+
+##### 調査区域の大きさ Spatial extent
+
+<ol>
+<li>広域での研究ほど空間的なdistance-decayがゆるやか．調査範囲が単一の種プールにとどまる場合，種多様性には上限があることなどが理由<font size="2" color="888888"> [調査範囲を広げれば複数の種プールが含まれる，ということが起きればこの逆になるが，ここではそのようなことは起こりにくいという前提がある？]</font></li>
+<li>一方，広域ほど多様な環境があるため，環境的なdistance-decayは急峻になる．</li>
+</ol>
+
+##### 生態系区分 Realm
+
+<p>淡水→陸→海の順に，分散制限が緩和されるため，distance-decayはゆるやかになる．</p>
+
+</p>
+
+### <font color="blue">本研究</font>
+
+<p>
+これらの仮説を検証するため，複数の分類群を対象とした分析を行う．また，サイズの違いや分散モードの違いも考慮する．
+</p>
+
+
+</div>
+
+
+## <p id="bb">方法</p>
+
+<div class="box1">
+
+### <font color="blue">分析の材料</font>
+
+<figure><img src="Images/Graco-Roza_etal_2022/data.png" width="600"><figcaption></figcaption></figure>
+
+### <font color="blue">分析のフレームワーク</font>
+
+<figure><img src="Images/Graco-Roza_etal_2022/method.png" width="600"><figcaption></figcaption></figure>
+
+<p>
+<font size="2" color="888888">
+複数の研究を統合するための処理<br>
+We also investigated the ecological and geographical factors driving the rate of the distance decay across datasets. Each dataset was characterized with respect to: (1) latitude, recorded as the absolute mean value of all the sites of the dataset; (2) spatial extent, expressed as the largest pairwise distance (in kilometres) between study sites; (3) realm, classified into freshwater, marine and terrestrial environments; (4) body size information drawn from literature (Hillebrand, 2004; Peters, 1983), estimated as the mean log10-transformed fresh weight (in grams) of the biotic group included in the dataset; (5) dispersal mode, classified as active and passive modes and organisms dispersed by seeds; (6) taxonomic γ-diversity, expressed as the total number of species in the dataset; (7) functional γ-diversity, measured as the total volume of the union of the n-dimensional hypervolumes estimated within the dataset (Mammola & Cardoso, 2020); (8) total number of study sites in the dataset; and (9) the number of environmental variables in the dataset. For body sizes, we note that although the size range within the biotic group can be large (up to five orders of magnitude), it is small compared with the overall variation obtained across organism groups (12 orders of magnitude). For more details on body size approximations, see the papers by Hillebrand (2004) and Drakare et al. (2005). The taxonomic γ-diversity was included to study whether there is a typical positive relationship between γ-diversity (taxonomic and functional) and β-diversity (Kraft et al., 2011; Lamanna et al., 2014). Functional γ-diversity was estimated using the function hypervolume_set of the package hypervolume v.2.0.12 (Blonder & Harris, 2019). Hypervolumes are expressed in units of SDs to the power of the number of trait dimensions used (i.e., three). The number of study sites and the number of environmental variables for each dataset were included to explore their potential effect on distance decay.<br>
+
+「マスター仮説」の検証には，t検定とnull-modelを用いた．その他の仮説検証は，boosted regression trees (BRTs) を用いて，研究ごとのいろいろな違いを統制して行っている．<br>
+
+他にもいろいろ書いてあるので，再現をするときにはちゃんと読む．<br>
+
+Functional γ: 機能空間（多次元ベクトル）の実現値が占める体積．収集した機能特性の一覧は，<a href="https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fgeb.13513&file=geb13513-sup-0001-AppendixS1.docx">Appendix S1</a>にある（すごい量）．
+</p></font>
+
+</div>
+
+
+## <p id="bb">結果</p>
+
+<div class="box1">
+
+### <font color="blue">マスター仮説</font>
+
+<figure><img src="Images/Graco-Roza_etal_2022/h1.png" width="600"><figcaption></figcaption></figure>
+
+
+### <font color="blue">分類群ごとのdecay rate</font>
+
+<figure><img src="Images/Graco-Roza_etal_2022/by_sp.png" width="600"><figcaption></figcaption>Partial dependence plots（他の変数の効果を積分して潰した際の，興味のある変数の影響）を行っている．透明な線は，統制前のプロット．数字%はBRTでの相対的説明力を表す．</figure>
+
+### <font color="blue">地理的要因の影響</font>
+
+<figure><img src="Images/Graco-Roza_etal_2022/factors.png" width="400"><figcaption></figcaption></figure>
+
+### <font color="blue">データセットの特性の影響</font>
+
+<figure><img src="Images/Graco-Roza_etal_2022/factor2.png" width="500"><figcaption></figcaption></figure>
+
+</div>
+
+
+## <p id="bb">議論</p>
+<div class="box1">
+
+
+### <font color="blue">背景の確認と概要</font>
+
+<p>
+機能βを扱う一般的なフレームワークが存在していない．今回，網羅的な解析によりそれを打ち出した．一般に，<b>種組成βは機能βよりも，空間的距離に対して急峻に減衰する．</b>一方，環境的距離ではそのような違いはない（これまでの知見とは異なる）．
+</p>
+
+
+### <font color="blue">Distace-decayの強さ：種組成βは機能βの比較</font>
+
+<p>
+種組成変化には，空間的距離の影響がより強く効いている（「マスター仮説」の前半を支持）．また，形質（の多様性），分散モードを考慮することでdistance-decayの割合が説明できることもわかった（距離と機能の相互作用）．広い調査範囲ほど，種組成の空間的distance-decayが機能よりも急峻になることもわかった．これは複数の種プールが含まれることで．種組成の違いが大きくなる一方，種プールの効果は環境よりも歴史的な要因を多く反映しているからである．機能のγ多様性が高い＋受動的分散者では機能のdistance-decayがより強い（今回は受動的分散者が微生物だったので，移動能力が高く分散制限が効きにくかったことが反映されている）．
+</p>
+
+<p>
+直感（と仮説）に反して，環境勾配に対するdistance-decayは組成βのほうが急峻だった．同様の知見は他でも知られている (Heino & Tolonen, 2017; da Silva & Hernández, 2015; Teittinen & Virta, 2021)．
+
+先行研究では，種数のほうが機能のバリエーションよりも多いことが理由だと言われている．
+また，種プールが大きくなると組成のdecayが急峻になるが，その場合には種プール内の機能に冗長性が生まれ，サイト間での機能の類似性が高まるだろう．これもあり得る理由である．さらに，着目している環境勾配に対応しない機能が選ばれていた場合，decayはゆるやかになる．
+</p>
+
+
+### <font color="blue">緯度の影響</font>
+
+<p>
+仮説に反し，空間依存の decay rateは緯度30度あたりでピークになりその後減少するパターンになった（主にreplacement成分が支配）．似たようなパターンは哺乳類のturnover成分 (<a href="https://doi.org/10.1111/geb.12507">Castro-Insua et al., 2016</a>) やプランクトンのβ多様性 (<a href="https://doi.org/10.1038/s41467-021-25646-9">Martin et al., 2012</a>) で知られている．
+
+また，環境依存の decay rateは50度付近に凹みのある形になった（より高緯度では再び急になっている）．このような傾向も，先行研究で報告がある (<a href="https://doi.org/10.1111/geb.13146">Múrria et al., 2020</a>)．
+</p>
+
+<p>
+これまで，緯度依存のβ多様性パターン（空間的）は，ラポポートの法則で説明されてきた（高緯度ほどdistance-decayがフラットになる）が，今回のような"breakpoint"の存在は，より高緯度では別の要因が効いていることを示す．例えば，中緯度では人間の影響でハビタットが分断されβ多様性が高いのかもしれない．高緯度では最終氷期の影響で空間的distance-decayがフラットになっていることも指摘されている (<a href="https://doi.org/10.1111/ecog.03693">Gómez-Rodríguez & Baselga, 2018</a>)．また，高緯度ではより厳しい環境フィルタが働くため，種のネスト構造が卓越するようになる（β多様性のドライバーが変化する <a href="https://doi.org/10.1111/geb.12507">Castro-Insua et al., 2016</a>）．そして，より特殊化した種が生息し，高緯度では機能的なクラスタリングが推測される (<a href="https://doi.org/10.1111/ele.13631">Jarzyna et al., 2021</a>)．その結果機能βのdistance-decayが急峻になった，という可能性もある（高緯度ほど機能のアバンダンスが低い．という結果もこれを支持する Appendix S3）．
+</p>
+
+### <font color="blue">調査範囲の影響</font>
+
+<p>
+調査範囲が広いほど，空間依存の種組成のdistance-decayがゆるやかになる．地域種プールは限られていて，広い空間でコンスタントに新しい種に入れ替わるわけではない（広域でも，複数の種プールにまたがる，ということはまれ <font size="2" color="888888">[全球を覆うような広いスケールにすればこのパターンは変わるかも？？]</font>）．また，広い範囲だと環境勾配が繰り返されることも影響しただろう．
+<p>
+
+<p>
+逆に，環境依存の種組成のdistance-decayは広い範囲ほど急峻になった．つまり，種プールや分散制限の効果が環境依存のdistance-decayに及ぼす影響は，空間依存のものに及ぼす影響よりも小さい（種プール効果によってβ多様性に上限があっても，「広いほど多様な環境がある」ことの影響が勝り，distance-decayは急峻になる）．
+</p>
+
+<p>
+調査範囲，緯度，γ多様性が，他の変数よりもdecay-rateの分散をよく説明する．
+</p>
+
+### <font color="blue">生態系区分の影響</font>
+
+<p>
+海はdistance-decayが弱い，という先行研究と合致する結論．しかし，この点はもっと詳しく見る必要がある．
+</p>
+
+### <font color="blue">対象分類群と，データセットの影響</font>
+
+<p>
+体サイズが小さい分類群はdistance-decayが弱い．今回の研究では分散能力の高いpassive disperserから成っていたため，β多様性が低く，distance-decayが弱くなったのだろう．また，機能の複雑性（冗長性と相関する）も低いはずなので，機能のdistance-decayも弱くなったと考えられる．さらに，体サイズが小さいと同定が難しいので，実際よりも種多様性が低く見積もられていることも影響したかもしれない．
+</p>
+
+<p>
+分散モードとdistance-decayの関係は，空間，環境どちらに対しても似たようなパターンになった．分散能力が高いグループだと空間的decayが弱くなるのが自然だが，そうならなかったのは，受動的な分散者は分散能力が低いグループと同様，環境勾配に対して効率的に応答できないことを示しているのかもしれない．また，体サイズが小さいグループでは，測られていない環境要因によって分布が決まっていて，それが空間的な構造として現れてしまっていたのかもしれない．「真の分散制限」を未知の環境フィルタから分離する研究が必要だ (Stegen et al., 2013)．
+</p>
+
+### <font color="blue">研究デザイン</font>
+
+<p>
+サンプル点が全球を覆っていないこと，一部の分類群がカバーされていないこと，環境要因と機能についてもっと洗練の余地があること，などがlimitationである．
+</p>
+
+
+</div>
+
+
+## <p id="bb">結論</p>
+<div class="box1">
+この研究は，機能β多様性の研究をもっと広げるための土台となる包括的研究である．機能β多様性は群集の環境応答をより深く理解するツールになる．このような研究は，とくに種同定が難しい小さい分類群で，もっと注目されるべき．
+</div>
+
+`)</script>
+2022/12/02 レジュメ作成：五十里
+<a href="../index.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>
