@@ -1,0 +1,353 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+# LDG,i-LDG,Diversification rate,Time for speciation,Regional energy,global pattern,species richness,Multiple taxa
+# 熱帯外に種数ピークを持つ (i-LDG) 複数分類群を対象に，LDGの古典的説明がどれだけ適用されるのかを分析．分類群ごとに違いが大きいことを発見．全部追うのは難しいが，いろいろな研究のヒントが入ってる．<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Exceptions to the rule: Relative roles of time, diversification rates and regional energy in shaping the inverse latitudinal diversity gradient
+</title>
+
+</head>
+<body>
+
+<font size="5"> 
+Cerezer, F. O., Machac, A., Rangel, T. F., & Dambros, C. S. (2022). Exceptions to the rule: Relative roles of time, diversification rates and regional energy in shaping the inverse latitudinal diversity gradient. Global Ecology and Biogeography, 31(9), 1794-1809.
+</font>
+
+
+<script>md(`
+
+
+## <p id="bb">導入</p>
+
+
+<div class="box1">
+
+<p>
+典型的なLDGとは異なる，熱帯の外でピークになる種数緯度パターン (i-LDG) を持つ分類群がいる．i-LDGを説明できると考えられるモデルは，以下の3つある．
+<ol>
+<li>先祖がその地を専有してからの経過時間が種数をコントロール longer time to accumulate species (see Out of tropics, Jablonski et al. 2006)</li>
+<li>種分化の早さ faster diversification (e.g., topography, temperature, seasonality) that inherently promote speciation within the region, suppress regional extinction, or both (Mittelbach et al., 2007; Rohde, 1992; Whittaker et al., 2001).</li>
+<li>エネルギーが種数をコントロール（生存できる種数の上限を決める） more energy to support species-rich communities the total amount of regional energy, niches and resources, which determines the number of individuals, populations and species that can coexist stably in the region (Evans et al., 2005; Hawkins et al., 2003; Storch & Okie, 2019)</li>
+</ol>
+
+本研究では，これらの相対的影響を検討する．
+</p>
+
+<p>
+<details>
+<summary>どのモデルにも支持と不支持の両方の結果が知られている</summary>
+
+種数の多い熱帯で種分化が早い amphibians (Marin et al., 2018; Pyron & Wiens, 2013), birds (Cardillo et al., 2005; Ricklefs, 2006), mammals (Marin et al., 2018; Rolland et al., 2014) <br>
+一方で不支持のケース (Economo et al., 2018; Jetz et al., 2012) や，逆のパターンが発見されることもある；種が少ない温帯で種分化が早い (Harvey et al., 2020; Igea & Tanentzap, 2020; Rabosky et al., 2018)<br>
+
+◎古くからcolonizeされていた場所で種が多い；支持 (Economo et al., 2018; Marin et al., 2018; Miller & Román-Palacios, 2021)<br>
+不支持のケース (Rabosky et al., 2012; Scholl & Wiens, 2016)
+
+◎エネルギーによる制限；支持 (Hawkins et al., 2003)<br>しかし十分な証拠はない (Cornell, 2013)
+
+ (Economo et al., 2018; Marin et al., 2018; Wiens, 2017) かどうか，regional energy (Cornell, 2013) が影響するかどうかについても，結果は一貫しない．<br>
+ 
+ これらが同時に検証されたケースが少ないことと，各要因が地域的に混合されている状況が多いこと (e.g., tropics are long colonized but also resource rich) (Buckley et al., 2010; Machac, 2020; Pontarp & Wiens, 2016) がこういう問題の原因である．
+
+</details>
+</p>
+
+### この研究
+
+<p>
+
+#### 対象とする分類群
+
+<figure><img src="Images/Cerezer_etal_2022/tab1.png" width="600"><figcaption>分類群の基礎情報</figcaption></figure>
+
+<font size="2" color="grey">
+Notes: For each taxon, we indicate its described richness, the number of species included in this study, the region where its richness peaks, its mean age and its age range, and the explanation that we found to be the best supported one. The ages (in millions of years) were calculated using a set of 100 phylogenies for each taxon. Names of the terrestrial and marine realms follow Holt et al. (2013) and Miller et al. (2018), respectively. The described richness for Anseriformes and Procellariiformes were obtained from the International Ornithological Committee (IOC World Bird List, v.10.2; https://www.worldbirdnames.org/new/), the Mammal Diversity Database of the American Society of Mammalogists (https://www.mammaldiversity.org/) for Cetacea, Pinnipedia and Lagomorpha, and Amphibian Species of the World (v.6.0; https://amphibiansoftheworld.amnh.org/) for Caudata.
+</font>
+
+</p>
+
+</div>
+
+
+## <p id="bb">方法</p>
+
+<div class="box1">
+
+### 分布データ
+
+<ul>
+<li>レンジマップ  International Union for Conservation Nature (https://www.iucnredlist.org/) and BirdLife International (http://www.birdlife.org/). </li>
+<li>2度グリッドで種数をカウント．1種か，0種のグリッドは排除して計算</li>
+</ul>
+
+### 系統樹
+
+<ul>
+出版されている系統樹を使用 (Jetz et al., 2012; Jetz & Pyron, 2018; Upham et al., 2019).
+<li>Mammalia : Upham et al. (2019) (100 trees from “Mammals birth-death tip-dated DNA-only” distribution)</li>
+<li>Bird: Jetz et al. (2012) (100 trees from “Hackett All Species” distribution). </li>
+<li>Caudata: the amphibian tree of life obtained from work of Jetz and Pyron (2018) (100 trees from “Amphibians Posterior All Species” distribution)</li>
+</ul>
+<p>
+不確実性を考慮するため，タクソンごとに100サンプルを取って計算→ロバスト性を検証
+</p>
+
+### 種の蓄積時間
+
+#### 系統メトリック
+
+<p>
+<ul>
+<li>MPD mean pairwise distance: 動物相の古さをよく表すことが知られている (Economo et al., 2018; Oliveira et al., 2016)．</li>
+<li>MBL maximum branch length: 直接的な測り方（絶滅がないと仮定したときの一番古い種の年齢≒colonizeしてからの時間）(García-Andrade et al., 2021; García-Rodríguez et al., 2021)</li>
+<li>species tip age:  "the age of its closest internal tree node" (Sun et al., 2020)</li>
+</ul>
+
+<font size=2 color="grey">
+[info] 系統解析の実例
+<font>
+
+本研究では，MPDの結果をメインに使い，その他は補助的に扱う．それぞれの値は100サンプルの平均値．
+</p>
+
+#### Ancestral range reconstruction
+
+<p>
+<ol>
+<li>各種のRangeの何％が熱帯（between Cancer-Capricorn）にあるかを計算（空間的熱帯選好）</li>
+<li>各種の分布域の気候変数を平均（気候的熱帯選好）</li>
+<li>Blomberg's K (Blomberg et al., 2003) を用いて系統シグナルを計算（上記の選好が系統内でどれだけ保存されるか）</li>
+<li>系統の分散モデル dispersal–extinction–cladogenesis (DEC) model (Ree & Smith, 2008) as implemented by the BioGeoBEARS R package (Matzke, 2013) を用いて，祖先が熱帯-温帯にそれぞれ存在した可能性がどれだけあるかを計算 two discrete areas: A = temperate area (outside the Tropics of Cancer and Capricorn) and B = tropical area (inside the Tropics of Cancer and Capricorn)<li>
+</ol>
+</p>
+
+### Diversification rate
+
+<p>
+<ul>
+<li>DR: the inverse of the evolutionary distinctiveness (Jetz et al., 2012) 種がどれだけ系統内で孤立しているか；これをそれぞれのグリッド内の分布種について平均; assemblage-based approach; Villalobos et al. 2020</li>
+<li>BAMM: 分散を系統樹上でモデル化；BAMMtoolsを使用</li>
+</ul>
+注：両者で一貫した結果になった．
+</p>
+
+
+### Regional energy
+
+<p>
+類似の変数 proxy variables の間で種数予測の説明力が良かった annuam mean temperature BIO1 と annuam mean sea surface temperature を用いた（その他の変数の結果はappendixにある）．
+</p>
+
+
+### 分析
+
+<p>重回帰に基づく分散の分離 (varpart function of vegan package) を用いてそれぞれの変数の寄与を計算．また，GAMs，3次スプラインによる回帰，さらに空間自己相関を考慮したモデルによる分析も行った．</p>
+
+#### Sensitivity analyses
+
+それぞれの変数に複数の指標を用いたことに加え，cell removal (種が少ないグリッドを排除; threshold = 3, 5, 7)，外れ値の除去を行って結果の頑健性を確認した．
+
+</div>
+
+
+## <p id="bb">結果</p>
+
+<div class="box1">
+
+### 種数と緯度勾配
+
+<figure><img src="Images/Cerezer_etal_2022/sr.png" width="500"><figcaption>種数マップ</figcaption></figure>
+<figure><img src="Images/Cerezer_etal_2022/ldg.png" width="400"><figcaption>LDG</figcaption></figure>
+
+<figure><img src="Images/Cerezer_etal_2022/var_ldg.png" width="600"><figcaption>各変数の緯度トレンド</figcaption></figure>
+
+### Variation partitioning
+
+<figure><img src="Images/Cerezer_etal_2022/varp.png" width="700"><figcaption>各変数の説明力</figcaption></figure>
+
+<details> <summary>図の見方</summary>
+Comparing the effects of the three explanations. The figure shows variance partitioning for the effects of evolutionary time for species accumulation (MPD, blue), regional diversification rates (BAMM estimates, red) and regional energy (temperature, orange). It compares the total effects of the three explanations (left panel), their unique effects and the effects of their overlaps, depicted using the Venn diagrams (right panel). Venn diagrams show the results of variance partitioning based on multiple regression models and provide additional detail on how variance is shared by the three explanations. The values within the Venn diagrams show adjusted R2 values, and empty fields correspond to R2 = 0.
+</details>
+
+
+<ul>
+<li>時間 the evolutionary time for species accumulation の重要性はそれほど高くなかった R2 = 0.01~ 0.19<li>
+<li>海鳥と鯨類は，地理・気候選好どちらも系統シグナルが弱かった．これらのグループは起源地が幅広かった</li>
+<li>サンショウウオは，evolutionary time の影響が最大になっていた（温帯に古くから存在し，かつ種数もそこで多い；ただし，MBLを使ったほうがはっきり現れている）；サンショウウオは地理的系統シグナルが強い (K = 1.201 )．</li>
+<li>Ancestral reconstruction では，起源が不確かな geese を除いては，どのグループも温帯起源種が多い</li>
+<li>海のグループを除いては，エネルギー（温度）よりも diversification and time の影響が強い</li>
+<li>変数のオーバーラップ：鰭脚類は時間、種分化率、地域エネルギーの重複効果が大きい（R2=0.12）；鯨類とサンショウウオは種分化率とエネルギーの重複効果で説明されやすかった (R2 = 0.24; 0.06)</li>
+<li>GAMの結果も似たものになった</li>
+<li>結果にはロバスト性があった (Sec 3.2 参照)</li>
+</ul>
+
+</div>
+
+
+## <p id="bb">議論</p>
+
+<div class="box1">
+
+</div>
+
+<p>i-LDGには複数の要因が効いている．海-陸，そして変温動物-恒温動物の間で差異があった．
+そんな中で，以下の共通点があった．
+
+<ul>
+<li>種数が多い地域は，現在の種分化率が高い species-rich regions tend to have fast present-day diversification</li>
+<li>十分なリソースと種分化率の高さのもとでも，占有時間は種数に影響する time constrains the accumulation of species even in the face of available resources and fast diversification</li>
+<li>分散能力が高い海のグループでは，エネルギーが種数パターンを作る regional energy seems to shape richness gradients in the marine taxa with good dispersal</li>
+</ul>
+</p>
+
+<p>
+geese, albatrosses, cetaceans, rabbits →温帯起源かつ温帯で種分化が激しく，その結果温帯で種数がピークになっている．一方，pinnipeds, salamanders→現在は種数が少ない熱帯で種分化が激しい；今後LDGはフラットに近づくだろう．<br>
+
+<font size="2" color="grey">
+the tropics have been colonized only in recent times and that salamanders show accelerated diversification in the tropics (Kozak & Wiens, 2010; Wiens, 2007).
+</font>
+
+このように分類群間で，種数のパターンは近くても，プロセスは違う (see Hawkins et al. 2012)．
+</p>
+
+
+### それぞれの変数の効果
+
+<p>
+時間の効果＝ほどほど．地域ごとの違いが大きい．
+
+<font size="2" color="grey">
+[kan] エネルギーと種分化率は，合成による説明がある程度ある．エネルギーと種分化率には相関があるはずなので，その影響か？
+</font>
+</p>
+
+<p>
+エネルギーの効果＝陸の生き物ではあまり強くない．エネルギー制限のはずの温帯で種多様性が高いグループが，エネルギーの効果をあまり受けていないのは意外だ．似た環境でも場所が違うと種数が全く違うこともよくある（とくにガン，ウサギ，サンショウウオ）ので，歴史的分散プロセスの影響が強いと思われる．<br>
+
+<font size="2" color="grey">
+For future work, it could be useful to explicitly delimit the geographical and phylogenetic scales at which regional energy might be expected to outweigh the other effects (e.g., time, diversification rates) that can generate similar richness patterns (Graham et al., 2018; Machac et al., 2018).
+</font>
+</p>
+
+
+### 種分化率
+<p>
+
+<font size="2" color="grey">
+種分化率と種数の関係に関する研究動向<br>
+Whether species-rich regions show faster or slower diversification has been of much interest lately (Harvey et al., 2020; Machac, 2020; Miller & Román-Palacios, 2021; Morlon, 2020). Traditionally, species-rich regions, especially the tropics (Mittelbach et al., 2007), have been presented as the “cradles” of diversity, where species originate rapidly, and/or as diversity “museums”, with reduced extinction (Jablonski et al., 2006; Rangel et al., 2018). Contrary to this traditional view, recent evidence from a range of clades has revealed the opposite pattern (e.g., plants, fishes, birds), whereby present-day diversification tends to be faster in the species-poor regions (Harvey et al., 2020; Igea, 2020; Machac, 2020; Rabosky, 2018).
+</font><br>
+
+「種が少ない温帯で種分化が早い」という結果が最近出てきている．その説明：(1) 熱帯では種数が蓄積されるにつれリソースが枯渇し，新しい種ができにくくなっている．(2) 高緯度は更新世の絶滅があり，それに置き換わるように新たな種が誕生している．今回の結果は，このどれも，高々部分的にしか支持しない．
+</p>
+
+<p>
+LDGタクソンにネストしているi-LDGグループ（例：鳥全体に対する，海鳥）では，種数が多い地域で種分化が早い，という伝統的な結果に合致する現象が起きていることを意味する．
+</p>
+
+
+### スケールについての議論
+
+<p>
+時間，地理，系統スケールの影響に関する研究<br>
+
+今回対象にしたi-LDG taxaは，世界的には分布していない．また，幅広い系統齢 10–200 Myr であった．<font size=2>[kan]  ↓の議論ができる設定になっている，ということが言いたい？</font>
+
+スケールについて以下の対立する仮説がある．
+<ol>
+<li>特異的なホットスポット (diversity anomalies) は時間と種分化率の効果で生まれており，大規模なパターンはエネルギーによってコントロールされる Graham et al., 2018; Pontarp & Wiens, 2016; Wiens, 2017</li> 
+<li>地球規模の分散 (out of tropics) がむしろ全体のパターンを作っている（エネルギーの効果よりも歴史的分散の効果が大きい; Li & Wiens, 2019; Ricklefs, 2008; Wiens & Donoghue, 2004）</li>
+</ol>
+
+今回対象とした分類群は，起源地が温帯かつ温帯で種数が最大になっている（歴史的分散の効果を示す）．一方，それぞれの分布域内の地域的な種多様性パターンに対しては，time-for-spcies-accumulation の影響は大きくなかった．
+</p>
+
+<p>
+時間の影響が弱かったのは，i-LDG clade（若い系統が多い）に着目していたからかもしれない．一方で，古い系統ほどエネルギーによる種分化率差異が種多様性パターン与える影響が卓越するようになり，時間の効果が消えるという理屈も成り立つ．しかし，今回の結果では最も古い系統であるサンショウウオで時間の効果が最大だった→時間経過によるマスク効果は考えにくい．したがって今回の結果は<b>実際に時間 time-for-spcies-accumulation が種多様性パターンに与える影響が小さい</b>ということを示唆する．
+</p>
+
+<p>
+分散を直接推定するのは難しいが，ニッチ保守性によって間接的に測れる (Wiens & Graham, 2005)．ニッチ保守性が強い→分散しにくい：歴史効果が卓越するだろう．ニッチ保守性が弱い→分散しやすい：歴史効果が弱くなるだろう．実際に，前者の典型例であるサンショウウオで時間の効果が最大で，後者である鯨類では歴史効果が殆どなかった．
+
+<font size=2 color="grey">
+[kan] 分散とニッチ保守性の関係は，手法によっては分割できるのでは？（分散能力を直接図れれば；羽の長さなど）．鰭脚類は（海の種なので）あるていどは分散できるはずだが歴史効果が強く出ている．いろいろ検討できそう？
+</font>
+</p>
+
+
+### i-LDGとLDGの統合
+
+<p>
+LDGに対する対する3つの説明 (energy, diversification, time) は多様性パターンの形状によらず当てはまると考えられるようになっている（LDGしか説明できないものではなくその他のパターンも説明できるように，説明が洗練されてきた歴史がある）．しかし，今回の研究により，上記3つの説明がi-LDGグループの種多様性パターンを説明する割合はばらばらである（全く説明しないものもある）ことがわかった．したがって，3つの説明が，「どのようなケースでどれだけ適用できるのか」という新たな観点が必要である．典型的なLDG以外のパターンを示すグループ（例 aphids, ichneumonids, shallow-water molluscs），さらに化石群集も研究対象にして研究を発展させるべきだ．
+</p>
+
+### 結果のロバスト性
+
+<p>
+複数の系統手法，多様化率推定，エネルギー推定（古気候データも利用）により，結果のロバスト性は高い．また，着目した分類群は若いものが多いが，それでも系統齢が多様であるため，結果の一般性も高いだろう．
+</p>
+
+
+## <p id="bb">結論</p>
+
+
+<div class="box1">
+
+<p>
+類似した種多様性パターン（i-LDG) でも，その説明は異なる．古典的な3つの説明 (time, diversification rate, regional energy) は分類群によって影響力が異なり，かつ互いにリンクしていた．
+</p>
+
+<p>
+<b>種分化率が種多様性パターンと性に相関することもあるが (geese, albatrosses, cetaceans and rabbits)，最近になって種分化率が高いエリアにたどり着いたグループ (salamanders) では逆になることもある．</b>
+
+<font size=2 color="grey">
+[kan] 時間によるマスク効果（上記議論参照）の有無は，種分化率が高い場所にたどり着いたタイミングの違いで現れたり現れなかったりするのか？
+</font>
+</p>
+
+<p>
+<b>エネルギー資源の量は種多様性パターンを左右する場合もあるが，種分化が抑制されるほど制限が起きているのはまれだった</b>（種分化率は，種が多い地域でも依然下がっていない）．
+
+<font size=2 color="grey">
+[kan] 種数-エネルギー量と，種分化率の相関（低下率）をみることで，そもそも制限のようなものがあるのか否かが検証できないかな？
+</font>
+<p>
+
+<p>
+似たような環境でも種数が大きく異なることもある（rabbits and pinnipeds <b>歴史効果が卓越するケースもある</b>）
+
+<font size=2 color="grey">
+[kan] 歴史的分散の効果は basal/derived cladeがどこに起源するかという次元でまず効いているから，derived clade内の多様性パターンというスケールでは効果は弱い，ということなのかな？</font>
+</p>
+
+<p>
+統一理論を目指すのもいいが，
+<b>このように，それぞれの仮説がどれだけ適用されるのか，という観点で研究を進めていくことがより意味がある</b>（LDGを示す分類群でも，time, diversification, energy の相対的重要性は違うかもしれない; Machac, 2020; Miller & Román-Palacios, 2021; Mittelbach et al., 2007; Pontarp et al., 2019）．
+</p>
+</div>
+
+
+
+`)</script>
+2023/01/20 レジュメ作成：五十里
+<a href="../index.html">return to index</a>
+</body>
+
+
+
+
+
+Machac, A., Graham, C. H., & Storch, D. (2018). Ecological controls of mammalian diversification vary with phylogenetic scale. Global Ecology and Biogeography, 27, 32–46
+
+Miller, E. C., & Román-Palacios, C. (2021). Evolutionary time best explains the latitudinal diversity gradient of living freshwater fish diversity. Global Ecology and Biogeography, 30, 749–763.
+
+Machac, A. (2020). The dynamics of bird diversity in the New World. Systematic Biology, 69, 1180–1199.
+
+Mittelbach, G. G., Schemske, D. W., Cornell, H. V., Allen, A. P., Brown, J. M., Bush, M. B., Harrison, S. P., Hurlbert, A. H., Knowlton, N., Lessios, H. A., McCain, C. M., McCune, A. R., McDade, L. A., McPeek, M. A., Near, T. J., Price, T. D., Ricklefs, R. E., Roy, K., Sax, D. F., … Turelli, M. (2007). Evolution and the latitudinal diversity gradient: Speciation, extinction and biogeography. Ecology Letters, 10, 315–331
+
+Pontarp, M., Bunnefeld, L., Cabral, J. S., Etienne, R. S., Fritz, S. A., Gillespie, R., Graham, C. H., Hagen, O., Hartig, F., Huang, S., Jansson, R., Maliet, O., Münkemüller, T., Pellissier, L., Rangel, T. F., Storch, D., Wiegand, T., & Hurlbert, A. H. (2019). The latitudinal diversity gradient: Novel understanding through mechanistic eco evolutionary models. Trends in Ecology & Evolution, 34, 211–223.
+
+
+

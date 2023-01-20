@@ -1,0 +1,128 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+# Distance-decay,Turnover,Nestedness,beetle,dispersal,LGP,refugia<br>
+# 甲虫において，高緯度ほど分散能力が高い種が多くdistance-decayが弱い．複数のグループでdistance-decayのパターンを，分散能力に着目して比較することで，生物多様性パターン形成に関する一般則に近づける．しかし，分類群が大きく隔たると，直接比べるのが難しくなる．この研究は，甲虫（種数が多く，形態や分散能力が多様）に絞った比較にすることで，この問題を解決している．<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Variation among European beetle taxa in patterns of distance decay of similarity suggests a major role of dispersal processes
+</title>
+</head>
+<body>
+
+<font size="5"> 
+Variation among European beetle taxa in patterns of distance decay of similarity suggests a major role of dispersal processes
+</font>
+
+
+<script>md(`
+
+### 仮説
+
+<div class="box1">
+
+<p>ヨーロッパの甲虫4648種（21グループ）を対象に，ヨーロッパの34地域の在不在データを使用．</p>
+
+
+
+<ol>
+<li>南部のほうがdistance-decayが急峻：北部は氷期に種がいなくなっているので，現在北部にたどり着けている種は分散能力が高いはず→β多様性はhomogeneous．</li>
+<li>α多様性（種多様性）パターンとβ多様性パターンの北部と南部の違いは，それぞれが氷期の影響の強さを反映しているので，相関する．</li>
+<li>分散能力と生態特性が南部と北部のdistance-decayパターンに影響している．</li>
+</ol>
+
+<p>
+<font size="2" color="888888">
+ヨーロッパの南北は48Nで分割<br>
+
+用いた生態特性などについての記述<br>
+Taxa were classified according to their main habitat (epiedaphic, edaphic, aquatic and epiphytic) and trophic specialization (coprophagous, zoophagous, xylophagous, phytophagous) following Baselga et al. (2012b). As proxies of dispersal ability, the proportion of apterous species and species mean size were also obtained from Baselga et al. (2012b) or compiled from taxonomic monographs in the case of Cryptocephalinae and Chrysomelinae (Doguet 1994, Petitpierre 2000, Warchalowski 2003, Konstantinov et al. 2011). Details are provided in Gómez-Rodríguezet al. (2015: Table 1). Both ecological classification and dispersal ability proxies are coarse characterizations of taxon’s niche and dispersal attributes.</font>
+</p>
+
+</div>
+### 結果
+
+<div class="box1">
+
+<figure><img src="Images/distance_dependent_beta/beetle1.png" width="700"><figcaption></figcaption>空間距離によるdistance-decay</figure>
+
+<figure><img src="Images/distance_dependent_beta/beetle2.png" width="700"><figcaption></figcaption>気候距離によるdistance-decay</figure>
+
+<figure><img src="Images/distance_dependent_beta/beetle3.png" width="500"><figcaption></figcaption>種多様性パターン</figure>
+
+#### 細かい結果
+
+<ul>
+<li>南北での傾きの差と，南北での種多様性の差は，有意に相関していた (r2=0.31)</li>
+<li>南北での傾きの差を有意に説明したのは，proportion of apterous species (翅がない=飛べない種の割合; r2=0.20)と habitat (r2=0.42)，これらのjointは，7%を説明（両方の変数を入れたモデルでr2=0.55）した．これは，前者が35%，後者が13%の説明力を持つことを意味する．</li>
+<li>傾きの差と切片の差の積にも同様の解析をしたところ，前者が36%，後者が6%であった．つまり，分散に関係する生態特性が，より強く，南北でのdistance-decayの差を説明する．</li>
+<li></li>
+</ul>
+
+</div>
+
+### 考察
+
+<div class="box1">
+
+
+
+#### 空間距離と気候距離の対比と，高緯度ほどdistance-decayが弱いというメインの結果についての議論
+
+<ul>
+<li>ヨーロッパの甲虫群集の類似性は，空間距離と関連し，気候距離とは関連しない：気候ニッチよりも分散制限が群集組成に影響している．</li>
+<li>南部の方が，最近接のサイト間での群集類似性が低く（切片），さらにdistance-decay rateも高い（傾き）．これは，高緯度ほどturnover率が下がるという先行研究の結果と一致 e (Qian and Ricklefs 2007, Baselga et al. 2012a, Qian and Ricklefs 2012, Castro-Insua et al. 2016, but see Soininen et al. 2007)．</li>
+<li>南部では，グループごとのdistance-decay reteの差異が激しい．これは，気候勾配と関連するα多様性の緯度パターンがグループ間で似通っていることを考えると驚きである．しかし，パターンが似ていても，強度が異なることがわかった．各グループはたどってきた生物地理的歴史が異なるはずだから，ひとまとめにして議論することはできない（歴史効果を議論すべきだ）．</li>
+</ul>
+
+
+#### 歴史効果とは，分散プロセスである
+
+<ul>
+<li>北部ではフラットなdistance-decayが一貫して見られた（＋環境依存のdistance-decayは弱い＝分散プロセスがパターン形成において卓越）：北部の群集は，似たような分散に関する特性を持った種 (good dispersers) から成っている．</li>
+<li>逆に南部の群集はgood dispersersのみによって構成されてはいないことを意味する．さらに，多くのグループで「南部の方がdistance-decayが急峻」だったことから，南部の群集はweak disperserであると推測される．</li>
+<li>以上のパターンは，種多様性の緯度勾配と強く関連していた．</li>
+</ul>
+
+#### 分散プロセスに影響した歴史的イベントとは，更新世の氷期である
+
+<ul>
+<li>α多様性とβ多様性のどちらにも影響したのが更新世の氷期である．</li>
+<li>ニッチフィルタも影響しているが (<a href="Gómez-Rodríguez, C. et al. 2015. Dispersal and ecological traits explain differences in beta diversity patterns of European beetles. – J. Biogeogr. 42: 1526–1537.">Gómez-Rodríguez et al. 2015</a>)，今回の結果により，β多様性のパターンに対する影響よりが強いのは，分散制限であることがわかった（複数のグループ間で，切片と傾きの両方の違いを検討したからこそわかること）．</li>
+<li>すなわち，気候が群集の類似性の説明要因ではなかったこと，北部のほうが気候勾配が急なのにdistance-decayの割合が南部と同じ程度であったこと，グループごとの生態特性とdistance-decay rateの南北差に関連がなかったこと[??]が，これを支持する結果である</li>
+</ul>
+
+<p>
+<font size="2" color="888888">
+ただし，測定していない環境変数の効果が空間距離を通じて現れていることもありえる．
+</font>
+</p>
+
+</div>
+
+### 結論
+
+<div class="box1">
+
+<ul>
+<li>「北部の厳しい環境にはgood dispersersしかたどり着けない」よって「たどり着いた種の分布は広くなる」「その結果，複数サイトの群集の類似性が高まる」というプロセスにより，高緯の厳しい環境でdistance-decayがフラットになるという反直感的なパターンが現れていた．</li>
+<li>この結果は，大陸，大陸島，海洋島でdistance-decayを比べた研究でみられた現象（海洋島ほどdecay rateが低い； <a href="König, C. et al. 2017. Dissecting global turnover in vascular plants.– Global Ecol. Biogeogr. 26: 228–242.">König et al. 2017</a>: 海洋島にはgood dispersersしかたどり着けない）と対応している．</li>
+<li>分散が種多様性パターンを形作る主要なドライバーである．なぜなら，グループごとに計算した「種多様性の南北の差」と「distance-decay の差異」が相関したからである．すなわち，<b>α，βのどちらのパターンも，グループによって異なる割合の種が北部に分散できたことを反映している</b>．</li>
+<li>つまり，「ヨーロッパ北部の甲虫群集について知識を得るためにな，ヨーロッパ南部の情報が必要になる」という逆説的な現象が生じる．気候変動の影響が生物多様性に与える影響を議論する上で，このような観点が重要になるのだ．</li>
+</ul>
+
+</div>
+
+`)</script>
+2022/12/05 レジュメ作成：五十里
+<a href="../papers.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>

@@ -1,0 +1,84 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+# Distance-decay,Beta diversity partitioning,Turnover,Nestedness,Multiple taxa<br>
+# β多様性のブレークポイント（低緯度でturnover，高緯度でnestednessが卓越し，それが入れ替わる）：β多様性パターンと様々な変数の単なる相関を見るのではなく，支配的な要素（turnover v nestedness）が変化する点 breakpoint に着目した解析を行うことで，複数の分類群を通じた生物多様性パターンのcausal effectを議論しやすくなる．両生類についてすでに知られているこのbreakpointに着目した分析を，異なる分散能力を持つ分類群で行うことで，一般性を検証している．
+<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Break the pattern: breakpoints in beta diversity of vertebrates are general across clades and suggest common historical causes
+</title>
+</head>
+<body>
+
+<font size="5"> 
+Break the pattern: breakpoints in beta diversity of vertebrates are general across clades and suggest common historical causes
+</font>
+
+
+<script>md(`
+
+
+## <p id="bb">導入</p>
+
+
+<div class="box1">
+
+### 方法
+
+<ul>
+<li>鳥類，哺乳類（コウモリ），哺乳類（それ以外）を対象</li>
+<li>レンジマップを1度グリッドで整備</li>
+<li>500kmグリッド（地域グリッド）内で計算した，マルチサイトB_SMIとB_SNEを緯度に対してプロット</li>
+</ul>
+
+</div>
+<div class="box1">
+
+### 結果
+
+<ul>
+<li>分類群間で一貫して，turnoverと最も相関していたのが mean altitude（r2=0.2程度）：山の存在が種分化を促す．</li>
+<li>nestednessのほうは，気候変数（最も温暖な月の平均気温）：種分布は気候に左右される＋寒い地域ほどネスト構造が出やすい</li>
+<li>500kmグリッド（地域グリッド）内で計算した，マルチサイトB_SMIとB_SNEを緯度に対してプロット</li>
+</ul>
+
+#### Breakpoint
+
+
+<figure><img src="Images/distance_dependent_beta/breakpoint.png" width="600"><figcaption>500kmごとに計算したベータ多様性の各成分と，緯度に対する環境勾配</figcaption></figure>
+
+
+</div>
+<div class="box1">
+
+
+### 考察
+
+<ul>
+<li>Breakpointの存在：分類群間で一貫する．先行研究の両生類の結果と一貫．</li>
+<li>高緯度ほどnestedness成分の影響が強くなる．ただしこの切り替わりが見られるbreakpointは鳥類で一番高緯度：鳥類は移動能力が高いため，分散に起因するプロセスがより厳しい環境でも残存する．</li>
+<li>哺乳類と鳥類は，両生類よりは移動能力が高く平衡状態に近いことから，気候とネスト構造の相関が出やすかった</li>
+<li>標高のbreakpoint（図中のA）や，最終氷期との気候アノマリーのbreakpoint（図中のC）が，ベータ多様性のbreakpointの場所と対応している（そして，そのようなbreakpointは現在の気候には存在しない；図中のB）：歴史効果の影響を示唆．高緯度は氷河期の影響で一度生物が消えて，再度分布拡大している最中なので，地理的なネスト構造になる．</li>
+<li>高緯度ほどエネルギー（多くの先行研究ではPETで測られる）が種数の制限要因になり，低緯度ほど雨量が制限要因になる（エネルギーは十分にあるので）．このような緯度に依存する変化も今回の結果に影響しただろう．[エネルギーと種数に関するレビュー <a href="Hawkins, B.A., Field, R., Cornell, H.V., Currie, D.J., Guegan, J.F., Kaufman, D.M., Kerr, J.T., Mittelbach, G.G., Oberdorff, T., O’brien, E.M., Porter, E.E. & Turner, J.R.G. (2003) Energy, water, and broad-scale geographic patterns of species richness. Ecology, 84, 3105–3117.">Hawkins et al. 2003</a>; <a href="Whittaker, R.J., Nogues-Bravo D. & Araujo, M.B. (2007) Geographical gradients of species richness: a test of the water-energy conjecture of Hawkins et al. (2003) using European data for five taxa. Global Ecology and Biogeography, 16, 76–89.">Whittaker et al 2007</a>]</li>
+<li>他にも淡水甲殻類のレンジが43Nを境に拡大するようになる (Zagmajster et al., 2014) といったパターンも知られている．</li>
+<li>このようなbreakpointに着目した解析を行うことで，複数の分類群を通じた生物多様性パターンのcausal effectを議論しやすくなるだろう．</li>
+</ul>
+
+</div>
+
+
+
+`)</script>
+2022/12/05 レジュメ作成：五十里
+<a href="../index.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>
