@@ -1,0 +1,159 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+# Keyword<br>
+# Abstract<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Dissecting global turnover in vascular plants
+</title>
+</head>
+<body>
+
+<font size="5"> 
+König, C., Weigelt, P., & Kreft, H. (2017). Dissecting global turnover in vascular plants. Global Ecology and Biogeography, 26(2), 228-242. https://onlinelibrary.wiley.com/doi/10.1111/geb.12536
+</font>
+
+
+<script>md(`
+
+
+## <p id="bb">導入</p>
+
+
+<div class="box1">
+
+<p>
+β多様性（サイト間の群集組成の違い）は生態学の根幹をなすコンセプトだ．なぜなら，種と環境の関係を理解する鍵となるからである．β多様性をもたらす要因は3つ提唱されている．
+<ol>
+<li>サイトごとに個体数が違うので，サンプル努力の違いによって種組成が見かけ上違って見える the uniformity hypothesis (Pitman et al., 1999)</li>
+<li>確率的な，分散制限と種分化のプロセスがサイト間の種組成の違いを作り出す the neutrality hypothesis (Hubbell, 2001)</li>
+<li>環境ニッチによって種がソートされ，サイト間の種組成の違いが生まれる the niche-assembly hypothesis (Whittaker, 1956; Hutchinson, 1957)</li>
+</ol>
+このうち2と3が，実データでも支持されている．β多様性が距離と関係していれば2，環境と関係していれば3が支持されることになる（しかし，背反的ではない）．
+</p>
+
+<p>
+β多様性を，距離あるいは環境勾配に対してプロットすることで，距離（中立過程に対応），環境勾配（ニッチ過程に対応）のそれぞれの影響を調べることができる．距離の遠さと環境の違いは一般に相関するので，影響を分割するのは難しい．
+</p>
+
+<p>
+異なる分類群や，異なる地理条件（陸，島，海など）でβ多様性の空間及び環境との関連を調べた研究がある．<b>異なる分散能力を持つグループを比較することで，β多様性がどれだけ分散プロセスによってコントロールされているかがわかる</b>．同様に，<b>異なる地理的設定の分析を比較することで，群集形成プロセスの相対的重要性（分散あるいは環境）が，異なる環境下でどのように変化するのかが評価できる</b>．
+</p>
+
+<p>
+この研究では，世界の維管束植物のデータセット (604 checklists comprising 149,475 species) を用いて，組成，機能β多様性のパターンを評価した．異なるサブセット区分による分析を比較することで，どのようなプロセスが全球スケールの turnover を駆動しているのかを明らかにする．具体的には以下を行った．
+<ul>
+<li>空間的距離に着目した Distance-decay 解析</li>
+<li>Generalized dissimilarity models による環境要因の影響力の評価</li>
+<li>全球（等面積グリッドを使用）での組成の類似性を予測</li>
+</ul>
+</p>
+
+<p>
+<b>仮説</b><br>
+空間／環境がTurnoverに与える相対的影響は，
+<ul>
+<li>地理的条件によって変化：異なる環境では異なる分散・環境フィルタが機能するから</li>
+<li>分類群・機能群によって変化：フィルターに対する応答が違うから</li>
+</ul>
+
+
+具体的には以下を予測する；島嶼では分散制限が卓越し，大陸では環境フィルタが卓越する．さらに，分散能力が高いグループは分散制限の影響を受けにくく，広い環境に適応したグループは環境フィルタの影響を受けにくい．
+
+</p>
+
+
+</div>
+
+
+## <p id="bb">方法</p>
+
+<div class="box1">
+
+### 植物データ
+
+<p>
+Weigelt et al. (2015) など既存文献をもとに，維管束植物のチェックリストデータベースを作成．大陸は，小さめのエリアを使用：258 island and 346 mainland OGUs (Operational geographical uinit: 分析の単位)．
+
+
+
+植物の機能特性は，以下のデータベースからコンパイル：TROPICOS (Missouri Botanical Garden, 2015), USDA PLANTS (USDA & NRCS, 2015), World Checklist of Selected Plant Families (WCSP, 2014), TRY (Kattge et al., 2011), CanadenSys (Desmet & Brouillet, 2013) and Useful Tropical Plants (Fern & Fern, 2015). 
+
+最終的に，growth form（草本，低木，高木）を利用してグループを分けた．
+</p>
+<p>
+<font size="2" color="888888">
+チェックリストに入れた条件：1) the checklist was sufficiently complete, i.e. the number of reported species fell into a reasonable range for the given biome and area (Kreft & Jetz, 2007), (2) the floristic status (native versus alien) of all species was documented, (3) the checklist contained more than 30 native vascular plant species to allow robust statistical analyses, and (4) the corresponding geographical unit could be clearly defined and had a size between 1 and 500,000 km2. <br>
+The final dataset consisted of 258 island and 346 mainland OGUs containing a total of 149,475 native plant species (all alien species were excluded) and 771,403 species records (see Appendix S1 in Supporting Information).
+</font></p>
+
+
+### 地理・環境データ
+
+<p>
+以下のポリゴンデータを取得．
+
+<ul>
+<li>行政区分，島レベルのチェックリスト：GADM database of Global Administrative Areas (Hijmans et al., 2009)</li>
+<li>保護区のチェックリスト：he World Database of Protected Areas (IUCN and UNEP-WCMC, 2014)</li>
+</ul>
+
+地点間の距離を，それぞれのポリゴンの中心間の距離として取得．気候データは，WorldClim (30 arcsec) の，ポリゴンと重なる領域の値の中央値を使用 (年平均気温，年平均降水量，気温季節変動，降水量季節変動，標高)．
+
+These variables have been shown to capture major ecologically relevant axes of environmental space (Moser et al., 2005; Kreft & Jetz, 2007; Weigelt & Kreft, 2013).
+
+<p>
+<font size="2" color="888888">
+<figure><img src="Images/test.png" width="600"><figcaption>test</figcaption></figure>
+</font>
+</p>
+
+島の区分（大陸島，海洋島，環礁）も行った．
+
+</p>
+
+
+### ベータ多様性
+
+<p>
+地点 (OGU) ごとに面積が違うので，Turnover成分のみを用いる．分類群の分割：angiosperms, gymnosperms, pteridophytes；10種以下OGUは分析から除く．機能群の分割：trees, shrubs and herbs；機能が割り当てられていない種が80%以上のOGUは除外．
+</p>
+
+
+### 解析
+
+
+#### Distance-decay
+
+Log-binomial GLM で turnover を回帰．切片は1に固定（距離0では，種組成は同じだと仮定する）．Halving distance（類似性が半分になる点; <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.0906-7590.2007.04817.x">Soininen et al. 2007</a>） を turnover rate とみなす．
+
+<p>
+<font size="2" color="888888">
+[info] Acknowledging that the non-independence of observations in similarity matrices leads to correct parameter estimates but invalid test statistics (Lichstein, 2007), we estimated confidence intervals for the GLMs using a bootstrapping approach.<br>この他にもいろいろ，方法で参考になることが書いてある
+</font></p>
+
+#### Generalized dissimilarity modelling
+
+
+
+
+</div>
+
+<figure><img src="Images/Konig_etal_2016/procedure.png" width="500"><figcaption></figcaption></figure><br>
+
+procedure.png
+
+`)</script>
+2022/06/21 レジュメ作成：五十里
+<a href="../papers.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>
