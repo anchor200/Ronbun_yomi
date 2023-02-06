@@ -1,0 +1,230 @@
+<script src="../../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../library/index.css">
+<head>
+<title>
+生物の観点からみた地理
+</title>
+</head>
+<body>
+<script>md(`
+
+<font size="5"> 
+生物の観点からみた地理
+</font>
+
+
+## 基本のキ
+
+<div class="box1">
+
+
+### 地理基盤の重要性
+
+<p>
+生物の分布パターンは，陸上においてはほとんどが気候（気温と降水量），土壌タイプによって決定される．海では，ほとんどが水温、塩分、光、そして水圧によって決定される．これを地理基盤 geographic template とよぶ．<br>
+<font size=2 color="grey">ref. Biogeography 5th p41</font>
+</p>
+
+
+### Distance-decay
+
+<p>
+環境条件は，二点間の距離が大きくなるほど異なるものになる．したがって群集組成も，距離に伴って異なるものとなる．<br>
+<font size=2 color="grey">ref. Biogeography 5th p42</font>
+</p>
+
+### Two engines
+
+<p>
+Geographic template の時空間変動は，以下の2つのエンジンに駆動されている．
+<ol>
+<li>地球の核がもたらすエネルギー：プレート移動</li>
+<li>太陽のエネルギー：陸空海で異なったエネルギーの吸収率，場所ごとの吸収エネルギーの違いによる空気の流れや海流</li>
+</ol>
+<font size=2 color="grey">ref. Biogeography 5th p41</font>
+</p>
+
+</div>
+
+
+## 気候
+
+<div class="box1">
+
+### 気温
+
+
+#### 緯度と気温
+
+<p>
+緯度と気温の関係は，太陽放射の角度が緯度によって異なることから生じる．
+</p>
+
+<p><font size=2 color="grey">[memo] 熱は以下の3通りの方法で空間を伝わる．(1) 伝導 Conduction: 分子の振動が直接伝わる，(2) 対流 Convection: 熱を持った気体や液体が移動する，(3) 放射 Radiation: 電磁波が空間や物体を通じて伝わる </font>
+<font size=2 color="grey">ref. Biogeography 5th p43</font></p>
+
+
+#### 標高と気温
+
+<p>
+空気の体積の変化は断熱過程である．断熱過程におけるポアソンの法則により，空気の体積が増加すると温度は低下する（エアコンの原理）．<br>
+<font color="blue" size=2>T[温度]  = [定数] / V^(比熱比 - 1) ，ただし定義上，比熱比 - 1 > 0 </font>
+</p>
+
+<p>
+標高が上がると，気圧が下がるため空気の体積は大きくなる．上記のポアソンの法則が働いて，
+1㎞上昇するにつれて、気温はだいたい10℃低下する．
+</p>
+
+
+
+#### 緯度と標高
+
+<p>緯度が高くなることと，標高が上がることは類似した効果をもたらす．標高による life zone の分割線が北に向かって下がっているのが，緯度の効果．</p>
+
+<figure><img src="images/elevation_v_latitude.png" width="400"><figcaption>標高の効果と緯度の効果</figcaption></figure>
+<font size=2 color="grey">ref. fig. 3.7 also see fig 2.12 (b)</font>
+
+
+### 降水量
+
+#### 雨影効果 rain shadow effect
+
+<p>
+雨陰効果：風が山脈を卓越する際，地形により上昇気流が発生する．卓越風が湿潤な場合，大気の温度差により，雲が発生し卓越風内の大気は水蒸気が奪われる．この結果，山脈の風下側では卓越風が高温乾燥状態になる．これが季節風など，短期的に観測されるのが，フェーン現象である．また，南半球の偏西風の雨陰となるパタゴニアなど，恒常風の雨陰となるところでは，年中高温乾燥地域となり，砂漠が形成される．
+</p>
+<figure><img src="images/rain_shadow.png" width="400"><figcaption>雨影効果 Teta et al. 2022</figcaption></figure>
+
+
+#### Tropical convergence zone
+
+<p>
+赤道の高標高草原は，熱帯収束帯の通過に伴い，年に2回雨季を経験する．
+地軸の傾きが原因となり，北上（北半球が夏のとき）したり，南下したりする．
+<ul>
+<li>熱帯収束帯がずっと掛かっている場所が熱帯雨林になる（アマゾンや中央アフリカ）</li>
+<li>掛かったり掛からなかったりする場所が，雨緑樹林（at 熱帯モンスーン気候）</li>
+<li>その外側（雨季がない）が，サバンナ（at サバナ気候）</li>
+</ul>
+
+<br>
+<font size=2 color="grey">ref. Biogeography 5th p47</font>
+</p>
+<figure><img src="images/shusokutai.png" width="300"><figcaption>熱帯収束帯 from wikipedia</figcaption></figure>
+
+
+#### 砂漠
+
+<figure><img src="images/sabaku.png" width="400"><figcaption>砂漠の成因</figcaption></figure>
+
+</div>
+
+
+## 土壌
+
+see <a href="soil.html">土壌</a>
+
+
+## 海洋や湖沼の環境
+
+<div class="box1">
+
+
+### 水深
+
+<p>
+極めて透明な水でさえ，上層50～100ｍの間で99％の太陽放射が吸収される．
+
+<p><font size=2 color="grey">[memo] 
+赤やオレンジのような波長の長い光は、最も早くに吸収され、より波長が短くて高いエネルギーの光は、深くまで到達する。これにより、深海は青色（波長が短い）になる。</font></p>
+
+これにより，
+
+<ol>
+<li>photic zone と呼ばれる光が十分に強い表層でしか光合成は行われない</li>
+<li>熱帯の海でも深海の温度は低くなる</li>
+</ol>
+
+
+<figure><img src="images/Aquatic-Zones.jpg" width="700"><figcaption>Aquatic-Zones</figcaption></figure>
+
+
+
+<p><font size=2 color="grey">[memo] 
+塩が溶けていることによる凝固点降下が原因で，海水は0度以下でも凍らない．</font></p>
+</p>
+
+
+### 躍層 Thermal stratification と栄養塩
+
+<p>
+水の温度と密度の関係（高温の水ほど密度が低い）により，躍層ができる．<br>Thermocline：表層と深層で温度が劇的に変化する線<br>
+
+
+躍層ができると垂直方向の水の混合が妨げられるので，陸域より流出してきた栄養が深い場所には届かなくなる＋深い場所に酸素が供給されなくなる．ゆえに熱帯の深い湖（躍層ができやすい）は、生産性がない．<br>
+
+
+<p><font size=2 color="grey">[memo] c.f. 海の場合は，海流による垂直循環（極で冷やされた水が，下層に落ちる）により，深海でも酸素はある程度ある．また，熱水噴出孔の影響（光以外を使った一次生産）で，深海でもある程度生物多様性がある．</font></p>
+
+また，極地の水は、毎年春と秋の二回に水柱全体が同じ温度、同じ密度になる（Fig. 3.13; Overturn）
+</p>
+
+
+<p>
+まとめると，
+<ul>
+<li>夏は表層が高温で躍層が生じる</li>
+<li>冬は下層の密度が高くなり躍層が生じる</li>
+<li>熱帯の湖は，表面が栄養塩が足りない；c.f. Overturnが起きる極地の湖では，撹拌時に栄養塩が上層まで上がってくる</li>
+<li>海水は海流により多少は混ざる</li>
+</ul>
+</p>
+
+
+#### 栄養塩が生じさせる問題
+
+<p>
+栄養供給が過剰化すると（人間の排出する下水や工業廃水など）、過剰生産がおきる．すると藻の急成長→酸素不足→魚の死→そしてその他の環境問題（赤潮．青潮，etc…）と繋がる</p>
+
+
+
+### 海洋循環
+
+<p>
+海洋循環の起源：<a href="../Veron_ency.html">参考</a>
+</p>
+
+<p>
+河川や降水は継続的に海洋表層に淡水を供給し続け、密度の小さい淡水は表層に留まる。河川からの水は海洋の表層の上を数㎞先まで流れる。極地においては、蒸発量がすくないことで、河川や降水からの淡水の流入が卓越する。他方、熱帯では水は失われる。
+<p><font size=2 color="grey">[memo] 
+海水が沈む場所：極で暖流と寒流がぶつかるとこ（寒流が下に潜る）</font></p>
+</p>
+
+
+#### 湧昇
+
+<p>
+湧昇 (湧昇流：ペルー沖など)とよばれる水が湧き上がる地域は、大陸の縁の切り立ちに沿って海流が流れている場所で見つかる。→コリオリの力が，北上する沿岸の水を外洋に運んでしまうため</p>
+
+<p>
+湧昇の原因は他にもたくさんある：<a href="http://omix.aori.u-tokyo.ac.jp/overview/longversion/">北大西洋の例</a>
+</p>
+
+</div>
+
+
+
+
+
+</body>
+
+<b>Reference</b><br>
+<ul>
+<li>Biogeography 5th Chap3</li>
+<li>Teta, P., de la Sancha, N. U., D'Elía, G., & Patterson, B. D. (2022). Andean rain shadow effect drives phenotypic variation in a widely distributed Austral rodent. Journal of Biogeography, 49(10), 1767-1778.</li>
+<li>C. Hart Merriam and the Concept of Life Zones https://www.birdandhike.com/Veg/Merriam/_Merriam.htm</li>
+<li>Instapedia Aquatic Zones https://www.insightsonindia.com/world-geography/physical-geography-of-the-world/biogeography/biomes-5/aquatic-zones/</li>
+</ul>
+`)</script>
+2023/02/07 レジュメ作成：五十里
+<a href="../../index.html">return to index</a>
