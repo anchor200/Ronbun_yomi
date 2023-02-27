@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
-# Keyword<br>
-# Abstract<br>
+# Beta diversity,Plant,Global,GDM,Generalized dissimilarity modelling,<br>
+# 植物のチェックリストを網羅的に集めて，分類群，機能群，地理的セッティングごとに，全球スケールの turnover を解析．Turnover rate は分散制限とニッチ制限による決定論的プロセスに左右される．シダは turnover が緩やかで，低木が最も急．島には分散能力が高いものがたどり着くため，メインランドよりも turnover が緩やか．<br>
 <script src="../library/marked.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../library/index.css">
 <head>
@@ -71,6 +71,11 @@ König, C., Weigelt, P., & Kreft, H. (2017). Dissecting global turnover in vascu
 
 <div class="box1">
 
+
+<figure><img src="Images/Konig_etal_2016/procedure.png" width="500"><figcaption>方法の全体図</figcaption></figure><br>
+
+
+
 ### 植物データ
 
 <p>
@@ -99,15 +104,10 @@ The final dataset consisted of 258 island and 346 mainland OGUs containing a tot
 <li>保護区のチェックリスト：he World Database of Protected Areas (IUCN and UNEP-WCMC, 2014)</li>
 </ul>
 
-地点間の距離を，それぞれのポリゴンの中心間の距離として取得．気候データは，WorldClim (30 arcsec) の，ポリゴンと重なる領域の値の中央値を使用 (年平均気温，年平均降水量，気温季節変動，降水量季節変動，標高)．
-
-These variables have been shown to capture major ecologically relevant axes of environmental space (Moser et al., 2005; Kreft & Jetz, 2007; Weigelt & Kreft, 2013).
-
-<p>
-<font size="2" color="888888">
-<figure><img src="Images/test.png" width="600"><figcaption>test</figcaption></figure>
+地点間の距離を，それぞれのポリゴンの中心間の距離として取得．気候データは，WorldClim (30 arcsec) の，ポリゴンと重なる領域の値の中央値を使用 (年平均気温，年平均降水量，気温季節変動，降水量季節変動，標高)．<br>
+<font size=2 color="grey">
+[info] These variables have been shown to capture major ecologically relevant axes of environmental space (Moser et al., 2005; Kreft & Jetz, 2007; Weigelt & Kreft, 2013).
 </font>
-</p>
 
 島の区分（大陸島，海洋島，環礁）も行った．
 
@@ -135,17 +135,208 @@ Log-binomial GLM で turnover を回帰．切片は1に固定（距離0では，
 
 #### Generalized dissimilarity modelling
 
+<p>
+
+GDMは以下を説明する目的のために作られた手法 (Ferrier et al., 2007)．
+<ol>
+<li>変数ごとの，値の勾配に沿ったtunrover割合の違いの定量化 Variation in the rate of
+turnover along individual variables </li>
+</ol>
 
 
+ベータ多様性を目的変数として，説明変数ごとに加法的にI-splineを合成した回帰 (log-binominal GLM) を行う．結果，以下がわかる．
+
+<ol>
+<li>他の変数が一定の場合に，特定の変数がどれだけturnoverと結びついているかを表す近似値 total height of the curve </li>
+<li>その変数に沿ったturnoverの割合 the shape of the curve</li>
+</ol>
+
+
+年平均気温，年間降水量，気温季節性，降水量季節性，面積，標高を説明変数として投入（変換なし）．Rパッケージgdmのデフォルト設定．250回の繰り返しで検定を行い，有意な変数のみをモデルに保つようにしてモデル選択．
+
+</p>
+
+#### 変数の重要性評価
+
+##### Dispersion importance 応答変数の分散をどれだけ説明できるか
+
+<p>
+全変数投入 (full model)，地理的距離のみ (distance-only)，環境変数のみ (environmental only) を比較し，deviance explained に基づき，variation partitioningを実施 (Borcard et al., 1992; Legendre, 2008)．
+</p>
+
+##### Level importance 応答変数の平均をどれだけ説明できるか
+
+<p>
+Full model での応答関数（スプラインの合成）の高さの相対値を，full model の説明力 (R2)で正規化して指標化．
+</p>
+
+
+#### 種組成類似性マップ
+
+種組成の類似性（観測値と回帰による予測値両方）をNMDSで3次元プロットし，RGB色で表現．3次元のベクトルは，年平均気温と年間降水量に垂直になるように軸を回転．この分析は，大陸のプロットに限定して実施．
+</div>
+
+
+## <p id="bb">結果</p>
+
+<div class="box1">
+
+### Distance decay
+
+<figure><img src="Images/Konig_etal_2016/res1.png" width="500"><figcaption>Distance-decay</figcaption></figure><br>
+
+
+<p>
+<ul>
+<li>全体のHalvind distance（種組成の類似度が半分になる距離）は D1/2=1576km</li>
+<li>メインランド D1/2=1216km に対し，島 D1/2=1840km は turunover が緩やか</li>
+<li>環礁は turnover がとても緩やか D1/2=5967km</li>
+<li>種子植物に対し，シダ植物 D1/2=2156km はturnoverが緩やか</li>
+<li>低木 D1/2=826, 高木 1163, 草本 1523km．低木で最もturnoverが急</li>
+</ul>
+</p>
+
+### Importance
+
+<figure><img src="Images/Konig_etal_2016/res2.png" width="500"><figcaption>変数の重要性：各棒の右が関数の形状に基づく，左がvariation partitioningに基づくプロット</figcaption></figure><br>
+
+<p>
+<ul>
+<li>メインランドで距離の重要性が高まり，島で環境の重要性が高まる（仮説と不一致）</li>
+<li>大陸島では，海洋島よりも，環境の重要性（距離との相対値）が高まる</li>
+<li>環礁は降水量季節性のみが高い説明力（注：環礁は熱帯にしかないため環境勾配がない）</li>
+<li>裸子植物では，距離の重要性が高い．機能群と分類群に関して，その他は類似したパターンになった．</li>
+</ul>
+</p>
+
+### Projection
+
+<figure><img src="Images/Konig_etal_2016/res3.png" width="700"><figcaption>3次元化したNMDSの結果を色で表現</figcaption></figure><br>
+<p>
+<ul>
+<li>環境のみ：バイオームタイプに類似→分散制限がない場合の turnover パターンを表す</li>
+<li>距離のみ：分散制限のみの効果を表す</li>
+<li>歴史がユニークであるオーストラリアと南アフリカでは，モデルの精度が落ちる</li>
+</ul>
+</p>
 
 </div>
 
-<figure><img src="Images/Konig_etal_2016/procedure.png" width="500"><figcaption></figcaption></figure><br>
 
-procedure.png
+## <p id="bb">議論</p>
+
+<div class="box1">
+
+<p>
+距離と少ない環境変数で維管束植物の全休スケール turnover が説明できる．分析グループによっては内実に大きく違いがみられる．
+</p>
+
+### Turnover as result of filtering processes
+
+<p>
+メインランドよりも島のほうが，turnoverについて距離より環境変数の説明力が高かったのはなぜか（「島は隔絶された生態系」という考えに反する）？
+
+以下が考えられる．
+<ul>
+<li>島は分散フィルタがきつく，たどり着ける種の潜在量が少なく群集が均一化しやすい</li>
+<li>分散フィルタを乗り越えられる種は分散能力が高いため，距離の制限を受けにくくなる</li>
+</ul>
+</p>
+
+<p>
+環礁で turnover rate がとても低く，距離の重要性も低かったことはこの説明と一貫する．
+</p>
+
+<p>
+<font size=2 color="grey">
+[memo] この観点はベータ多様性の緯度勾配，標高勾配を議論する上でも重要になる．これに続く文章，よくわからなかった… For example, it suggests that the size of the species pool (gamma diversity) is an inherent property of the geographical or environmental setting and that correcting for variations in pool size (Kraft et al., 2011) might lead to incorrect conclusions regarding the role of assembly processes.
+</font>
+</p>
+
+<p>
+島では種分化が turnover をドライブするのでは→今回のデータセットでは島の群集の90%以上は非固有種で，多く出てきたのは pantoropical species だった：植物の場合には，島の群集形成プロセスにおいて，種分化の影響よりも分散フィルタの作用が大きい（他では違う結果も知られている; Stuart et al., 2012）．
+</p>
+
+
+
+
+### The role of species attributes for turnover
+
+<p>
+ターンオーバー率は
+<ul>
+<li>シダで最小</li>
+<li>被子植物、裸子植物、草本で中程度</li>
+<li>高木で高い</li>
+<li>低木で非常に高い</li>
+</ul>
+
+これは狭いエリアで行われた先行研究と一致：シダ＜被子植物 (Lopez-Martinez et al. 2013)；高木＜低木 (Tuomisto et al. 2003; Qian 2009)．<b>分散能力が高い（植物の場合，むかごが小さい）ほどturnover率が低い</b>．
+</p>
+
+<p>
+島では環境要因が turnover のドライバーとしてより強力＋メインランドで，地理的距離に敏感だったグループほど，島で環境要因が重要になる．<br>
+<b>→分散フィルタが強い島では，分散能力が高い種しかたどりつけないことを反映しているのではないか</b><br>
+裸子植物（分散能力が低い）は島にはほとんどいない．
+</p>
+
+<p>
+今後はグループごとの環境耐性の違に基づいて，environment-turnover の関係を調べることが重要である（分散能力について，むかご propagule size を用いて検討できているのと同じように）．
+</p>
+
+### The origin of beta diversity
+
+#### 解析手法の影響
+
+<p>
+今回，Variation-partitioning を2通り行っている．
+<ul>
+<li>Dispersion importance 応答変数の分散をどれだけ説明できるか (variance-based)</li>
+<li>Level importance 応答変数の平均をどれだけ説明できるか (transformation-based)</li>
+</ul>
+
+前者は全体の説明力のよさを反映．距離が3000–5000 kmではほぼ種が turnover しきってしまうので，距離による説明力が大きく出る．
+
+
+後者はシステマチックな変化を反映．スプラインで当てはめてているので，saturateした後のパターンに引きずられない．
+</p>
+
+#### scaling
+
+<p>
+研究スケールによってわかることが違う．例えば今回の研究のspatial grain/extentでは，標高などのtopographicな影響は検出できない．</p>
+
+
+<p>
+Turnover をドライブするのは niche-based processes か neutral processes か？という問いにおいて，この観点は特に重要：広域スケールでは neutral process の重要性は消失する．広域スケールでは，距離の影響は，進化の歴史的プロセスを強く反映する（中立な移入-絶滅動態ではなく）(Chase 2014)．
+
+
+また，分散も，(1) 種によって分散能力が違う (2) 決定論的プロセス（確率的でない）が含まれるという点で，純粋に中立的ではない．
+
+
+この研究では，全球スケールの turnover は niche-based の環境依存プロセスと，non-neutral な分散プロセスによって駆動されていることがわかった．
+</p>
+
+</div>
+
+
+## <p id="bb">結論</p>
+
+<div class="box1">
+
+
+<ol>
+<li>地理的セッティング（種の特徴だけでなく）が，分散フィルタと環境フィルタを通じて turnover に影響する．</li>
+<li>分類グループ，機能グループによって，これらのフィルタを通過する能力は異なり，その差は分散能力の違いによってだいたい説明できる</li>
+
+GDMは，ロバストで多くの情報が得られる手法．
+今後は，系統も考慮することで，進化史（起源地などの歴史的プロセス）と分散能力（種ごとの特徴）を区別することが重要．
+</ol>
+
+</div>
 
 `)</script>
-2022/06/21 レジュメ作成：五十里
+2023/02/27 レジュメ作成：五十里
 <a href="../papers.html">return to index</a>
 
 
