@@ -1,0 +1,281 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+# Phylogenetic niche conservatism,ニッチ保守性,phylogenetic comparative method,系統解析<br>
+# ニッチ保守性を駆動する具体的プロセスと，その検証方法，研究例を紹介．<br>
+<script src="../library/marked.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../library/index.css">
+<head>
+<title>
+Phylogenetic comparative approaches for studying niche conservatism
+</title>
+</head>
+<body>
+
+<font size="5"> 
+Phylogenetic comparative approaches for studying niche conservatism
+</font>
+
+
+<script>md(`
+
+
+## <p id="bb">導入</p>
+
+
+<div class="box1">
+
+<p>
+Phylogenetic niche conservatism (PNC): the tendency of species to retain characteristics of their fundamental niche over time (Wiens & Graham, 2005).<br>
+
+PNCを駆動するミクロ進化プロセスは5つある．
+<ol>
+<li><font color="blue">安定化選択</font> (stabilizing selection)：祖先種と同じニッチから逸脱すると適応度が低くなるので，ニッチが変化しないものが残る (e.g. Holt & Barfield, 2008)</li>
+<li><font color="blue">多面発現</font> (pleiotopy)：ニッチを変化させる遺伝子変化が，他の形質に対して適応度を下げるような変化をさせるため，変化しないものが残る (e.g. Etterson & Shaw, 2001)</li>
+<li><font color="blue">Gene flow</font>：レンジ内での遺伝子フローは、ニッチ形質の変化をキャンセルする (e.g. Sexton et al., 2009)</li>
+<li><font color="blue">遺伝的変異の制限</font>：ある形質の遺伝的変異が制限されている場合、自然選択はそれに作用しない (e.g. Bradshaw, 1991)</li>
+<li><font color="blue">競争、捕食、その他の生物的要因</font> (see Wiens et al., 2010)</li>
+</ol>
+
+このようなミクロ進化プロセスが，マクロレベルでのパターン（種多様性の勾配など）として現れるとき，その現象は広大な時空間スケールをもつ．
+したがって，広いスケールでのPNCの評価には、複数の種にまたがる検証が必要になる．
+</p>
+
+
+#### PNC and the phylogenetic comparative method
+
+<p>
+
+<ul>
+<li>種は様々な点で，独立ではない（系統的に近い種は歴史を共有している）：PNCはその主要因</li>
+<li>このことを考慮して種間の差異を解析するのが系統的比較法 phylogenetic comparative method (PCM)</li>
+<li>PCM は，仮説ベースで用いれば，PNCの検証に使える．</li>
+</ul>
+</p>
+
+### Distinguishing among macroevolutionary models
+<ul>
+<li>PNCパターンは，複数の異なるプロセスで説明可能なことがある</li>
+<li>検証したい仮説と，そのための手法ごとにおかれた仮定を理解して研究すべき</li>
+<li>着目する 特性 trait によって結果が異なる：肉食獣は食性に保守性ありだが気候ニッチの保守性弱／シクリッドは逆．</li>
+<li>ニッチの定義，着目する特性，保守性を評価する系統レベルによって結論が異なる</li>
+<li></li>
+</ul>
+</div>
+
+
+## <p id="bb">Niches and traits ニッチと特性</p>
+
+
+<div class="box1">
+
+### ニッチとは？
+
+<ul>
+<li>環境ニッチ Grinnellian niche：種が生存するために必要な環境条件の集合</li>
+<li>資源ニッチ Eltonian niche：資源ニーズと生物学的相互作用（より細かいスケール）</li>
+</ul>
+
+<p>
+潜在ニッチと実現ニッチの区別も重要．前者についてのデータが得られることはほとんどないため，現実的には後者に関するデータが研究に用いられる．
+</p>
+
+<p><font size="2" color="888888">
+ニッチ概念のレビュー：Chase & Leibold, 2003; Soberón, 2007; Soberón & Nakamura, 2009
+</font></p>
+
+### 特性とは？
+
+<p>
+
+<ul>
+<li>厳密な見方→遺伝子によってコーディングされた特徴</li>
+<li>広い定義→生態や環境選好も含む：生息温度は直接進化せず、種の耐熱性、食性、体格の変化に応じて変化する</li>
+</ul>
+
+PNC+PCMの文脈では，特性を後者のように広く定義するのがいいかな．
+</p>
+
+</div>
+
+## <p id="bb">マクロ生態学的モデル</p>
+
+<div class="box1">
+
+<p>
+仮説と着目する特性 Key trait を先験的に決め，適切な手法とデータを選ぶのが重要．
+系統比較法 PCM を使えば，複数のプロセスを検証する包括的な枠組みができる．
+</p>
+
+<figure><img src="Images/Cooper_and_Jetz_2010/fig1.png" width="500"><figcaption>点線をブラウンとしたときの，各マクロ進化モデルにおける時間と変化蓄積の関係</figcaption></figure>
+
+
+
+### (a) Drift ドリフト
+
+<p>
+ブラウン運動にしたがう特性の変化．キー特性（たとえば温度選好）であれば，この系統シグナルが十分1に近いというだけでも，「ニッチ保守性がある」と言ってしまってもよいだろう．
+</p>
+
+<p><font size="2" color="888888">
+一方，系統シグナルは，PNCが起きてなくても検出されうる．収斂，分類学的インフレ（分けすぎ），隠れ種にも影響される．たんにstasisになっていることもある．特定の最適値に向けた収束も，同じパターンになってしまう（Ornstein–Uhlenbeck (OU) model）
+</font></p>
+
+
+<details>
+  <summary>メトリックと例</summary>
+
+#### メトリック
+<p>
+Pagel’s λ: 0（系統シグナルなし）〜1（系統樹上のブラウン運動にしたがう）．あるいはBlomberg’s K（同じ解釈でよい）
+</p>
+
+#### 例
+<p>
+Freckleton et al. (2002)は、26のソースから106の生態学的特徴のデータを取得し、それぞれについてPagelのλを推定→いくつもの保守性を発見
+</p>
+
+</details>
+
+### (b) Niche retention
+
+<p>
+種は、ブラウン運動の下で予想されるよりも祖先に近いニッチを持っているケース。これは、制約や安定化選択によって生じる可能性がある．環境選好よりは，資源利用に関してよく見られる．
+</p>
+
+
+<details>
+  <summary>メトリックと例</summary>
+  
+#### メトリック
+
+<p>
+Blomberg’s K: K > 1は、種の形質がブラウン運動の予想以上に類似していることを示す。<br>
+Pagel’s δ: δ>1は、形質が後の枝でより比例して変化することを示し、すなわち、最近の進化が系統の深いところの変化よりも形質に影響を与えることを示す。δ<1ならば逆（ニッチ保守性がある）</p>
+
+#### 例
+
+<p>
+Anolis lizards: Losos et al. (2003)<br>
+同一クレード内の種間距離にたいして，クレードをまたいだ種間距離が大きいか？→そうではなかった（枝先でも，分化が比較的進んでいる）．
+</p>
+</details>
+
+### (c) Phylogenetic inertia
+
+
+  
+<p>
+ニッチ進化の速度が環境の変化に追いつかず、種が新しい最適な状態になるまでに長い時間がかかる。そのため、先祖代々のニッチの特徴が保持される。
+</p>
+
+<p>
+気候変動に対するグローバルな応答をみたい→「環境変動にニッチ進化が追いつかない」ことが考えられるので，Phylogenetic inertia の枠組みで研究するのがよい
+</p>
+
+<details>
+  <summary>メトリックと例</summary>
+  
+#### メトリック
+
+<p>
+SLOUCH: test for constraint on trait and evidence for inertia. <br>
+Compare fit of Ornstein-Uhlenbeck versus other models
+</p>
+
+#### 例
+
+<p>
+Kozak & Wiens (2010)：ホワイトノイズ、ブラウン、および様々なOUモデルを、北米のプレトドンティドサンショウウオ（Plethodontidae）の気候ニッチに当てはめ→最も適合性の高いモデルは、低標高、中標高、高標高に位置する気候レジームに対して別々の適応的最適値を仮定したOUモデルであることがわかった．つまり，サンショウウオの広範な気候ニッチはPNCを示す．
+</p>
+</details>
+
+### (d) Niche filling/shifting
+
+<p>
+進化が進むとニッチが埋まり、祖先と子孫のニッチ間の差が次第に小さくなっていく。特に、同じギルド（同一の栄養段階に属し、共通の資源を利用している種たち）内の種の適応的な放射に適用される。
+</p>
+
+
+<details>
+  <summary>メトリックと例</summary>
+  
+#### メトリック
+
+<p>
+Freckleton and Harvey’s randomization test. 
+<br>Pagel’s δ: δ < 1 （系統樹の枝先で進化速度が下がってる）
+</p>
+
+#### 例
+
+<p>
+Freckleton & Harvey (2006)：ウグイスの仲間の体格と餌の大きさ→旧世界のウグイス（Phyllosopus；12種）はニッチ充填によるPNCの顕著な証拠を示したが、デンドロイカウグイス（14種）の進化はブラウン運動モデルでよりよく適合
+</p>
+<p>
+ドリフトモデル(a)の下ではPNCとなるが，ニッチ充填モデル(d)ではニッチ保存性はないとの結論に至った→事前に仮説検証の枠組みを決めて，比較を行うことの重要性
+</p>
+</details>
+
+### (e) Evolutionary rate
+
+<p>
+2つのグループの同じ形質について、あるグループの変化率が他のグループと比べて高いことは、進化の制約が弱いことを示す
+</p>
+
+
+<details>
+  <summary>メトリックと例</summary>
+
+
+#### メトリック
+
+<p>
+Compare θ, Brownian rate parameter (σ2), or felsen values
+</p>
+
+
+#### 例
+
+<p>
+Thomas et al. (2006) は、異なる発達戦略を持つシギ・チドリ類（Charadrii）、特に自給自足の子を持つ種（precocial）と親から給餌される子を持つ種（semi-precocial）についてθ値を推定：着目したのは，parental care, mating behaviour, econdary sexual characters．Precocial young期（孵化が個体発生の後半→孵ったときにすでに動ける）をもつ種のほうが，PNCが弱い．
+</p>
+
+</details>
+</div>
+
+
+## <p id="bb">要注意</p>
+
+<div class="box1">
+
+<p>
+いろいろな前提が必要．
+<ul>
+<li>信頼できる系統樹（枝長もふくむ）が得られている</li>
+<li>ドリフトなのか，強い選択なのか？ 着目している特性が生存に関わるものである（ニッチ特性）ため，要注意．ドリフトであった場合でも，どう結論づけるべきかは状況依存</li>
+<li>近縁種につよい分散制限があって，似た環境にしか生息していない→見かけ上の偽の保守性が見つかる</li>
+<li>系統シグナルがないか，弱くても，ニッチ保守性がないとは結論できない．環境ニッチの場合，使っている環境変数が生息域を代表していなかったり (grain sizeの問題)，直接種の分布を制限していなかったりする場合．PNCのテストは，「環境がニッチを左右しているか」ではなく，「ニッチが環境から受ける影響がどう進化したか」を問うものであることに注意．</li>
+</ul>
+</p>
+
+## 結論
+
+<p>
+ある特定のケースでPNCがもたらすかもしれない効果について、具体的な仮説を検証すべき
+</p>
+
+</div>
+
+
+`)</script>
+2023/04/19 レジュメ作成：五十里
+<a href="../papers.html">return to index</a>
+
+
+
+
+
+
+
+
+
+</body>
